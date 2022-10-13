@@ -1,0 +1,168 @@
+\documentclass[10pt]{amsart}
+\setcounter{tocdepth}{3}% to get subsubsections in toc
+
+\let\oldtocsection=\tocsection
+
+\let\oldtocsubsection=\tocsubsection
+
+\let\oldtocsubsubsection=\tocsubsubsection
+
+\renewcommand{\tocsection}[2]{\hspace{0em}\oldtocsection{#1}{#2}}
+\renewcommand{\tocsubsection}[2]{\hspace{1em}\oldtocsubsection{#1}{#2}}
+\renewcommand{\tocsubsubsection}[2]{\hspace{2em}\oldtocsubsubsection{#1}{#2}}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[spanish]{babel}
+\usepackage{blindtext}
+
+\usepackage{listings}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{stmaryrd}
+\usepackage{calrsfs}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{stmaryrd}
+\usepackage{lipsum}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
+
+% Define a custom color
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+
+% Define a custom style
+\lstdefinestyle{myStyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	keepspaces=true,                 
+	numbers=left,       
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2,
+}
+
+% Use \lstset to make myStyle the global default
+\lstset{style=myStyle}
+
+\voffset=-1.4mm
+\oddsidemargin=14pt
+\evensidemargin=14pt
+\topmargin=26pt
+\headheight=9pt     
+\textheight=576pt
+\textwidth=441pt 
+\parskip=0pt plus 4pt
+
+\title{Lenguajes de Programaci\'on}
+\author{Seminario\#1\\
+	 \textbf{C++11, C++14}.}
+
+
+\begin{document}
+	\begin{titlepage}
+		\clearpage	
+		\maketitle
+		\begin{center}
+			\includegraphics[width=10cm]{c++logo.png}
+			
+			\vspace{5em}
+			Equipo 2:
+			
+			Marcos Manuel Tirador del Riego
+			
+			Laura Victoria Riera P\'erez
+			
+			Leandro Rodr\'iguez Llosa
+			\vspace{1em}
+			
+			Grupo: C-311
+		\end{center}
+		\thispagestyle{empty}
+	\end{titlepage}
+
+
+\newpage
+\pagenumbering{gobble}
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{arabic}
+\section{Definici\'on de las clases genéricas linked\_list y node}
+
+\lstinputlisting[caption=Sample Code Listing C++, label={lst:listing-cpp}, language=C++]{sample1.cpp}
+
+\newpage
+\section{Definici\'on de miembros de datos necesarios de ambas clases}
+
+\subsection{Nuevos elementos introducidos a partir de C++11 que permiten un manejo más "inteligente" de la memoria}
+
+\subsection{Inicializaci\'on}
+
+\subsection{Filosofía en el uso de la memoria defendida por C++}
+
+\subsection{Simplificaci\'on de nombres de tipos mediante el uso de alias}
+
+\newpage
+\section{Definici\'on de  los constructores clásicos de C++(C++0x) , el constructor move y las sobrecargas del operador =}
+
+\subsection{¿Qué hace cada uno de ellos? ¿Cuándo se llaman?}
+
+\subsection{¿Qué es un lvalue y un rvalue ?}
+
+\subsection{std::move}
+
+\newpage
+\section{Definici\'on de un constructor que permita hacer list-initialization lo más parecido a C\# posible}
+
+\subsection{Compare la utilización del \{\} v.s ()}
+
+\newpage
+\section{Definici\'on de  un constructor que reciba un vector $ <T> $}
+
+\subsection{Usar for\_each con expresiones lambda}
+
+\newpage
+\section{Definici\'on del destructor de la clase}
+
+\subsection{¿Hace falta?}
+
+\subsection{¿Para qué casos haría falta un puntero crudo (raw pointer)?}
+
+\newpage
+\section{Definici\'on de las funciones length , Add\_Last , Remove\_Last , At , Remove\_Ate}
+
+\subsection{Noexcept}
+
+\subsection{Inferencia de tipo en C++ (auto, decltype decltype(auto)). Explicar todos, pero no obligatoriamente usarlos.}
+
+\newpage
+\section{Crear un puntero a función Function<R, T...> que devuelve un valor de tipo R y recibe un número variable de parámetros de tipo T .}
+
+\subsection{Definir una función genérica Map a linked\_list en T y R , que recibe un puntero a función que transforma un elemento T en uno R; de manera que Map devuelve una instancia de linked\_list$ < $R$ > $ resultado de aplicar a todos los elementos T de la lista original la función de transformación.}
+
+\subsection{Crear punteros a funciones usando alias }
+
+\subsection{Crear un puntero a función Function que permita cualquier cantidad de parámetros de cualquier tipo.}
+
+\end{document}

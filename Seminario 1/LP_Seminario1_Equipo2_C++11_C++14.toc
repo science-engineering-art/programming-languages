@@ -1,0 +1,25 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\tocsection {}{1}{Definici\'on de las clases genéricas linked\_list y node}}{1}{section.1}%
+\contentsline {section}{\tocsection {}{2}{Definici\'on de miembros de datos necesarios de ambas clases}}{2}{section.2}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{Nuevos elementos introducidos a partir de C++11 que permiten un manejo más "inteligente" de la memoria}}{2}{subsection.2.1}%
+\contentsline {subsection}{\tocsubsection {}{2.2}{Inicializaci\'on}}{2}{subsection.2.2}%
+\contentsline {subsection}{\tocsubsection {}{2.3}{Filosofía en el uso de la memoria defendida por C++}}{2}{subsection.2.3}%
+\contentsline {subsection}{\tocsubsection {}{2.4}{Simplificaci\'on de nombres de tipos mediante el uso de alias}}{2}{subsection.2.4}%
+\contentsline {section}{\tocsection {}{3}{Definici\'on de los constructores clásicos de C++(C++0x) , el constructor move y las sobrecargas del operador =}}{3}{section.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{¿Qué hace cada uno de ellos? ¿Cuándo se llaman?}}{3}{subsection.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{¿Qué es un lvalue y un rvalue ?}}{3}{subsection.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{std::move}}{3}{subsection.3.3}%
+\contentsline {section}{\tocsection {}{4}{Definici\'on de un constructor que permita hacer list-initialization lo más parecido a C\# posible}}{4}{section.4}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{Compare la utilización del \{\} v.s ()}}{4}{subsection.4.1}%
+\contentsline {section}{\tocsection {}{5}{Definici\'on de un constructor que reciba un vector $ <T> $}}{5}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Usar for\_each con expresiones lambda}}{5}{subsection.5.1}%
+\contentsline {section}{\tocsection {}{6}{Definici\'on del destructor de la clase}}{6}{section.6}%
+\contentsline {subsection}{\tocsubsection {}{6.1}{¿Hace falta?}}{6}{subsection.6.1}%
+\contentsline {subsection}{\tocsubsection {}{6.2}{¿Para qué casos haría falta un puntero crudo (raw pointer)?}}{6}{subsection.6.2}%
+\contentsline {section}{\tocsection {}{7}{Definici\'on de las funciones length , Add\_Last , Remove\_Last , At , Remove\_Ate}}{7}{section.7}%
+\contentsline {subsection}{\tocsubsection {}{7.1}{Noexcept}}{7}{subsection.7.1}%
+\contentsline {subsection}{\tocsubsection {}{7.2}{Inferencia de tipo en C++ (auto, decltype decltype(auto)). Explicar todos, pero no obligatoriamente usarlos.}}{7}{subsection.7.2}%
+\contentsline {section}{\tocsection {}{8}{Crear un puntero a función Function<R, T...> que devuelve un valor de tipo R y recibe un número variable de parámetros de tipo T .}}{8}{section.8}%
+\contentsline {subsection}{\tocsubsection {}{8.1}{Definir una función genérica Map a linked\_list en T y R , que recibe un puntero a función que transforma un elemento T en uno R; de manera que Map devuelve una instancia de linked\_list$ < $R$ > $ resultado de aplicar a todos los elementos T de la lista original la función de transformación.}}{8}{subsection.8.1}%
+\contentsline {subsection}{\tocsubsection {}{8.2}{Crear punteros a funciones usando alias }}{8}{subsection.8.2}%
+\contentsline {subsection}{\tocsubsection {}{8.3}{Crear un puntero a función Function que permita cualquier cantidad de parámetros de cualquier tipo.}}{8}{subsection.8.3}%

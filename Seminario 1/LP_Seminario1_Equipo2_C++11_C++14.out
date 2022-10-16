@@ -1,24 +1,24 @@
-\BOOKMARK [1][-]{section.1}{1. Definici\363n de las clases gen\351ricas linked\137list y node}{}% 1
-\BOOKMARK [1][-]{section.2}{2. Definici\363n de miembros de datos necesarios de ambas clases}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{2.1. Nuevos elementos introducidos a partir de C++11 que permiten un manejo m\341s \357nteligente"de la memoria}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{2.2. Inicializaci\363n}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{2.3. Filosof\355a en el uso de la memoria defendida por C++}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{2.4. Simplificaci\363n de nombres de tipos mediante el uso de alias}{section.2}% 6
-\BOOKMARK [1][-]{section.3}{3. Definici\363n de los constructores cl\341sicos de C++\(C++0x\) , el constructor move y las sobrecargas del operador =}{}% 7
-\BOOKMARK [2][-]{subsection.3.1}{3.1. \277Qu\351 hace cada uno de ellos? \277Cu\341ndo se llaman?}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.2}{3.2. \277Qu\351 es un lvalue y un rvalue ?}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.3}{3.3. std::move}{section.3}% 10
-\BOOKMARK [1][-]{section.4}{4. Definici\363n de un constructor que permita hacer list-initialization lo m\341s parecido a C\043 posible}{}% 11
-\BOOKMARK [2][-]{subsection.4.1}{4.1. Compare la utilizaci\363n del \173\175 v.s \(\)}{section.4}% 12
-\BOOKMARK [1][-]{section.5}{5. Definici\363n de un constructor que reciba un vector \040<T>}{}% 13
-\BOOKMARK [2][-]{subsection.5.1}{5.1. Usar for\137each con expresiones lambda}{section.5}% 14
-\BOOKMARK [1][-]{section.6}{6. Definici\363n del destructor de la clase}{}% 15
-\BOOKMARK [2][-]{subsection.6.1}{6.1. \277Hace falta?}{section.6}% 16
-\BOOKMARK [2][-]{subsection.6.2}{6.2. \277Para qu\351 casos har\355a falta un puntero crudo \(raw pointer\)?}{section.6}% 17
-\BOOKMARK [1][-]{section.7}{7. Definici\363n de las funciones length , Add\137Last , Remove\137Last , At , Remove\137Ate}{}% 18
-\BOOKMARK [2][-]{subsection.7.1}{7.1. Noexcept}{section.7}% 19
-\BOOKMARK [2][-]{subsection.7.2}{7.2. Inferencia de tipo en C++ \(auto, decltype decltype\(auto\)\). Explicar todos, pero no obligatoriamente usarlos.}{section.7}% 20
-\BOOKMARK [1][-]{section.8}{8. Crear un puntero a funci\363n Function<R, T...>que devuelve un valor de tipo R y recibe un n\372mero variable de par\341metros de tipo T .}{}% 21
-\BOOKMARK [2][-]{subsection.8.1}{8.1. Definir una funci\363n gen\351rica Map a linked\137list en T y R , que recibe un puntero a funci\363n que transforma un elemento T en uno R; de manera que Map devuelve una instancia de linked\137list <R > resultado de aplicar a todos los elementos T de la lista original la funci\363n de transformaci\363n.}{section.8}% 22
-\BOOKMARK [2][-]{subsection.8.2}{8.2. Crear punteros a funciones usando alias }{section.8}% 23
-\BOOKMARK [2][-]{subsection.8.3}{8.3. Crear un puntero a funci\363n Function que permita cualquier cantidad de par\341metros de cualquier tipo.}{section.8}% 24
+\BOOKMARK [1][-]{section.1}{Definici\363n de las clases gen\351ricas linked\137list y node}{}% 1
+\BOOKMARK [1][-]{section.2}{Definici\363n de miembros de datos necesarios de ambas clases}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Nuevos elementos introducidos a partir de C++11 que permiten un manejo m\341s \357nteligente"de la memoria}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Inicializaci\363n}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Filosof\355a en el uso de la memoria defendida por C++}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Simplificaci\363n de nombres de tipos mediante el uso de alias}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Definici\363n de los constructores cl\341sicos de C++\(C++0x\) , el constructor move y las sobrecargas del operador =}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{\277Qu\351 hace cada uno de ellos? \277Cu\341ndo se llaman?}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{\277Qu\351 es un lvalue y un rvalue ?}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.3}{std::move}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{Definici\363n de un constructor que permita hacer list-initialization lo m\341s parecido a C\043 posible}{}% 11
+\BOOKMARK [2][-]{subsection.4.1}{Compare la utilizaci\363n del \173\175 v.s \(\)}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Definici\363n de un constructor que reciba un vector \040<T>}{}% 13
+\BOOKMARK [2][-]{subsection.5.1}{Usar for\137each con expresiones lambda}{section.5}% 14
+\BOOKMARK [1][-]{section.6}{Definici\363n del destructor de la clase}{}% 15
+\BOOKMARK [2][-]{subsection.6.1}{\277Hace falta?}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.2}{\277Para qu\351 casos har\355a falta un raw pointer?}{section.6}% 17
+\BOOKMARK [1][-]{section.7}{Definici\363n de las funciones length , Add\137Last , Remove\137Last , At , Remove\137Ate}{}% 18
+\BOOKMARK [2][-]{subsection.7.1}{Noexcept}{section.7}% 19
+\BOOKMARK [2][-]{subsection.7.2}{Inferencia de tipo en C++ \(auto, decltype decltype\(auto\)\). Explicar todos, pero no obligatoriamente usarlos.}{section.7}% 20
+\BOOKMARK [1][-]{section.8}{Crear un puntero a funci\363n Function<R, T...>que devuelve un valor de tipo R y recibe un n\372mero variable de par\341metros de tipo T .}{}% 21
+\BOOKMARK [2][-]{subsection.8.1}{Definir una funci\363n gen\351rica Map a linked\137list en T y R , que recibe un puntero a funci\363n que transforma un elemento T en uno R; de manera que Map devuelve una instancia de linked\137list <R > resultado de aplicar a todos los elementos T de la lista original la funci\363n de transformaci\363n.}{section.8}% 22
+\BOOKMARK [2][-]{subsection.8.2}{Crear punteros a funciones usando alias }{section.8}% 23
+\BOOKMARK [2][-]{subsection.8.3}{Crear un puntero a funci\363n Function que permita cualquier cantidad de par\341metros de cualquier tipo.}{section.8}% 24

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  16 OCT 2022 18:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  16 OCT 2022 22:54
 entering extended mode
 **./LP_Seminario1_Equipo2_C++11_C++14.tex
 (LP_Seminario1_Equipo2_C++11_C++14.tex
@@ -599,80 +599,141 @@ Overfull \hbox (0.30545pt too wide) in paragraph at lines 156--157
 pro-ble-ma des-co-no-ci-do pa-ra $[]$:
  []
 
-[2] [3]
-Overfull \hbox (33.7211pt too wide) in paragraph at lines 181--181
+[2] [3] [4] [5]
+Overfull \hbox (33.7211pt too wide) in paragraph at lines 295--295
 []\OT1/cmr/bx/n/14.4 Definicion de un cons-truc-tor que per-mi-ta ha-cer list-
 initialization
  []
 
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 183.
-[4]
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 297.
+[6]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 186.
+(hyperref)                removing `math shift' on input line 396.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 186.
-
-[5] [6]
-Overfull \hbox (0.30215pt too wide) in paragraph at lines 204--204
-[]\OT1/cmr/bx/n/14.4 Definicion de las fun-cio-nes length , Add[]Last , Re-mo-
-ve[]Last
- []
+(hyperref)                removing `math shift' on input line 396.
 
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 213.
+(hyperref)                removing `math shift' on input line 439.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 213.
+(hyperref)                removing `math shift' on input line 439.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 213.
+(hyperref)                removing `math shift' on input line 439.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 213.
+(hyperref)                removing `math shift' on input line 439.
 
-[8] (LP_Seminario1_Equipo2_C++11_C++14.aux
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 439.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 439.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 439.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 439.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 439.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 439.
+
+[8]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 483.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 483.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 483.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 483.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 483.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 483.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 485.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 485.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 485.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 485.
+
+[9] [10] (LP_Seminario1_Equipo2_C++11_C++14.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 Package rerunfilecheck Info: File `LP_Seminario1_Equipo2_C++11_C++14.out' has n
 ot changed.
-(rerunfilecheck)             Checksum: F6D5FE987498064CD8B652B11EAB32E3;2818.
+(rerunfilecheck)             Checksum: 9AA0FE94010C5AA30C744905CFA848CE;2863.
  ) 
 Here is how much of TeX's memory you used:
- 10414 strings out of 479618
- 157009 string characters out of 2865026
+ 10437 strings out of 479618
+ 157298 string characters out of 2865026
  768775 words of memory out of 3000000
- 27330 multiletter control sequences out of 15000+200000
- 416368 words of font info for 82 fonts, out of 3000000 for 9000
+ 27348 multiletter control sequences out of 15000+200000
+ 417322 words of font info for 85 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,6n,89p,686b,1385s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbsy10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmbx10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmbx12.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/laura/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/laura/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/laura/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/laura
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/User
-s/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mti10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmtt10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmtt8.pfb>
-Output written on LP_Seminario1_Equipo2_C++11_C++14.pdf (10 pages, 206934 bytes
+ 81i,6n,89p,838b,1385s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\laura\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1000.pk><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmbsy10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmbx10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/laura/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/laura/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/laura/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/laura/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users
+/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
+:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8
+.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmti10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmtt10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmtt8.pfb>
+Output written on LP_Seminario1_Equipo2_C++11_C++14.pdf (12 pages, 248708 bytes
 ).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
  198 words of extra memory for PDF output out of 10000 (max. 10000000)
 

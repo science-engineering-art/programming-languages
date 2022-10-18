@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  17 OCT 2022 20:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  18 OCT 2022 00:01
 entering extended mode
 **./LP_Seminario1_Equipo2_C++11_C++14.tex
 (LP_Seminario1_Equipo2_C++11_C++14.tex
@@ -463,6 +463,22 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 38.
 (LP_Seminario1_Equipo2_C++11_C++14.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
+
+
+LaTeX Warning: Label `lst:listing-cpp' multiply defined.
+
+
+LaTeX Warning: Label `lst:listing-cpp' multiply defined.
+
+
+LaTeX Warning: Label `lst:listing-cpp' multiply defined.
+
+
+LaTeX Warning: Label `lst:listing-cpp' multiply defined.
+
+
+LaTeX Warning: Label `lst:listing-cpp' multiply defined.
+
 )
 \openout1 = `LP_Seminario1_Equipo2_C++11_C++14.aux'.
 
@@ -585,134 +601,132 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
-(sample1.cpp
+(1-2.cpp
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1.
 )pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.138 	
-        [1]
+l.120 E
+       l C++ moderno evita usar la memoria del heap tanto como sea posible d...
+[1] [2]
 Overfull \hbox (0.30545pt too wide) in paragraph at lines 155--156
 []\OT1/cmr/m/n/10 Este ti-po de pun-te-ro in-te-li-gen-te tie-ne en cuen-ta un 
 pro-ble-ma des-co-no-ci-do pa-ra $[]$:
  []
 
-[2] [3] [4]
-Overfull \hbox (33.7211pt too wide) in paragraph at lines 233--233
+[3] (3.cpp [4]) [5] [6]
+Overfull \hbox (33.7211pt too wide) in paragraph at lines 239--239
 []\OT1/cmr/bx/n/14.4 Definicion de un cons-truc-tor que per-mi-ta ha-cer list-
 initialization
  []
 
+(4.cpp)
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 235.
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 244.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 243.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 244.
-
-[5]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 266.
+(hyperref)                removing `math shift' on input line 252.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 266.
+(hyperref)                removing `math shift' on input line 252.
+
+(5.cpp) [7] (6.cpp)
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 266.
+(hyperref)                removing `math shift' on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 266.
+(hyperref)                removing `math shift' on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 266.
+(hyperref)                removing `math shift' on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 266.
+(hyperref)                removing `math shift' on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 266.
+(hyperref)                removing `math shift' on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 266.
+(hyperref)                removing `math shift' on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 266.
+(hyperref)                removing `math shift' on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 266.
-
-[6]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 285.
+(hyperref)                removing `math shift' on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 285.
+(hyperref)                removing `math shift' on input line 278.
+
+(7.cpp [8] [9])
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 299.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 285.
+(hyperref)                removing `math shift' on input line 299.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 285.
+(hyperref)                removing `math shift' on input line 299.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 285.
+(hyperref)                removing `math shift' on input line 299.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 285.
+(hyperref)                removing `math shift' on input line 299.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 287.
+(hyperref)                removing `math shift' on input line 299.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 287.
+(hyperref)                removing `math shift' on input line 301.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 287.
+(hyperref)                removing `math shift' on input line 301.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 287.
-
-[7] (LP_Seminario1_Equipo2_C++11_C++14.aux
+[10] (8.cpp) [11] (LP_Seminario1_Equipo2_C++11_C++14.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `LP_Seminario1_Equipo2_C++11_C++14.out' has n
 ot changed.
-(rerunfilecheck)             Checksum: F38AD2B07D3B6E92A24B9B2163283F5F;2890.
+(rerunfilecheck)             Checksum: 9718AB1752CD67D4738382D8C77610CD;2842.
  ) 
 Here is how much of TeX's memory you used:
- 10426 strings out of 479618
- 157164 string characters out of 2865026
- 768777 words of memory out of 3000000
- 27340 multiletter control sequences out of 15000+200000
+ 10813 strings out of 479618
+ 162758 string characters out of 2865026
+ 1020760 words of memory out of 3000000
+ 27473 multiletter control sequences out of 15000+200000
  416987 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,6n,89p,703b,1385s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 81i,6n,89p,703b,1979s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbsy10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
 sfonts/cm/cmbx10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/
@@ -727,10 +741,10 @@ s/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 mti10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmtt10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmtt8.pfb>
-Output written on LP_Seminario1_Equipo2_C++11_C++14.pdf (9 pages, 225699 bytes)
-.
+Output written on LP_Seminario1_Equipo2_C++11_C++14.pdf (13 pages, 274473 bytes
+).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
+ 544 PDF objects out of 1000 (max. 8388607)
+ 279 named destinations out of 1000 (max. 500000)
  206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

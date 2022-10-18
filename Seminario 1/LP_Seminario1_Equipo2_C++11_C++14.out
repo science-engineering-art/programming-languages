@@ -18,8 +18,8 @@
 \BOOKMARK [2][-]{subsection.6.2}{\277Para qu\351 casos har\355a falta un raw pointer?}{section.6}% 18
 \BOOKMARK [1][-]{section.7}{Definici\363n de las funciones \040length , \040Add\137Last \040, \040Remove\137Last , \040At , \040Remove\137At }{}% 19
 \BOOKMARK [2][-]{subsection.7.1}{Noexcept}{section.7}% 20
-\BOOKMARK [2][-]{subsection.7.2}{Inferencia de tipo en C++ \(auto, decltype decltype\(auto\)\). Explicar todos, pero no obligatoriamente usarlos.}{section.7}% 21
+\BOOKMARK [2][-]{subsection.7.2}{Inferencia de tipo en C++ \(auto, decltype decltype\(auto\)\)}{section.7}% 21
 \BOOKMARK [1][-]{section.8}{Crear un puntero a funci\363n \040Function<R, T...> que devuelve un valor de tipo \040R \040y recibe un n\372mero variable de par\341metros de tipo \040T \040.}{}% 22
-\BOOKMARK [2][-]{subsection.8.1}{Definir una funci\363n gen\351rica Map a linked\137list en T y R , que recibe un puntero a funci\363n que transforma un elemento T en uno R; de manera que Map devuelve una instancia de linked\137list <R > resultado de aplicar a todos los elementos T de la lista original la funci\363n de transformaci\363n.}{section.8}% 23
+\BOOKMARK [2][-]{subsection.8.1}{Definir una funci\363n gen\351rica Map a linked\137list en T y R , que recibe un puntero a funci\363n que transforma un elemento T en uno R; de manera que Map devuelve una instancia de linked\137list \040<R> resultado de aplicar a todos los elementos T de la lista original la funci\363n de transformaci\363n.}{section.8}% 23
 \BOOKMARK [2][-]{subsection.8.2}{Crear punteros a funciones usando alias }{section.8}% 24
 \BOOKMARK [2][-]{subsection.8.3}{Crear un puntero a funci\363n Function que permita cualquier cantidad de par\341metros de cualquier tipo.}{section.8}% 25

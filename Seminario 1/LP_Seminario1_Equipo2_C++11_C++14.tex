@@ -106,9 +106,9 @@
 \pagenumbering{arabic}
 \section{Definici\'on de las clases genéricas linked\_list y node}
 
-\lstinputlisting[caption=Sample Code Listing C++, label={lst:listing-cpp}, language=C++]{sample1.cpp}
+Una lista enlazada es una estructura de datos compuesta de nodos, donde cada nodo contiene alguna información y un puntero a otro nodo de la lista. Si un nodo tiene sólo un enlace con su antecesor y su sucesor en esta secuencia, la lista se denomina lista doblemente enlazada.
 
-Una lista enlazada es una estructura de datos compuesta de nodos, donde cada nodo contiene alguna información y un puntero a otro nodo de la lista. Si un nodo tiene sólo un enlace con su sucesor en esta secuencia, la lista se denomina lista enlazada simple.
+\lstinputlisting[label={lst:listing-cpp}, language=C++]{1-2.cpp}
 
 \vspace{2em}
 \section{Definici\'on de miembros de datos necesarios de ambas clases}
@@ -181,6 +181,8 @@ Una declaración de alias se utiliza para declarar un nombre que se usará como 
 \vspace{2em}
 \section{Definici\'on de  los constructores clásicos de C++(C++0x) , el constructor move y las sobrecargas del operador =}
 
+\lstinputlisting[label={lst:listing-cpp}, language=C++]{3.cpp}
+
 \subsection{¿Qué es un lvalue y un rvalue?}
 
 Cada expresión de C++ tiene un tipo y pertenece a una categoría de valor. Las categorías de valor son la base de las reglas que los compiladores deben seguir al crear, copiar y mover objetos temporales durante la evaluación de expresiones.
@@ -201,6 +203,10 @@ Un constructor es una función que tiene el mismo nombre que la clase encargado 
 	El constructor predeterminado es aquel que se puede llamar sin argumentos (no tiene parámetros o estos est\'an predeterminados). Si este no está definido explícitamente en el código, el compilador genera uno por defecto.
 	
 	Los constructores pueden tener parámetros arbitrarios y ser declarados expl\'icitamente, estos son constructores proporcionados por el usuario (programador).
+	
+	\item Constructor copy:
+
+	Se utiliza para crear un nuevo objeto a partir de otro existente. Tiene como parámetro de entrada una referencia a otro objeto de la misma clase, de forma tal que las variables del objeto que se está creando se inicializan con los valores del objeto a copiar. Si no se define, el sistema proporciona uno, el cual realiza una copia bit a bit entre los objetos.
 	
 	\item Constructor move:
 	 
@@ -223,7 +229,7 @@ Un operador de asignación se implementa mediante una función miembro no estát
 Este puede ser sobrecargado y se utiliza para copiar valores de un objeto a otro objeto ya existente, en este caso se conoce como operador de asignaci\'on de copia (copy). Por otro lado si declaramos un objeto y luego intentamos asignar una referencia rvalue a él (el objeto que aparece en el lado derecho de una expresión de asignación es un rvalue) se invoca el operador de asignación de movimiento (move) que utiliza move semantics. 
 
 \subsection{La funci\'on std::move}
-	\ $ \verb*|std::move| $ se usa para permitir la transferencia eficiente de recursos de t a otro objeto. Al pasar un objeto a esta función se obtiene un rvalue que hace referencia a él. 
+	 $ \verb*|std::move| $ se usa para permitir la transferencia eficiente de recursos de t a otro objeto. Al pasar un objeto a esta función se obtiene un rvalue que hace referencia a él. 
 	
 	Los nombres de las variables de referencia de rvalue son lvalues y deben convertirse a valores para vincularse a las sobrecargas de funciones que aceptan parámetros de referencia de rvalue, razón por la cual los constructores move y los operadores de asignación move suelen usar $ \verb*|std::move| $.
 	
@@ -231,6 +237,8 @@ Este puede ser sobrecargado y se utiliza para copiar valores de un objeto a otro
 
 \vspace{2em}
 \section{Definici\'on de un constructor que permita hacer list-initialization lo más parecido a C\# posible}
+
+\lstinputlisting[label={lst:listing-cpp}, language=C++]{4.cpp}
 
 \subsection{Compare la utilización del \{\} v.s ()}
 
@@ -245,10 +253,14 @@ La inicialización con llaves permite expresar lo que antes era inexpresable. Fu
 
 \subsection{Usar for\_each con expresiones lambda}
 
+\lstinputlisting[label={lst:listing-cpp}, language=C++]{5.cpp}
+
 \vspace{2em}
 \section{Definici\'on del destructor de la clase}
 
 Como se vi\'o anteriormente, un constructor es una función miembro que se invoca cuando el objeto se inicializa. De manera similar, un destructor es una función miembro que se invoca cuando un objeto es destruido. No toma parámetros, y hay uno por clase. El nombre del destructor es el s\'imbolo $ \sim $ seguido del nombre de la clase. Si el usuario no define un destructor, el compilador proporciona uno por defecto.
+
+\lstinputlisting[label={lst:listing-cpp}, language=C++]{6.cpp}
 
 \subsection{¿Hace falta?}
 
@@ -256,7 +268,7 @@ Los destructores son necesarios pues se llaman cuando un objeto sale del alcance
 
 \subsection{¿Para qué casos haría falta un raw pointer?}
 
-Un puntero es un tipo de variable. Almacena la dirección de un objeto en la memoria y se utiliza para acceder a ese objeto. Un raw pointer es un puntero cuya vida útil no está controlada por un objeto encapsulador, como un puntero inteligente. A un puntero sin procesar se le puede asignar la dirección de otra variable que no sea un puntero, o se le puede asignar un valor de nullptr. Un puntero al que no se le ha asignado un valor contiene datos aleatorios.
+Un puntero es un tipo de variable. Almacena la dirección de un objeto en la memoria y se utiliza para acceder a ese objeto. Un raw pointer es un puntero cuya vida útil no está controlada por un objeto encapsulador, como un puntero inteligente. A un puntero crudo se le puede asignar la dirección de otra variable que no sea un puntero, o se le puede asignar un valor de nullptr. Un puntero al que no se le ha asignado un valor contiene datos aleatorios.
 
 También se puede desreferenciar un puntero para recuperar el valor del objeto al que apunta. El operador de acceso a miembros proporciona acceso a los miembros de un objeto.
 
@@ -264,6 +276,8 @@ En C++ moderno, los raw pointers solo se usan en pequeños bloques de código de
 
 \vspace{2em}
 \section{Definici\'on de las funciones $ length $, $ Add\_Last $ , $ Remove\_Last $, $ At $, $ Remove\_At $}
+
+\lstinputlisting[label={lst:listing-cpp}, language=C++]{7.cpp}
 
 \subsection{Noexcept}
 
@@ -273,7 +287,7 @@ Un incentivo para aplicar noexcept a funciones que no producir\'an excepciones e
 
 Es particularmente valioso para las operaciones de movimiento, intercambio, memoria funciones de desasignación y destructores.
 
-\subsection{Inferencia de tipo en C++ (auto, decltype decltype(auto)). Explicar todos, pero no obligatoriamente usarlos.}
+\subsection{Inferencia de tipo en C++ (auto, decltype decltype(auto))}
 
 \begin{itemize}
 	\item auto: deduce el tipo de una variable declarada a partir de su expresión de inicialización.
@@ -284,10 +298,12 @@ Es particularmente valioso para las operaciones de movimiento, intercambio, memo
 \vspace{2em}
 \section{Crear un puntero a función $ Function<R, T...> $ que devuelve un valor de tipo $ R $ y recibe un número variable de parámetros de tipo $ T $ .}
 
-\subsection{Definir una función genérica Map a linked\_list en T y R , que recibe un puntero a función que transforma un elemento T en uno R; de manera que Map devuelve una instancia de linked\_list$ < $R$ > $ resultado de aplicar a todos los elementos T de la lista original la función de transformación.}
+\subsection{Definir una función genérica Map a linked\_list en T y R , que recibe un puntero a función que transforma un elemento T en uno R; de manera que Map devuelve una instancia de linked\_list $ <R> $  resultado de aplicar a todos los elementos T de la lista original la función de transformación.}
 
 \subsection{Crear punteros a funciones usando alias }
 
 \subsection{Crear un puntero a función Function que permita cualquier cantidad de parámetros de cualquier tipo.}
+
+\lstinputlisting[label={lst:listing-cpp}, language=C++]{8.cpp}
 
 \end{document}

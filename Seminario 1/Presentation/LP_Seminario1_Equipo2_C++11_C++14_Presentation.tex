@@ -1,5 +1,7 @@
 \documentclass{beamer}
 
+\usepackage{listings}
+
 \title{Lenguajes de Programaci\'on\\
 \textbf{Seminario 1: C++11, C++14}}
 \author{Equipo 2:\\
@@ -14,10 +16,16 @@
 \begin{document}
 	\frame{\titlepage}
 	
-%	\begin{frame}
-%		\frametitle{Clases genéricas linked\_list y node}
-%	\end{frame}
-
+	\begin{frame}
+		\frametitle{Clase genérica node}
+		\lstinputlisting[basicstyle=\tiny, label={lst:listing-cpp}, language=C++]{1-2-node.cpp}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Clase genérica linked\_list }
+		\lstinputlisting[basicstyle=\tiny, label={lst:listing-cpp}, language=C++]{1-2.cpp}
+	\end{frame}
+	
 	\begin{frame}
 		\frametitle{Manejo más ``inteligente" de la memoria a partir de C++11}
 		
@@ -182,7 +190,7 @@
 		\end{itemize}
 	\end{frame}
 	
-		\begin{frame}
+	\begin{frame}
 		\frametitle{Constructores}
 		\begin{itemize}
 			\item Constructor copy:
@@ -211,7 +219,17 @@
 		
 		Este puede ser sobrecargado y se utiliza para copiar valores de un objeto a otro objeto ya existente, en este caso se conoce como operador de asignaci\'on de copia (copy). Por otro lado si declaramos un objeto y luego intentamos asignar una referencia rvalue a él (el objeto que aparece en el lado derecho de una expresión de asignación es un rvalue) se invoca el operador de asignación de movimiento (move) que utiliza move semantics. 
 	\end{frame}
-
+	
+	\begin{frame}
+		\frametitle{Constructores}
+		\lstinputlisting[basicstyle=\tiny, label={lst:listing-cpp}, language=C++]{3.cpp}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Constructores}
+		\lstinputlisting[basicstyle=\tiny, label={lst:listing-cpp}, language=C++]{3-Move.cpp}
+	\end{frame}
+	
 	\begin{frame}
 		\frametitle{La funci\'on std::move}
 		\textbf{std::move} se usa para permitir la transferencia eficiente de recursos de t a otro objeto. Al pasar un objeto a esta función se obtiene un rvalue que hace referencia a él. 
@@ -219,9 +237,10 @@
 		Permite transferir la propiedad de los activos y las propiedades de un objeto directamente cuando el argumento es un rvalue sin tener que hacer copias costosas.
 	\end{frame}
 
-%	\begin{frame}
-%		\frametitle{Constructor que permite hacer list-initialization similar a C\#. for\_each con expresiones lambda}
-%	\end{frame}
+	\begin{frame}
+		\frametitle{Constructor que permite hacer list-initialization similar a C\#. for\_each con expresiones lambda}
+	\lstinputlisting[basicstyle=\tiny, label={lst:listing-cpp}, language=C++]{4.cpp}
+	\end{frame}
 
 	\begin{frame}
 		\frametitle{\{\} v.s ()}
@@ -232,15 +251,21 @@
 		La inicialización con llaves permite expresar lo que antes era inexpresable. Funciona en la mayoría de los contextos, sin construcción de copia implícita (a diferencia de ``="). Se pueden usar para especificar valores de inicialización predeterminados para datos no estáticos. Esta capacidad, nueva en C++ 11, se comparte con la sincronización de inicialización “=”, pero no con paréntesis.
 	\end{frame}
 
-%	\begin{frame}
-%		\frametitle{Constructor que reciba un vector $ <T> $}
-%	\end{frame}
+	\begin{frame}
+		\frametitle{Constructor que reciba un vector $ <T> $}
+			\lstinputlisting[basicstyle=\tiny, label={lst:listing-cpp}, language=C++]{5.cpp}
+	\end{frame}
 
 	\begin{frame}
 		\frametitle{Destructor}
 		Un destructor es una función miembro que se invoca cuando un objeto es destruido. No toma parámetros, y hay uno por clase. El nombre del destructor es el s\'imbolo $ \sim $ seguido del nombre de la clase. Si el usuario no define un destructor, el compilador proporciona uno por defecto.
 		
 		$\rightarrow$ Los destructores son necesarios pues se llaman cuando un objeto sale del alcance o cuando un puntero a un se elimina el objeto, liberando la memoria dinámica utilizada por dicho objeto o liberando recursos empleados. 
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Destructor}
+		\lstinputlisting[basicstyle=\tiny, label={lst:listing-cpp}, language=C++]{6.cpp}
 	\end{frame}
 
 	\begin{frame}
@@ -255,9 +280,25 @@
 		En C++ moderno, los raw pointers solo se usan en pequeños bloques de código de alcance limitado, bucles o funciones auxiliares donde el rendimiento es crítico y no hay posibilidad de confusión sobre la propiedad.
 	\end{frame}
 
-%	\begin{frame}
-%		\frametitle{Definici\'on de las funciones $ length $, $ Add\_Last $ , $ Remove\_Last $, $ At $, $ Remove\_At $}
-%	\end{frame}
+	\begin{frame}
+		\frametitle{Definici\'on de funciones: $ Add\_Last $}
+		\lstinputlisting[basicstyle=\tiny, label={lst:listing-cpp}, language=C++]{7-Add.cpp}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Definici\'on de funciones: $ Remove\_Last $}
+		\lstinputlisting[basicstyle=\tiny, label={lst:listing-cpp}, language=C++]{7-Pop.cpp}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Definici\'on de funciones: $ Remove\_At $}
+		\lstinputlisting[basicstyle=\tiny, label={lst:listing-cpp}, language=C++]{7-DeleteAt.cpp}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Definici\'on de funciones: $ At $}
+		\lstinputlisting[basicstyle=\tiny, label={lst:listing-cpp}, language=C++]{7-ElementAt.cpp}
+	\end{frame}
 
 	\begin{frame}
 		\frametitle{Noexcept}
@@ -283,7 +324,8 @@
 		\end{itemize}
 	\end{frame}
 
-%	\begin{frame}
-%		\frametitle{Puntero a función $ Function<R, T...> $ que devuelve un valor de tipo $ R $ y recibe un número variable de parámetros de tipo $ T $}
-%	\end{frame}
+	\begin{frame}
+		\frametitle{Puntero a función $ Function<R, T...> $ que devuelve un valor de tipo $ R $ y recibe un número variable de parámetros de tipo $ T $}
+		\lstinputlisting[basicstyle=\tiny, label={lst:listing-cpp}, language=C++]{8.cpp}
+	\end{frame}
 \end{document}

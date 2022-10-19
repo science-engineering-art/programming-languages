@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  19 OCT 2022 06:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  19 OCT 2022 07:29
 entering extended mode
 **./LP_Seminario1_Equipo2_C++11_C++14_Presentation.tex
 (LP_Seminario1_Equipo2_C++11_C++14_Presentation.tex
@@ -1179,20 +1179,20 @@ l.27 	\end{frame}
 ] [25
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 221
+LaTeX Font Info:    Trying to load font information for U+msa on input line 217
 .
 
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 221
+LaTeX Font Info:    Trying to load font information for U+msb on input line 217
 .
 
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 221.
+ut line 217.
 
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mathk
 erncmss.fd
@@ -1204,14 +1204,14 @@ thkerncmss.
 cpp}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.226 	\end{frame}
+l.222 	\end{frame}
                    (3.cpp) [27
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{lst:listing-
 cpp}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.231 	\end{frame}
+l.227 	\end{frame}
                    (3-Move.cpp) [28
 
 ] [29
@@ -1220,7 +1220,7 @@ l.231 	\end{frame}
 cpp}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.243 	\end{frame}
+l.239 	\end{frame}
                    (4.cpp) [30
 
 ] [31
@@ -1229,7 +1229,7 @@ l.243 	\end{frame}
 cpp}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.257 	\end{frame}
+l.253 	\end{frame}
                    (5.cpp) [32
 
 ] [33
@@ -1238,7 +1238,7 @@ l.257 	\end{frame}
 cpp}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.269 	\end{frame}
+l.265 	\end{frame}
                    (6.cpp) [34
 
 ] [35
@@ -1249,7 +1249,7 @@ l.269 	\end{frame}
 cpp}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.286 	\end{frame}
+l.282 	\end{frame}
                    (7-Add.cpp
 
 LaTeX Font Warning: Font shape `OML/cmss/m/it' undefined
@@ -1262,21 +1262,21 @@ LaTeX Font Warning: Font shape `OML/cmss/m/it' undefined
 cpp}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.291 	\end{frame}
+l.287 	\end{frame}
                    (7-Pop.cpp) [38
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{lst:listing-
 cpp}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.296 	\end{frame}
+l.292 	\end{frame}
                    (7-DeleteAt.cpp) [39
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{lst:listing-
 cpp}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.301 	\end{frame}
+l.297 	\end{frame}
                    (7-ElementAt.cpp) [40
 
 ] [41
@@ -1287,7 +1287,7 @@ l.301 	\end{frame}
 cpp}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.330 	\end{frame}
+l.326 	\end{frame}
                    (8.cpp) [43
 
 ]
@@ -1336,7 +1336,7 @@ nts/cm/cmssi8.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/cm/cmsy10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/
 type1/public/amsfonts/cm/cmsy6.pfb>
 Output written on LP_Seminario1_Equipo2_C++11_C++14_Presentation.pdf (43 pages,
- 394242 bytes).
+ 394075 bytes).
 PDF statistics:
  1226 PDF objects out of 1440 (max. 8388607)
  88 named destinations out of 1000 (max. 500000)

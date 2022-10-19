@@ -46,10 +46,6 @@
 		\begin{block}{Punteros Inteligentes (Smart Pointers)}
 	 		Los punteros inteligentes apuntan a objetos y, cuando el puntero sale del alcance (scope), el objeto se destruye. Esto los hace inteligentes en el sentido de que no tenemos que preocuparnos por la liberaci\'on manual de la memoria asignada. Los punteros inteligentes hacen todo el trabajo pesado por nosotros.
 		\end{block}
-		
-		\begin{block}{Contenedores}
-			Los contenedores son estructuras de datos quienes se ocupan de la gestión del espacio de almacenamiento necesario.
-		\end{block}
 	
 	\end{frame}
 	
@@ -260,7 +256,7 @@
 		\frametitle{Destructor}
 		Un destructor es una función miembro que se invoca cuando un objeto es destruido. No toma parámetros, y hay uno por clase. El nombre del destructor es el s\'imbolo $ \sim $ seguido del nombre de la clase. Si el usuario no define un destructor, el compilador proporciona uno por defecto.
 		
-		$\rightarrow$ Los destructores son necesarios pues se llaman cuando un objeto sale del alcance o cuando un puntero a un se elimina el objeto, liberando la memoria dinámica utilizada por dicho objeto o liberando recursos empleados. 
+		$\rightarrow$ Los destructores son necesarios pues se llaman cuando un objeto sale del alcance o cuando el puntero a un objeto es eliminado, liberando la memoria dinámica utilizada por dicho objeto o liberando recursos empleados. 
 	\end{frame}
 	
 	\begin{frame}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  18 OCT 2022 00:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  19 OCT 2022 07:29
 entering extended mode
 **./LP_Seminario1_Equipo2_C++11_C++14.tex
 (LP_Seminario1_Equipo2_C++11_C++14.tex
@@ -479,6 +479,9 @@ LaTeX Warning: Label `lst:listing-cpp' multiply defined.
 
 LaTeX Warning: Label `lst:listing-cpp' multiply defined.
 
+
+LaTeX Warning: Label `lst:listing-cpp' multiply defined.
+
 )
 \openout1 = `LP_Seminario1_Equipo2_C++11_C++14.aux'.
 
@@ -721,7 +724,7 @@ ot changed.
  ) 
 Here is how much of TeX's memory you used:
  10813 strings out of 479618
- 162758 string characters out of 2865026
+ 162954 string characters out of 2865026
  1020760 words of memory out of 3000000
  27473 multiletter control sequences out of 15000+200000
  416987 words of font info for 84 fonts, out of 3000000 for 9000
@@ -741,7 +744,7 @@ s/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 mti10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmtt10.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/cm/cmtt8.pfb>
-Output written on LP_Seminario1_Equipo2_C++11_C++14.pdf (13 pages, 274473 bytes
+Output written on LP_Seminario1_Equipo2_C++11_C++14.pdf (13 pages, 274242 bytes
 ).
 PDF statistics:
  544 PDF objects out of 1000 (max. 8388607)

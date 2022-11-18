@@ -19,9 +19,9 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-%\documentclass[10pt]{article} % Single column
+\documentclass[10pt]{article} % Single column
 
-\documentclass[twoside,twocolumn]{article} % Two column
+%\documentclass[twoside,twocolumn]{article} % Two column
 
 \usepackage{blindtext} % Package to generate dummy text throughout this template 
 
@@ -65,6 +65,16 @@
 \usepackage{graphicx} % For images
 
 \usepackage{pifont} % bullets
+
+% Keywords command
+\providecommand{\keywords}[1]
+{
+	\small	
+	\vspace{0.5em}
+	\noindent \textbf{\textit{Palabras clave --- }} #1
+}
+
+
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
@@ -88,6 +98,8 @@
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
 \noindent \blindtext % Dummy abstract text - replace \blindtext with your abstract text
+
+\keywords{Palabra 1 \textbf{$\cdot$} Palabra 2 \textbf{$\cdot$} Palabra 3}
 \end{abstract}
 }
 
@@ -104,7 +116,7 @@
 
 \section{Introduction}
 
-\lettrine[nindent=0em,lines=3]{L} orem ipsum dolor sit amet, consectetur adipiscing elit.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 \blindtext % Dummy text
 
 \blindtext % Dummy text

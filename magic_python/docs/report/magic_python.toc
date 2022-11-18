@@ -1,0 +1,7 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {I}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {II}Methods}{2}{section.2}%
+\contentsline {section}{\numberline {III}Results}{2}{section.3}%
+\contentsline {section}{\numberline {IV}Discussion}{3}{section.4}%
+\contentsline {subsection}{\numberline {\es@scroman {i}}Subsection One}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {\es@scroman {ii}}Subsection Two}{3}{subsection.4.2}%

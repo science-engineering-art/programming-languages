@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  17 NOV 2022 23:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  17 NOV 2022 23:10
 entering extended mode
 **./magic_python.tex
 (magic_python.tex
@@ -438,46 +438,395 @@ LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/todonotes\todonotes.sty
+Package: todonotes 2021/06/04 v1.1.5 Todonotes source and documentation.
+Package: todonotes 2021/06/04
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
+y
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common.tex
+\pgfutil@everybye=\toks24
+\pgfutil@tempdima=\dimen257
+\pgfutil@tempdimb=\dimen258
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common-lists.tex))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-latex.def
+\pgfutil@abb=\box52
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
+code.tex
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2020/12/27 v3.1.8b (3.1.8b)
+))
+Package: pgf 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
+sty
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
+sty
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s.code.tex
+Package: pgfsys 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+filtered.code.tex
+\pgfkeys@tmptoks=\toks27
+))
+\pgf@x=\dimen259
+\pgf@y=\dimen260
+\pgf@xa=\dimen261
+\pgf@ya=\dimen262
+\pgf@xb=\dimen263
+\pgf@yb=\dimen264
+\pgf@xc=\dimen265
+\pgf@yc=\dimen266
+\pgf@xd=\dimen267
+\pgf@yd=\dimen268
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count302
+\c@pgf@countb=\count303
+\c@pgf@countc=\count304
+\c@pgf@countd=\count305
+\t@pgf@toka=\toks28
+\t@pgf@tokb=\toks29
+\t@pgf@tokc=\toks30
+\pgf@sys@id@count=\count306
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
+fg
+File: pgf.cfg 2020/12/27 v3.1.8b (3.1.8b)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-pdftex.def
+File: pgfsys-pdftex.def 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-common-pdf.def
+File: pgfsys-common-pdf.def 2020/12/27 v3.1.8b (3.1.8b)
+)))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+ssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfsyssoftpath@smallbuffer@items=\count307
+\pgfsyssoftpath@bigbuffer@items=\count308
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+sprotocol.code.tex
+File: pgfsysprotocol.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+e.code.tex
+Package: pgfcore 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+code.tex
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
+code.tex)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
+r.code.tex
+\pgfmath@dimen=\dimen269
+\pgfmath@count=\count309
+\pgfmath@box=\box53
+\pgfmath@toks=\toks31
+\pgfmath@stack@operand=\toks32
+\pgfmath@stack@operation=\toks33
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.code.tex
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.basic.code.tex)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.trigonometric.code.tex)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.random.code.tex)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.comparison.code.tex)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.base.code.tex)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.round.code.tex)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.misc.code.tex)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.integerarithmetics.code.tex)))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
+.code.tex
+\c@pgfmathroundto@lastzeros=\count310
+))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+tex)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epoints.code.tex
+File: pgfcorepoints.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@picminx=\dimen270
+\pgf@picmaxx=\dimen271
+\pgf@picminy=\dimen272
+\pgf@picmaxy=\dimen273
+\pgf@pathminx=\dimen274
+\pgf@pathmaxx=\dimen275
+\pgf@pathminy=\dimen276
+\pgf@pathmaxy=\dimen277
+\pgf@xx=\dimen278
+\pgf@xy=\dimen279
+\pgf@yx=\dimen280
+\pgf@yy=\dimen281
+\pgf@zx=\dimen282
+\pgf@zy=\dimen283
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@path@lastx=\dimen284
+\pgf@path@lasty=\dimen285
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathusage.code.tex
+File: pgfcorepathusage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@shorten@end@additional=\dimen286
+\pgf@shorten@start@additional=\dimen287
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+escopes.code.tex
+File: pgfcorescopes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfpic=\box54
+\pgf@hbox=\box55
+\pgf@layerbox@main=\box56
+\pgf@picture@serial@count=\count311
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+egraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgflinewidth=\dimen288
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransformations.code.tex
+File: pgfcoretransformations.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@pt@x=\dimen289
+\pgf@pt@y=\dimen290
+\pgf@pt@temp=\dimen291
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+equick.code.tex
+File: pgfcorequick.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eobjects.code.tex
+File: pgfcoreobjects.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+earrows.code.tex
+File: pgfcorearrows.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfarrowsep=\dimen292
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eshade.code.tex
+File: pgfcoreshade.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@max=\dimen293
+\pgf@sys@shading@range@num=\count312
+\pgf@shadingcount=\count313
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eimage.code.tex
+File: pgfcoreimage.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eexternal.code.tex
+File: pgfcoreexternal.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfexternal@startupbox=\box57
+))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+elayers.code.tex
+File: pgfcorelayers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransparency.code.tex
+File: pgfcoretransparency.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epatterns.code.tex
+File: pgfcorepatterns.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+erdf.code.tex
+File: pgfcorerdf.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+shapes.code.tex
+File: pgfmoduleshapes.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfnodeparttextbox=\box58
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+plot.code.tex
+File: pgfmoduleplot.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-0-65.sty
+Package: pgfcomp-version-0-65 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@nodesepstart=\dimen294
+\pgf@nodesepend=\dimen295
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-1-18.sty
+Package: pgfcomp-version-1-18 2020/12/27 v3.1.8b (3.1.8b)
+))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+y
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+code.tex
+Package: pgffor 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex)
+\pgffor@iter=\dimen296
+\pgffor@skip=\dimen297
+\pgffor@stack=\toks34
+\pgffor@toks=\toks35
+))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z\tikz.code.tex
+Package: tikz 2020/12/27 v3.1.8b (3.1.8b)
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgf@plot@mark@count=\count314
+\pgfplotmarksize=\dimen298
+)
+\tikz@lastx=\dimen299
+\tikz@lasty=\dimen300
+\tikz@lastxsaved=\dimen301
+\tikz@lastysaved=\dimen302
+\tikz@lastmovetox=\dimen303
+\tikz@lastmovetoy=\dimen304
+\tikzleveldistance=\dimen305
+\tikzsiblingdistance=\dimen306
+\tikz@figbox=\box59
+\tikz@figbox@bg=\box60
+\tikz@tempbox=\box61
+\tikz@tempbox@bg=\box62
+\tikztreelevel=\count315
+\tikznumberofchildren=\count316
+\tikznumberofcurrentchild=\count317
+\tikz@fig@count=\count318
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+matrix.code.tex
+File: pgfmodulematrix.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+\pgfmatrixcurrentrow=\count319
+\pgfmatrixcurrentcolumn=\count320
+\pgf@matrix@numberofcolumns=\count321
+)
+\tikz@expandcount=\count322
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)))
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2020/12/27 v3.1.8b (3.1.8b)
+)
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/latex-tools\calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count323
+\calc@Bcount=\count324
+\calc@Adimen=\dimen307
+\calc@Bdimen=\dimen308
+\calc@Askip=\skip71
+\calc@Bskip=\skip72
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count325
+\calc@Cskip=\skip73
+)
+\c@@todonotes@numberoftodonotes=\count326
+)
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count302
-\l__pdf_internal_box=\box52
+\l__kernel_color_stack_int=\count327
+\l__pdf_internal_box=\box63
 ) (magic_python.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 \openout1 = `magic_python.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-\big@size=\dimen257
-LaTeX Info: Redefining \microtypecontext on input line 115.
-Package microtype Info: Applying patch `item' on input line 115.
-Package microtype Info: Applying patch `toc' on input line 115.
-Package microtype Info: Applying patch `eqnum' on input line 115.
-Package microtype Info: Applying patch `footnote' on input line 115.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
+LaTeX Font Info:    ... okay on input line 116.
+\big@size=\dimen309
+LaTeX Info: Redefining \microtypecontext on input line 116.
+Package microtype Info: Applying patch `item' on input line 116.
+Package microtype Info: Applying patch `toc' on input line 116.
+Package microtype Info: Applying patch `eqnum' on input line 116.
+Package microtype Info: Applying patch `footnote' on input line 116.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 115.
+LaTeX Info: Redefining \showhyphens on input line 116.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -485,8 +834,8 @@ Package microtype Info: No adjustment of character kerning.
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-ppl.cfg
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
-LaTeX Info: Redefining \. on input line 115.
-LaTeX Info: Redefining \% on input line 115.
+LaTeX Info: Redefining \. on input line 116.
+LaTeX Info: Redefining \% on input line 116.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -526,7 +875,7 @@ LaTeX Info: Redefining \% on input line 115.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 115.
+Package hyperref Info: Link coloring OFF on input line 116.
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -537,30 +886,30 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count303
+\c@section@level=\count328
 )
-LaTeX Info: Redefining \ref on input line 115.
-LaTeX Info: Redefining \pageref on input line 115.
-LaTeX Info: Redefining \nameref on input line 115.
+LaTeX Info: Redefining \ref on input line 116.
+LaTeX Info: Redefining \pageref on input line 116.
+LaTeX Info: Redefining \nameref on input line 116.
  (magic_python.out) (magic_python.out)
-\@outlinefile=\write3
-\openout3 = `magic_python.out'.
+\@outlinefile=\write4
+\openout4 = `magic_python.out'.
 
 
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count304
-\scratchdimen=\dimen258
-\scratchbox=\box53
-\nofMPsegments=\count305
-\nofMParguments=\count306
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count307
-\MPscratchDim=\dimen259
-\MPnumerator=\count308
-\makeMPintoPDFobject=\count309
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count329
+\scratchdimen=\dimen310
+\scratchbox=\box64
+\nofMPsegments=\count330
+\nofMParguments=\count331
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count332
+\MPscratchDim=\dimen311
+\MPnumerator=\count333
+\makeMPintoPDFobject=\count334
+\everyMPtoPDFconversion=\toks37
 )
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -568,7 +917,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-<magic_logo.png, id=27, 347.04657pt x 399.74344pt>
+<magic_logo.png, id=30, 347.04657pt x 399.74344pt>
 File: magic_logo.png Graphic file (type png)
 <use magic_logo.png>
 Package pdftex.def Info: magic_logo.png  used on input line 119.
@@ -613,18 +962,18 @@ Package microtype Info: Character `029' is missing
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 122.
+(blindtext)                 on input line 123.
 
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 135.
+(blindtext)                 on input line 137.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 137.
+(blindtext)                 on input line 139.
 
 [1
 
@@ -632,24 +981,24 @@ Package blindtext Warning: spanish not defined, using English instead.
 g>]
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 153.
+(blindtext)                 on input line 155.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 176.
+(blindtext)                 on input line 178.
 
 [2]
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 183.
+(blindtext)                 on input line 185.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 192.
+(blindtext)                 on input line 194.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 196.
+(blindtext)                 on input line 198.
 
 [3] (magic_python.aux
 LaTeX Info: Redefining \. on input line 25.
@@ -659,13 +1008,13 @@ Package rerunfilecheck Info: File `magic_python.out' has not changed.
 (rerunfilecheck)             Checksum: B80D3E5E100053B48E7649ED8176694E;302.
  ) 
 Here is how much of TeX's memory you used:
- 12474 strings out of 479618
- 198102 string characters out of 2865026
- 551469 words of memory out of 3000000
- 29121 multiletter control sequences out of 15000+200000
+ 23135 strings out of 479618
+ 429087 string characters out of 2865026
+ 756516 words of memory out of 3000000
+ 39555 multiletter control sequences out of 15000+200000
  471456 words of font info for 273 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,10n,74p,1011b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 102i,11n,102p,1011b,455s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:
 /Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10
 .pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
@@ -675,9 +1024,9 @@ alatino/uplb8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/ur
 w/palatino/uplbi8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type
 1/urw/palatino/uplr8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/urw/palatino/uplri8a.pfb>
-Output written on magic_python.pdf (3 pages, 176744 bytes).
+Output written on magic_python.pdf (3 pages, 177138 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
+ 88 PDF objects out of 1000 (max. 8388607)
  14 named destinations out of 1000 (max. 500000)
- 106550 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 106562 words of extra memory for PDF output out of 106986 (max. 10000000)
 

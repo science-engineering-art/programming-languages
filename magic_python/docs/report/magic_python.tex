@@ -96,7 +96,6 @@
 \date{\footnotesize Noviembre 2022 } % Leave empty to omit a date
 
 
-%----------------------------------------------------------------------------------------
 % Abstract configurations
 \renewenvironment{abstract}
 {\small
@@ -110,13 +109,15 @@
 	\item\relax}
 {\endlist}
 
+\usepackage{todonotes} % \TODO
+
 %----------------------------------------------------------------------------------------
 
 \begin{document}
-
 % Print the title
 \maketitle
 
+% ABSTRACT
 \begin{abstract}
 	\noindent \blindtext % Dummy abstract text - replace \blindtext with your abstract text
 	
@@ -128,6 +129,7 @@
 %	ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
 
+\vspace{1em}
 \section{Introduction}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

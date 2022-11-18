@@ -95,13 +95,20 @@
 }
 \date{\footnotesize Noviembre 2022 } % Leave empty to omit a date
 
-\renewcommand{\maketitlehookd}{%
-\begin{abstract}
-\noindent \blindtext % Dummy abstract text - replace \blindtext with your abstract text
 
-\keywords{Palabra 1 \textbf{$\cdot$} Palabra 2 \textbf{$\cdot$} Palabra 3}
-\end{abstract}
-}
+%----------------------------------------------------------------------------------------
+% Abstract configurations
+\renewenvironment{abstract}
+{\small
+	\begin{center}
+		\bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+	\end{center}
+	\list{}{
+		\setlength{\leftmargin}{1.5cm}%
+		\setlength{\rightmargin}{\leftmargin}%
+	}%
+	\item\relax}
+{\endlist}
 
 %----------------------------------------------------------------------------------------
 
@@ -109,6 +116,13 @@
 
 % Print the title
 \maketitle
+
+\begin{abstract}
+	\noindent \blindtext % Dummy abstract text - replace \blindtext with your abstract text
+	
+	\keywords{Palabra 1 \textbf{$\cdot$} Palabra 2 \textbf{$\cdot$} Palabra 3}
+\end{abstract}
+
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE CONTENTS

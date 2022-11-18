@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  17 NOV 2022 23:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  17 NOV 2022 23:14
 entering extended mode
 **./magic_python.tex
 (magic_python.tex
@@ -787,6 +787,8 @@ LaTeX Info: Redefining \addtolength on input line 81.
 )
 \c@@todonotes@numberoftodonotes=\count326
 )
+Package hyperref Info: Option `colorlinks' set `true' on input line 122.
+
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2021-01-09 L3 backend support: PDF output (pdfTeX)
@@ -798,35 +800,35 @@ LaTeX Info: Redefining \% on input line 25.
 )
 \openout1 = `magic_python.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 126.
+LaTeX Font Info:    ... okay on input line 126.
 \big@size=\dimen309
-LaTeX Info: Redefining \microtypecontext on input line 116.
-Package microtype Info: Applying patch `item' on input line 116.
-Package microtype Info: Applying patch `toc' on input line 116.
-Package microtype Info: Applying patch `eqnum' on input line 116.
-Package microtype Info: Applying patch `footnote' on input line 116.
+LaTeX Info: Redefining \microtypecontext on input line 126.
+Package microtype Info: Applying patch `item' on input line 126.
+Package microtype Info: Applying patch `toc' on input line 126.
+Package microtype Info: Applying patch `eqnum' on input line 126.
+Package microtype Info: Applying patch `footnote' on input line 126.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 116.
+LaTeX Info: Redefining \showhyphens on input line 126.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -834,8 +836,8 @@ Package microtype Info: No adjustment of character kerning.
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-ppl.cfg
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
-LaTeX Info: Redefining \. on input line 116.
-LaTeX Info: Redefining \% on input line 116.
+LaTeX Info: Redefining \. on input line 126.
+LaTeX Info: Redefining \% on input line 126.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -875,7 +877,7 @@ LaTeX Info: Redefining \% on input line 116.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 116.
+Package hyperref Info: Link coloring ON on input line 126.
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -888,9 +890,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count328
 )
-LaTeX Info: Redefining \ref on input line 116.
-LaTeX Info: Redefining \pageref on input line 116.
-LaTeX Info: Redefining \nameref on input line 116.
+LaTeX Info: Redefining \ref on input line 126.
+LaTeX Info: Redefining \pageref on input line 126.
+LaTeX Info: Redefining \nameref on input line 126.
  (magic_python.out) (magic_python.out)
 \@outlinefile=\write4
 \openout4 = `magic_python.out'.
@@ -920,34 +922,34 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 <magic_logo.png, id=30, 347.04657pt x 399.74344pt>
 File: magic_logo.png Graphic file (type png)
 <use magic_logo.png>
-Package pdftex.def Info: magic_logo.png  used on input line 119.
+Package pdftex.def Info: magic_logo.png  used on input line 129.
 (pdftex.def)             Requested size: 107.99637pt x 124.40002pt.
 LaTeX Font Info:    Trying to load font information for OT1+pplx on input line 
-119.
+129.
 
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pplx.fd
 File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
 )
 LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
-119.
+129.
 
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
-119.
+129.
 
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
-119.
+129.
 
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-119.
+129.
 
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -962,18 +964,18 @@ Package microtype Info: Character `029' is missing
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 123.
+(blindtext)                 on input line 133.
 
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 137.
+(blindtext)                 on input line 147.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 139.
+(blindtext)                 on input line 149.
 
 [1
 
@@ -981,24 +983,24 @@ Package blindtext Warning: spanish not defined, using English instead.
 g>]
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 155.
+(blindtext)                 on input line 165.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 178.
+(blindtext)                 on input line 188.
 
 [2]
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 185.
+(blindtext)                 on input line 195.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 194.
+(blindtext)                 on input line 204.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 198.
+(blindtext)                 on input line 208.
 
 [3] (magic_python.aux
 LaTeX Info: Redefining \. on input line 25.
@@ -1008,10 +1010,10 @@ Package rerunfilecheck Info: File `magic_python.out' has not changed.
 (rerunfilecheck)             Checksum: B80D3E5E100053B48E7649ED8176694E;302.
  ) 
 Here is how much of TeX's memory you used:
- 23135 strings out of 479618
- 429087 string characters out of 2865026
- 756516 words of memory out of 3000000
- 39555 multiletter control sequences out of 15000+200000
+ 23137 strings out of 479618
+ 429118 string characters out of 2865026
+ 756496 words of memory out of 3000000
+ 39557 multiletter control sequences out of 15000+200000
  471456 words of font info for 273 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,11n,102p,1011b,455s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1024,7 +1026,7 @@ alatino/uplb8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/ur
 w/palatino/uplbi8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type
 1/urw/palatino/uplr8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/urw/palatino/uplri8a.pfb>
-Output written on magic_python.pdf (3 pages, 177138 bytes).
+Output written on magic_python.pdf (3 pages, 177174 bytes).
 PDF statistics:
  88 PDF objects out of 1000 (max. 8388607)
  14 named destinations out of 1000 (max. 500000)

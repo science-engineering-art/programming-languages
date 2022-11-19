@@ -216,25 +216,17 @@ A continuaci\'on se muestra la implementaci\'on dada a ambos,
 
 \subsection{Iteraci\'on}
 
+En Python un \textit{iterable} es un objeto sobre el que se puede iterar, mientras que un \textit{iterador} es un objeto que se usa para iterar sobre un iterable usando el método m\'agico \mgc{next}, que devuelve el siguiente elemento del iterador, y cuando no hay m\'as elementos genera la excepción \csl{StopIteration}.
 
-\mgc{next}
+Se puede crear un iterador a partir de un iterable usando el m\'etodo m\'agico \mgc{iter}. Para que esto sea posible, la clase de un objeto necesita un método \mgc{iter}, que devuelve un iterador, o un método \mgc{getitem} con índices que comienzan en 0. En caso contrario se genera \csl{TypeError}. 
 
-Devuelve el siguiente elemento del iterador. Si no hay más elementos, genera la excepción StopIteration.
+Cada iterador es también iterable, pero no todos los iterables son iteradores. Por ejemplo, una lista es iterable pero una lista no es un iterador (no se le puede aplicar \csl{next()}. 
 
 \begin{center}
 	\includegraphics[width=12cm]{next.png}
 	
 	\imgcaption{7}{Operador multiplicaci\'on}
 \end{center}
-
-
-\mgc{iter}
-
-Devuelve un objeto iterador. 
-
-El primer argumento se interpreta de manera muy diferente dependiendo de la presencia del segundo argumento. Sin un segundo argumento, el objeto debe ser un objeto de colección que admita el protocolo iterable (el método \mgc[()]{iter}), o debe admitir el protocolo de secuencia (el método \mgc{getitem} con argumentos enteros que comienzan en 0). Si no es compatible con ninguno de esos protocolos, se genera TypeError. 
-
-Si se proporciona el segundo argumento, centinela, entonces el objeto debe ser un objeto invocable. El iterador creado en este caso llamará al objeto sin argumentos para cada llamada a su método next(); si el valor devuelto es igual a centinela, se generará StopIteration; de lo contrario, se devolverá el valor.
 
 \begin{center}
 	\includegraphics[width=12cm]{iter.png}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  18 NOV 2022 20:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  18 NOV 2022 21:00
 entering extended mode
 **./magic_python.tex
 (magic_python.tex
@@ -1044,42 +1044,42 @@ Package pdftex.def Info: setitem.png  used on input line 212.
 <next.png, id=63, 594.72188pt x 85.06781pt>
 File: next.png Graphic file (type png)
 <use next.png>
-Package pdftex.def Info: next.png  used on input line 225.
+Package pdftex.def Info: next.png  used on input line 226.
 (pdftex.def)             Requested size: 341.43306pt x 48.83702pt.
- [4 <./getitem.png> <./setitem.png> <./next.png>]
-<iter.png, id=71, 594.72188pt x 50.43843pt>
+ [4 <./getitem.png> <./setitem.png>]
+<iter.png, id=70, 594.72188pt x 50.43843pt>
 File: iter.png Graphic file (type png)
 <use iter.png>
-Package pdftex.def Info: iter.png  used on input line 240.
+Package pdftex.def Info: iter.png  used on input line 232.
 (pdftex.def)             Requested size: 341.43306pt x 28.95645pt.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 247.
-<getattr.png, id=72, 594.72188pt x 341.77687pt>
+ine 239.
+<getattr.png, id=71, 594.72188pt x 341.77687pt>
 File: getattr.png Graphic file (type png)
 <use getattr.png>
-Package pdftex.def Info: getattr.png  used on input line 260.
+Package pdftex.def Info: getattr.png  used on input line 252.
 (pdftex.def)             Requested size: 341.43306pt x 196.21248pt.
- [5 <./iter.png>]
+ [5 <./next.png> <./iter.png>]
 <setattr.png, id=79, 594.72188pt x 164.11313pt>
 File: setattr.png Graphic file (type png)
 <use setattr.png>
-Package pdftex.def Info: setattr.png  used on input line 266.
+Package pdftex.def Info: setattr.png  used on input line 258.
 (pdftex.def)             Requested size: 341.43306pt x 94.21655pt.
  [6 <./getattr.png> <./setattr.png>]
 <repr.png, id=87, 594.72188pt x 188.95593pt>
 File: repr.png Graphic file (type png)
 <use repr.png>
-Package pdftex.def Info: repr.png  used on input line 280.
+Package pdftex.def Info: repr.png  used on input line 272.
 (pdftex.def)             Requested size: 341.43306pt x 108.4787pt.
 <len.png, id=88, 594.72188pt x 51.94406pt>
 File: len.png Graphic file (type png)
 <use len.png>
-Package pdftex.def Info: len.png  used on input line 288.
+Package pdftex.def Info: len.png  used on input line 280.
 (pdftex.def)             Requested size: 341.43306pt x 29.82083pt.
 <call.png, id=89, 594.72188pt x 48.93282pt>
 File: call.png Graphic file (type png)
 <use call.png>
-Package pdftex.def Info: call.png  used on input line 296.
+Package pdftex.def Info: call.png  used on input line 288.
 (pdftex.def)             Requested size: 341.43306pt x 28.09209pt.
  [7 <./repr.png> <./len.png> <./call.png>] (magic_python.aux
 LaTeX Info: Redefining \. on input line 25.
@@ -1089,11 +1089,11 @@ Package rerunfilecheck Info: File `magic_python.out' has not changed.
 (rerunfilecheck)             Checksum: 2408F646404895BDA554B1860D8C9461;372.
  ) 
 Here is how much of TeX's memory you used:
- 24704 strings out of 479618
- 452380 string characters out of 2865026
- 779146 words of memory out of 3000000
+ 24702 strings out of 479618
+ 452364 string characters out of 2865026
+ 777146 words of memory out of 3000000
  41059 multiletter control sequences out of 15000+200000
- 469473 words of font info for 297 fonts, out of 3000000 for 9000
+ 469369 words of font info for 296 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,12n,102p,1391b,907s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\laura\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
@@ -1106,9 +1106,9 @@ ublic/fpl/fplrc8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1
 pe1/urw/palatino/uplbi8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/font
 s/type1/urw/palatino/uplr8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/f
 onts/type1/urw/palatino/uplri8a.pfb>
-Output written on magic_python.pdf (7 pages, 513070 bytes).
+Output written on magic_python.pdf (7 pages, 513861 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
+ 167 PDF objects out of 1000 (max. 8388607)
  16 named destinations out of 1000 (max. 500000)
  98435 words of extra memory for PDF output out of 106986 (max. 10000000)
 

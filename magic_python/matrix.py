@@ -107,7 +107,7 @@ class Matrix:
             i = int(i); j = int(j)
             return self[i, j]
 
-        matched = re.match(r"as_([a-z]+)", __name)
+        matched = re.match(r"as_([\w]+)", __name)
         if matched:
             type = matched.groups()[0]
             result = Matrix(self.amount_rows, self.amount_cols)

@@ -16,9 +16,9 @@ from matrix import Matrix
 a = Matrix(2,3, init_value=1)
 b = Matrix(2,3, init_value=1)
 
-print(a.as_float())
+for i in a:
+    print(i)
 
-print(a==b)
 # print('a + b')
 # print(f'{a+b}\n')
 
@@ -35,11 +35,6 @@ print(a==b)
 # eval('print(x)')
 # Examples
 
-
-a = Matrix(2, 3, init_value=0)
-b = Matrix(2, 3, init_value=1)
-a._0_1 = 9
-print(a)
 
 # print('a + b')
 # print(f'{a+b}\n')

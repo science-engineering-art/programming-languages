@@ -170,7 +170,7 @@ class Matrix:
 
     def __eq__(self, other: 'Matrix[T]') -> bool:
         """
-            Redeinición del operador `==`, para poder construir
+            Redefinición del operador `==`, para poder construir
             expresiones de la forma: 
             
             `if matrix1 == matrix2: pass`. 

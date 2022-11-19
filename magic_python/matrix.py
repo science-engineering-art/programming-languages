@@ -120,7 +120,10 @@ class Matrix:
 
     def __setattr__(self, __name: str, __value: Any):
         """
-            Setea en los atributos de la 
+            Asigna un nuevo valor a una posición de la matriz.
+
+            Ejemplo:
+            - `matrix._0_1 = 2` 
         """
         matched = re.match(r"_(\d+)_(\d+)", __name)
         if matched:
@@ -170,7 +173,7 @@ class Matrix:
 
     def __eq__(self, other: 'Matrix[T]') -> bool:
         """
-            Redeinición del operador `==`, para poder construir
+            Redefinición del operador `==`, para poder construir
             expresiones de la forma: 
             
             `if matrix1 == matrix2: pass`. 

@@ -1,10 +1,13 @@
 import re
-from typing import Any, List, Tuple, Iterator, Generic, TypeVar
-
+from typing import Any, List, Tuple, TypeVar
 T = TypeVar('T')
-class Matrix(Iterator, Generic[T]):
 
+
+class Matrix:
     def __init__(self, rows: int, cols: int, init_value=None):
+        """
+            Inicializador de la clase.
+        """
         self.amount_rows: int = rows
         self.amount_cols: int = cols
         self.matrix: List[List[T]] = [[init_value 
@@ -15,8 +18,7 @@ class Matrix(Iterator, Generic[T]):
         """
             Sumador de matrices.
         """
-        
-        result = Matrix(rows=self.amount_rows, 
+        result = Matrix[T](rows=self.amount_rows, 
             cols=self.amount_cols, init_value=None)
         
         for i in range(0, self.amount_rows):
@@ -29,11 +31,10 @@ class Matrix(Iterator, Generic[T]):
         """
             Multiplicador de matrices.
         """
-        
         if self.amount_cols != other.amount_rows:
             raise Exception('Invalid operation.')
 
-        result = Matrix(rows=self.amount_rows, 
+        result = Matrix[T](rows=self.amount_rows, 
             cols=other.amount_cols, init_value=None)
 
         for i in range(0, self.amount_rows):
@@ -46,13 +47,11 @@ class Matrix(Iterator, Generic[T]):
 
         return result
 
-    # hay que heredar de `object` para usar funciones mágicas
     def __getitem__(self, key: Tuple[int,int]):
         """
             Indizador con una sintaxis más cómoda. 
             Ejemplo: a = matrix[i,j]
         """
-        
         if not isinstance(key, tuple):
             raise Exception('Format incorrect.')
 
@@ -60,18 +59,19 @@ class Matrix(Iterator, Generic[T]):
             raise Exception('Number of parameters exceded.')
         i, j = key
 
-        if i >= 0 and i < len(self.amount_rows) and \
-            j >= 0 and j < len(self.amount_cols):
+        if i >= 0 and i < self.amount_rows and \
+            j >= 0 and j < self.amount_cols:
             return self.matrix[i][j]
         else:
             raise Exception('Index out of matrix.')
 
-    def __setitem__(self, key: Tuple[int, int], value: int):
+    def __setitem__(self, key: Tuple[int, int], value: T):
         """
-            Permite setear el valor de la matriz indexada, de manera más cómoda.
+            Permite setear el valor de la matriz indexada, de manera 
+            más cómoda.
+
             Ejemplo: `matrix[i,j] = 4`
         """
-
         if not isinstance(key, tuple):
             raise Exception('Format incorrect.')
         
@@ -79,15 +79,21 @@ class Matrix(Iterator, Generic[T]):
             raise Exception('Number of parameters exceded.')
         i, j = key
 
-        if i >= 0 and i < len(self.matrix) and \
-            j >= 0 and j < len(self.matrix[0]):
+        if i >= 0 and i < self.amount_rows and \
+            j >= 0 and j < self.amount_cols:
             self.matrix[i][j] = value
         else:
             raise Exception('Index out of matrix.')
 
     def __getattr__(self, __name: str):
-
-        
+        """
+            Controla la petición de atributos que pertencen a una 
+            instancia de la clase y no se encuentran inicializados.
+            
+            Ejemplo: 
+            - `a = matrix._0_2`
+            - `b = matrix.as_float()`
+        """
         matched = re.match(r"_(\d+)_(\d+)", __name)
         if matched:
             i, j = matched.groups()
@@ -96,7 +102,7 @@ class Matrix(Iterator, Generic[T]):
         
         matched = re.match(r"as_([a-z]+)", __name)
         if matched:
-            type = matched.groups()[0]            
+            type = matched.groups()[0]          
             result = Matrix(self.amount_rows, self.amount_cols)
             
             for i in range(0, self.amount_rows):
@@ -106,6 +112,12 @@ class Matrix(Iterator, Generic[T]):
             return lambda: result
 
     def __setattr__(self, __name: str, __value: Any):
+        
+        matched = re.match(r"_(\d+)_(\d+)", __name)
+        if matched:
+            i, j = matched.groups()
+            i = int(i); j = int(j)
+            self[i,j] = __value
         return super().__setattr__(__name, __value)
 
     def __next__(self):
@@ -116,8 +128,56 @@ class Matrix(Iterator, Generic[T]):
     def __iter__(self):
         return self.__next__()
 
+    def __repr__(self) -> str:
+        result = ''; j = 0
+        for i in self:
+            j += 1
+            result += f'{i} '
+            if j % self.amount_cols == 0 and j != \
+            self.amount_cols * self.amount_rows:
+                result += '\n' 
+        return result
 
-a: Matrix = Matrix(2,3, init_value=0)
-a[0,0] = 2
-b = a.as_float()
-for i in b: print(i)
+    def __len__(self) -> int:
+        return self.amount_cols * self.amount_rows
+
+    def __eq__(self, other: 'Matrix[T]') -> bool:
+        for i,j in zip(self,other):
+            if i != j:
+                return False
+        return True
+
+    def __call__(self, *args: Any, **kwds: Any) -> Any:
+        print(f"I'm callable.. args:{args} kwds:{kwds}")
+
+# matrixs = []
+
+# for i in range(0,10):
+#     matrixs.append(Matrix(2,3, init_value=i))
+#     print('not yet')
+
+# print(matrixs[2].__dict__)    
+
+# matrixs[0]._0_1 = 3
+# print(matrixs[0])
+
+a = Matrix(2,3, init_value=1)
+b = Matrix(2,3, init_value=1)
+
+print(a.as_float())
+
+print(a==b)
+# print('a + b')
+# print(f'{a+b}\n')
+
+
+# print("a.__getattribute__('__add__')(b)\n")
+# print(f"{a.__getattribute__('__add__')(b)}\n")
+# print(f"{a.__class__.__dict__['__add__'](a,b)}\n")
+# print(a.__class__.__dict__['__add__'].__getattribute__('__call__')(a,b))
+
+# print("Matrix.__add__.__getattribute__('__call__')(a,b)")
+# print(Matrix.__add__.__getattribute__('__call__')(a,b))
+
+# x = 1
+# eval('print(x)')

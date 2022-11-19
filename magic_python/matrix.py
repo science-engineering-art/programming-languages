@@ -14,20 +14,6 @@ class Matrix:
                                        for _ in range(0, cols)]
                                       for _ in range(0, rows)]
 
-    def __eq__(self, other: 'Matrix[int, int]') -> bool:
-        if self.amount_cols != other.amount_cols or self.amount_rows != other.amount_rows:
-            return False
-
-        result = Matrix(rows=self.amount_rows,
-                        cols=self.amount_cols, init_value=None)
-
-        for i in range(0, self.amount_rows):
-            for j in range(0, self.amount_cols):
-                if self[i, j] != other[i, j]:
-                    return False
-
-        return True
-
     def __add__(self, other: 'Matrix[T]') -> 'Matrix[T]':
         """
             Sumador de matrices.
@@ -70,6 +56,7 @@ class Matrix:
     def __getitem__(self, key: Tuple[int, int]):
         """
             Indizador con una sintaxis más cómoda. 
+
             Ejemplo: a = matrix[i,j]
         """
         if not isinstance(key, tuple):
@@ -117,8 +104,7 @@ class Matrix:
         matched = re.match(r"_(\d+)_(\d+)", __name)
         if matched:
             i, j = matched.groups()
-            i = int(i)
-            j = int(j)
+            i = int(i); j = int(j)
             return self[i, j]
 
         matched = re.match(r"as_([a-z]+)", __name)
@@ -133,47 +119,66 @@ class Matrix:
             return lambda: result
 
     def __setattr__(self, __name: str, __value: Any):
+        """
+            Setea en los atributos de la 
+        """
         matched = re.match(r"_(\d+)_(\d+)", __name)
         if matched:
             i, j = matched.groups()
-            i = int(i)
-            j = int(j)
+            i = int(i); j = int(j)
             self[i, j] = __value
+            return
+        
         return super().__setattr__(__name, __value)
 
-    def __getattribute__(self, __name: str) -> Any:
-        return super().__getattribute__(__name)
-
     def __next__(self):
+        """
+            Método que se encarga de generar el próximo elemento de la 
+            colección, de manera `lazy`.
+        """
         for row in self.matrix:
             for i in row:
                 yield i
 
     def __iter__(self):
+        """
+            Método que da una forma de iterar por los elementos de una 
+            colección. Es quien permite hacer construcciones del lenguaje 
+            de este estilo:
+
+            `for item in matrix: print(item)`
+        """
         return self.__next__()
 
     def __repr__(self) -> str:
+        """
+            Método para imprimir la matriz de la forma: `print(matrix)`.
+        """
         result = ''
-        j = 0
-        for i in self:
-            j += 1
-            result += f'{i} '
-            if j % self.amount_cols == 0 and j != \
-                self.amount_cols * self.amount_rows:
-                result += '\n'
+        for row in self.matrix:
+            result += ''.join(str(row)) + '\n' 
         return result
 
     def __len__(self) -> int:
+        """
+            Método para saber el tamaño de una matriz. 
+
+            Ejemplo: 
+            - `len(matrix)`
+        """
         return self.amount_cols * self.amount_rows
 
     def __eq__(self, other: 'Matrix[T]') -> bool:
+        """
+            Redeinición del operador `==`, para poder construir
+            expresiones de la forma: 
+            
+            `if matrix1 == matrix2: pass`. 
+        """
         for i,j in zip(self,other):
             if i != j:
                 return False
         return True
-
-    def __call__(self, *args: Any, **kwds: Any) -> Any:
-        print(f"I'm callable.. args:{args} kwds:{kwds}")
 
 # matrixs = []
 
@@ -212,6 +217,8 @@ print(a==b)
 
 a = Matrix(2, 3, init_value=0)
 b = Matrix(2, 3, init_value=1)
+a._0_1 = 9
+print(a)
 
 # print('a + b')
 # print(f'{a+b}\n')

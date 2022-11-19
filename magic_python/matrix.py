@@ -175,6 +175,10 @@ class Matrix:
             
             `if matrix1 == matrix2: pass`. 
         """
+        if self.amount_rows != other.amount_rows or \
+            self.amount_cols != other.amount_cols:
+            return False
+
         for i,j in zip(self,other):
             if i != j:
                 return False

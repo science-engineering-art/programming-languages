@@ -1,0 +1,178 @@
+\documentclass[10pt]{article}
+\setcounter{tocdepth}{3}% to get subsubsections in toc
+
+\let\oldtocsection=\tocsection
+
+\let\oldtocsubsection=\tocsubsection
+
+\let\oldtocsubsubsection=\tocsubsubsection
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[spanish]{babel}
+\usepackage{blindtext}
+
+\usepackage{listings}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{stmaryrd}
+\usepackage{calrsfs}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{stmaryrd}
+\usepackage{lipsum}
+
+\newcommand{\mgc}[1]{\texttt{\_\_#1\_\_}}
+\newcommand{\csl}[1]{\texttt{#1}}
+\newcommand{\todo}[1]{\color{red}TO DO.......#1\color{black}}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
+
+% Define a custom color
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+
+% Define a custom style
+\lstdefinestyle{myStyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	keepspaces=true,                 
+	numbers=left,       
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2,
+}
+
+% Use \lstset to make myStyle the global default
+\lstset{style=myStyle}
+
+\voffset=-1.4mm
+\oddsidemargin=14pt
+\evensidemargin=14pt
+\topmargin=26pt
+\headheight=9pt     
+\textheight=576pt
+\textwidth=441pt 
+\parskip=0pt plus 4pt
+
+\title{\textbf{Lenguajes de Programaci\'on}}
+\author{Seminario\#2\\
+ \textbf{Magic Python}.}
+\date{}
+
+\begin{document}
+	\begin{titlepage}
+		\clearpage	
+		\maketitle
+		\begin{center}
+%			\includegraphics[width=9cm]{c++logo.png}
+%			
+			\vspace{5em}
+			Equipo 2:
+			
+			Marcos Manuel Tirador del Riego
+			
+			Laura Victoria Riera P\'erez
+			
+			Leandro Rodr\'iguez Llosa
+			\vspace{1em}
+			
+			Grupo: C-311
+		\end{center}
+		\thispagestyle{empty}
+	\end{titlepage}
+
+
+\newpage
+\pagenumbering{gobble}
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{arabic}
+
+\section{M\'etodos M\'agicos}
+
+Los m\'etodos m\'agicos son un conjunto de m\'etodos especiales en Python, cuyo nombre comienza y termina con dos guiones bajos. Lo que hace especiales o ``m\'agicos'' a estos m\'etodos es que no tienen que ser invocados directamente, sino que la invocaci\'on ocurre internamente desde la clase, bajo una determinada acci\'on. Estos m\'etodos tambi\'en son llamados dunder, que es una abreviatura de ``Double Underscore'', que significa doble gui\'on bajo en ingl\'es. 
+
+En este seminario se ver\'a el uso de alguno de los m\'etodos m\'agicos m\'as importantes. Para ello se implementar\'a una clase \emph{Matrix} para representar matrices, con algunas funcionalidades b\'asicas.
+
+Se comenzar\'a hablando del m\'etodo \texttt{\_\_init\_\_}. Este m\'etodo es invocado cuando se crea una instancia de una clase. Este act\'ua como un constructor cuya funci\'on es inicializar las propiedades de la clase. Es por esto que el programador, para lograr el comportamiento deseado en la instanciaci\'on de una clase definida por \'el, debe redefinir el cuerpo de este m\'etodo en la clase.
+
+Sin embargo, es bueno saber que cuando uno instancia una clase, \mgc{init} no es el primer m\'etodo m\'agico que es invocado. Antes es llamado el m\'etodo  \mgc{new}. Este m\'etodo es el responsable de crear la instancia de la clase y luego se la pasa al m\'etodo \mgc{init} junto con los argumentos. Explicar la utilidad de esta clase se sale del prop\'osito de este seminario.
+
+Se puede observar en [\todo{citar codigo}] la implementaci\'on del constructor de la clase Matrix.
+
+\todo{insertar c\'odigo}
+
+\subsection{Operadores}
+
+Una de las ventajas de usar los m\'etodos  m\'agicos en Python es que permiten realizar operaciones con los objetos definidos como si fueran built-in. Por ejemplo si se quisiera saber si dos objetos son iguales habr\'ia que crear en la clase alg\'un tipo de m\'etodo \csl{equals} que permita definir el comportamiento de la comparaci\'on entre dos instancias de la clase. Pero Python simplifica este comportamiento al permitirte redefinir el m\'etodo m\'agico \mgc{eq}(). De esta forma podemos comparar dos objetos de un mismo tipo simplemente haciendo uso del operador \csl{==}. Si no redefinimos este m\'etodo en nuestra clase el comportamiento por defecto es que da un resultado positivo si y solo si las instancias de la clase que se est\'an comparando son exactamente la misma.
+
+Se presenta el c\'odigo empleado para definir en la clase Matrix la posibilidad de comparar dos matrices solamente usando \csl{==}.
+
+\todo{Poner el codigo}
+
+\todo{Creo que el codigo ese no existe, habria que programar eso}
+
+
+N\'otese como al hacer uso de los m\'etodos dunder el programador se ahorra tener que definir m\'etodos propios para imitar el comportamiento de operaciones b\'asicas. Adem\'as el llamado a estos m\'etodos que se habr\'ian de crear, ser\'ia engorroso y menos natural. Casi todos los operadores significativos pueden ser redefinidos a trav\'es de su m\'etodo m\'agico correspondiente. Se mostrar\'an a continuaci\'on dos operadores aritm\'eticos b\'asicos que fueron redefinidos en la clase Matrix. Estos son la suma, a partir de \mgc{add} y la multiplicaci\'on a partir de \mgc{mul}.
+
+
+
+\todo{Poner el codigo}
+
+\subsection{indexaci\'on e iteraci\'on}
+
+\subsection{Atributos}
+
+A trav\'es del uso de los m\'etodos m\'agicos Python permite controlar el acceso a los atributos de una clase. Esto es, permite definir un comportamiento determinado cuando se intente acceder a un atributo de la clase, incluso cuando este atributo no existe. Esto nos da la posibilidad, por ejemplo, de prohibir el acceso a ciertos atributos de la clase. Incluso d\'a la posibilidad de modificar los atributos de la clase en tiempo de compilaci\'on. \todo{revisar la validez de la oracion anterior pues no estoy seguro al 100}. Se ver\'an a continuaci\'on 3  m\'etodos que permiten este comportamiento.
+
+\begin{itemize}
+	\item \mgc{getattribute} Este m\'etodo es lo primero que se invoca cuando se intenta acceder a un atributo de una clase, sin importar si este existe o no. Permite definir reglas de comportamiento en respuesta al acceso al atributo. El comportamiento del m\'etodo por defecto es buscar si el atributo existe, retornando su valor en caso afirmativo y lanzando \csl{AttributeError} en caso contrario.
+	\item \mgc{getattr} Este m\'etodo es invocado siempre que se intente acceder a un atributo que no existe en un objeto. Adem\'as, si el m\'etodo anterior lanza \csl{AttributeError} desp\'ues de su ejecuci\'on, esta excepci\'on es ignorada y este m\'etodo es invocado. 
+	\item \mgc{setattr} Similar al primero de estos tres, este m\'etodo siempre es invocado cuando se intenta cambiar el valor de un atributo. De igual forma su uso suele ser aplicar algunas reglas antes de que se ejecute la modificaci\'on. Adicionalmente puede usarse para definir un comportamiento si el atributo en cuesti\'on no existe.
+\end{itemize}
+
+Hay que tener cierto cuidad al usar estos tres m\'etodos. Sucede que si en el cuerpo del m\'etodo se hace uso de alg\'un otro atributo de la clase, entonces el m\'etodo ser\'a invocado nuevamente provocando una recursi\'on infinita.
+
+A continuaci\'on se presenta la forma en que se redefinieron los m\'etodos \mgc{getattr} y \mgc{setattr} en la clase Matrix.
+
+\todo{Poner el codigo}
+
+Una de las ideas con el uso del \mgc{setattr} y \mgc{getattr} es poder indexar en la matriz $m$ usando la forma \csl{$m.\_i\_j$} donde $i$ y $j$ son los \'indices a los que se quiere acceder. Como \csl{$\_i\_i$} no es un atributo de Matrix, al intentar acceder al valor del mismo el programa invoca al m\'etodo \mgc{getattr} despu\'es de ejecutar \mgc{getattribute} sin \'exito. Entonces al m\'etodo en cuesti\'on es pasado como par\'ametro el nombre del atributo al que se quiere acceder. Haciendo uso de la biblioteca \csl{re} para comprobar patrones en expresiones regulares, podemos comparar el nombre del m\'etodo con el patr\'on \csl{$\_i\_j$}, y si coinciden solamente debemos obtener los enteros $i$ y $j$ del nombre, y devolver \csl{$self[i][j]$}. An\'alogamente se hace con \mgc{setattr} pero esta vez para modificar el valor en esa posici\'on. La diferencia es que como se explicaba antes, este m\'etodo se llama independientemente de si el atributo aparece o no, pero en este caso de igual modo este atributo no existe.
+
+N\'otese que la idea usada anteriormente consisti\'o en poder invocar un comportamiento determinado, como si fuera un atributo de la clase. Una idea similar usamos para lograr castear el tipo de los elementos en la matriz representada por la clase Matrix, a otro tipo diferente. Se quiere que este comportamiento se pueda lograr de la forma \csl{m.as\_type()} (por ejemplo se pudiera llamar a \csl{m.as\_float()} para obtener una nueva matriz con todos sus valores de tipo float). Para se puede adicionar otro comportamiento al m\'etodo \mgc{getattr}, ya que como Matrix no contiene un atributo \csl{as\_type} para ninguna cadena ``tpye''. La idea es de modo similar, haciendo uso de \csl{re}, reconocer el patr\'on de \csl{as\_type} en el nombre del atributo. Si este coincide se crea una matriz nueva del tipo en cuesti\'on y se castea cada elemento de la matriz anterior al tipo nuevo. Para esto \'ultimo se hace uso del m\'etodo \csl{eval} que eval\'ua el texto de un string como si fuera una sentencia de c\'odigo python. Finalmente se devuelve como resultado de la invocaci\'on de este m\'etodo, una expresi\'on lambda cuyo cuerpo consiste solamente de retornar la nueva matriz. Esto se hace ya que la sentencia \csl{m.as\_type()} espera que el atributo \csl{as\_type} devuelva una funci\'on, que se invocar\'a inmediatamente sin argumentos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

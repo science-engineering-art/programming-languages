@@ -10,20 +10,34 @@ class Matrix:
         """
         self.amount_rows: int = rows
         self.amount_cols: int = cols
-        self.matrix: List[List[T]] = [[init_value 
-            for _ in range(0,cols)] 
-            for _ in range(0,rows)]
-    
+        self.matrix: List[List[T]] = [[init_value
+                                       for _ in range(0, cols)]
+                                      for _ in range(0, rows)]
+
+    def __eq__(self, other: 'Matrix[int, int]') -> bool:
+        if self.amount_cols != other.amount_cols or self.amount_rows != other.amount_rows:
+            return False
+
+        result = Matrix(rows=self.amount_rows,
+                        cols=self.amount_cols, init_value=None)
+
+        for i in range(0, self.amount_rows):
+            for j in range(0, self.amount_cols):
+                if self[i, j] != other[i, j]:
+                    return False
+
+        return True
+
     def __add__(self, other: 'Matrix[T]') -> 'Matrix[T]':
         """
             Sumador de matrices.
         """
         result = Matrix[T](rows=self.amount_rows, 
             cols=self.amount_cols, init_value=None)
-        
+
         for i in range(0, self.amount_rows):
             for j in range(0, self.amount_cols):
-                result[i,j] = self[i, j] + other[i, j]
+                result[i, j] = self[i, j] + other[i, j]
 
         return result
 
@@ -37,17 +51,23 @@ class Matrix:
         result = Matrix[T](rows=self.amount_rows, 
             cols=other.amount_cols, init_value=None)
 
+        if self.amount_cols != other.amount_rows:
+            raise Exception('Invalid operation.')
+
+        result = Matrix(rows=self.amount_rows,
+                        cols=other.amount_cols, init_value=None)
+
         for i in range(0, self.amount_rows):
             for j in range(0, other.amount_cols):
                 for h in range(0, self.amount_cols):
                     if h == 0:
-                        result[i,j] = self[i, h] * other[h, j]
+                        result[i, j] = self[i, h] * other[h, j]
                     else:
-                        result[i,j] += self[i, h] * other[h, j]
+                        result[i, j] += self[i, h] * other[h, j]
 
         return result
 
-    def __getitem__(self, key: Tuple[int,int]):
+    def __getitem__(self, key: Tuple[int, int]):
         """
             Indizador con una sintaxis más cómoda. 
             Ejemplo: a = matrix[i,j]
@@ -55,7 +75,7 @@ class Matrix:
         if not isinstance(key, tuple):
             raise Exception('Format incorrect.')
 
-        if len(key) != 2: 
+        if len(key) != 2:
             raise Exception('Number of parameters exceded.')
         i, j = key
 
@@ -67,14 +87,14 @@ class Matrix:
 
     def __setitem__(self, key: Tuple[int, int], value: T):
         """
-            Permite setear el valor de la matriz indexada, de manera 
-            más cómoda.
-
+            Permite setear el valor de la matriz indexada, 
+            de manera más cómoda.
+            
             Ejemplo: `matrix[i,j] = 4`
         """
         if not isinstance(key, tuple):
             raise Exception('Format incorrect.')
-        
+
         if len(key) != 2:
             raise Exception('Number of parameters exceded.')
         i, j = key
@@ -97,14 +117,15 @@ class Matrix:
         matched = re.match(r"_(\d+)_(\d+)", __name)
         if matched:
             i, j = matched.groups()
-            i = int(i); j = int(j)
-            return self[i,j]
-        
+            i = int(i)
+            j = int(j)
+            return self[i, j]
+
         matched = re.match(r"as_([a-z]+)", __name)
         if matched:
-            type = matched.groups()[0]          
+            type = matched.groups()[0]
             result = Matrix(self.amount_rows, self.amount_cols)
-            
+
             for i in range(0, self.amount_rows):
                 for j in range(0, self.amount_cols):
                     result[i, j] = eval(f'{type}(self.matrix[i][j])')
@@ -112,30 +133,34 @@ class Matrix:
             return lambda: result
 
     def __setattr__(self, __name: str, __value: Any):
-        
         matched = re.match(r"_(\d+)_(\d+)", __name)
         if matched:
             i, j = matched.groups()
-            i = int(i); j = int(j)
-            self[i,j] = __value
+            i = int(i)
+            j = int(j)
+            self[i, j] = __value
         return super().__setattr__(__name, __value)
+
+    def __getattribute__(self, __name: str) -> Any:
+        return super().__getattribute__(__name)
 
     def __next__(self):
         for row in self.matrix:
             for i in row:
                 yield i
-    
+
     def __iter__(self):
         return self.__next__()
 
     def __repr__(self) -> str:
-        result = ''; j = 0
+        result = ''
+        j = 0
         for i in self:
             j += 1
             result += f'{i} '
             if j % self.amount_cols == 0 and j != \
-            self.amount_cols * self.amount_rows:
-                result += '\n' 
+                self.amount_cols * self.amount_rows:
+                result += '\n'
         return result
 
     def __len__(self) -> int:
@@ -157,6 +182,7 @@ class Matrix:
 #     print('not yet')
 
 # print(matrixs[2].__dict__)    
+# print(matrixs[2].__dict__)
 
 # matrixs[0]._0_1 = 3
 # print(matrixs[0])
@@ -178,6 +204,32 @@ print(a==b)
 
 # print("Matrix.__add__.__getattribute__('__call__')(a,b)")
 # print(Matrix.__add__.__getattribute__('__call__')(a,b))
+
+# x = 1
+# eval('print(x)')
+# Examples
+
+
+a = Matrix(2, 3, init_value=0)
+b = Matrix(2, 3, init_value=1)
+
+# print('a + b')
+# print(f'{a+b}\n')
+
+# print(a.__dict__)
+# print(a.__class__)
+
+# print("a.__getattribute__('__add__')(b)")
+# print(f"{a.__getattribute__('__add__')(b)}\n")
+# print(f"{a.__class__.__dict__['__add__'](a,b)}\n")
+# print(a.__class__.__dict__['__add__'].__getattribute__('__call__')(a, b))
+
+# print(a())
+
+# print("Matrix.__add__.__getattribute__('__call__')(a,b)")
+# print(Matrix.__add__.__getattribute__('__call__')(a, b))
+
+# print(a.__class__.__getattribute__['__add__'].__getattribute__('__call__')(a,b))
 
 # x = 1
 # eval('print(x)')

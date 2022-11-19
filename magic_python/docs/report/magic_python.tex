@@ -216,7 +216,10 @@ A continuaci\'on se muestra la implementaci\'on dada a ambos,
 
 \subsection{Iteraci\'on}
 
+
 \mgc{next}
+
+Devuelve el siguiente elemento del iterador. Si no hay más elementos, genera la excepción StopIteration.
 
 \begin{center}
 	\includegraphics[width=12cm]{next.png}
@@ -226,6 +229,12 @@ A continuaci\'on se muestra la implementaci\'on dada a ambos,
 
 
 \mgc{iter}
+
+Devuelve un objeto iterador. 
+
+El primer argumento se interpreta de manera muy diferente dependiendo de la presencia del segundo argumento. Sin un segundo argumento, el objeto debe ser un objeto de colección que admita el protocolo iterable (el método \mgc[()]{iter}), o debe admitir el protocolo de secuencia (el método \mgc{getitem} con argumentos enteros que comienzan en 0). Si no es compatible con ninguno de esos protocolos, se genera TypeError. 
+
+Si se proporciona el segundo argumento, centinela, entonces el objeto debe ser un objeto invocable. El iterador creado en este caso llamará al objeto sin argumentos para cada llamada a su método next(); si el valor devuelto es igual a centinela, se generará StopIteration; de lo contrario, se devolverá el valor.
 
 \begin{center}
 	\includegraphics[width=12cm]{iter.png}

@@ -214,9 +214,9 @@ Los iteradores e iterables son ampliamente utilizados y constituyen la base del 
 
 En Python un \textit{iterable} es un objeto sobre el que se puede iterar, mientras que un \textit{iterador} es un objeto que se usa para iterar sobre un iterable usando el método m\'agico \mgc{next}, que devuelve el siguiente elemento del iterador, y cuando no hay m\'as elementos genera la excepción \csl{StopIteration}.
 
-Se puede crear un iterador a partir de un iterable usando el m\'etodo m\'agico \mgc{iter}. Para que esto sea posible, la clase de un objeto necesita un método \mgc{iter} o un método \mgc{getitem} con índices que comiencen en 0. En caso contrario se genera \csl{TypeError}. 
-
 Cada iterador es también iterable, pero no todos los iterables son iteradores. Por ejemplo, una lista es iterable pero una lista no es un iterador (no se le puede aplicar \csl{next()}). 
+
+Un iterable puede ser convertido en iterador utilizando la funci\'on \csl{iter()}. Para que esto sea posible, la clase del objeto iterable necesita un método \mgc{iter} o un método \mgc{getitem} con índices que comiencen en 0. En caso contrario se genera \csl{TypeError}.
 
 \begin{center}
 	\includegraphics[width=12cm]{next.png}
@@ -232,7 +232,7 @@ Cada iterador es también iterable, pero no todos los iterables son iteradores. 
 
 \subsection{Atributos}
 
-A trav\'es del uso de los m\'etodos m\'agicos Python permite controlar el acceso a los atributos de una clase. Esto es, permite definir un comportamiento determinado cuando se intente acceder a un atributo de la clase, incluso cuando este atributo no existe. Esto nos da la posibilidad, por ejemplo, de prohibir el acceso a ciertos atributos de la clase. Incluso da la posibilidad de modificar los atributos de la clase en tiempo de compilaci\'on. \todo{revisar la validez de la oracion anterior pues no estoy seguro al 100}. Se ver\'an a continuaci\'on 3  m\'etodos que permiten este comportamiento.
+A trav\'es del uso de los m\'etodos m\'agicos Python permite controlar el acceso a los atributos de una clase. Esto es, permite definir un comportamiento determinado cuando se intente acceder a un atributo de la clase, incluso cuando este atributo no existe.  Incluso da la posibilidad de modificar los atributos de la clase en tiempo de ejecuci\'on. Esto nos da la posibilidad, por ejemplo, de prohibir el acceso a ciertos atributos de la clase. Se ver\'an a continuaci\'on tres  m\'etodos que permiten este comportamiento.
 
 \begin{itemize}
 	\item \mgc{getattribute} Este m\'etodo es lo primero que se invoca cuando se intenta acceder a un atributo de una clase, sin importar si este existe o no. Permite definir reglas de comportamiento en respuesta al acceso al atributo. El comportamiento del m\'etodo por defecto es buscar si el atributo existe, retornando su valor en caso afirmativo y lanzando \csl{AttributeError} en caso contrario.
@@ -278,16 +278,6 @@ N\'otese que la idea usada anteriormente consisti\'o en poder invocar un comport
 		
 		\imgcaption{12}{Implementaci\'on de \mgccapt{len} en la clase Matrix}
 	\end{center}
-
-	\item \mgc{call}: Permite escribir clases donde las instancias se comportan como funciones y se pueden llamar como tal.
-	
-	\begin{center}
-		\includegraphics[width=12cm]{call.png}
-		
-		\imgcaption{13}{Implementaci\'on de \mgccapt{call} en la clase Matrix}
-	\end{center}
-	
-	
 	
 \end{itemize}
 

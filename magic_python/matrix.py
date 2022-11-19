@@ -29,9 +29,6 @@ class Matrix:
         if self.amount_cols != other.amount_cols or self.amount_rows != other.amount_rows:
             return False
 
-        result = Matrix(rows=self.amount_rows,
-                        cols=self.amount_cols, init_value=None)
-
         for i in range(0, self.amount_rows):
             for j in range(0, self.amount_cols):
                 if self[i, j] != other[i, j]:

@@ -1,5 +1,0 @@
-\select@language {spanish}
-\contentsline {section}{\numberline {1}M\'etodos M\'agicos}{1}{section.1}
-\contentsline {subsection}{\numberline {1.1}Operadores}{1}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}indexaci\'on e iteraci\'on}{2}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Atributos}{2}{subsection.1.3}

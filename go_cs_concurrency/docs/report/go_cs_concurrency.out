@@ -1,0 +1,11 @@
+\BOOKMARK [1][-]{section.1}{Concurrencia}{}% 1
+\BOOKMARK [1][-]{section.2}{Paralelismo}{}% 2
+\BOOKMARK [1][-]{section.3}{Sem\341foros}{}% 3
+\BOOKMARK [1][-]{section.4}{Monitors}{}% 4
+\BOOKMARK [1][-]{section.5}{Barriers}{}% 5
+\BOOKMARK [1][-]{section.6}{Countdowns}{}% 6
+\BOOKMARK [1][-]{section.7}{Propuesta en Go para la sincronizaci\363n en la concurrencia}{}% 7
+\BOOKMARK [1][-]{section.8}{Soluci\363n a los fil\363sofos}{}% 8
+\BOOKMARK [2][-]{subsection.8.1}{Go}{section.8}% 9
+\BOOKMARK [2][-]{subsection.8.2}{C\043}{section.8}% 10
+\BOOKMARK [2][-]{subsection.8.3}{Comparaci\363n}{section.8}% 11

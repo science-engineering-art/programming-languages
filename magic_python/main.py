@@ -7,20 +7,20 @@ from matrix import Matrix
 #     matrixs.append(Matrix(2,3, init_value=i))
 #     print('not yet')
 
-# print(matrixs[2].__dict__)    
+# print(matrixs[2].__dict__)
 # print(matrixs[2].__dict__)
 
 # matrixs[0]._0_1 = 3
 # print(matrixs[0])
 
-a = Matrix(2,3, init_value=1)
-b = Matrix(2,3, init_value=1)
+a = Matrix(2, 3, init_value=1)
+b = Matrix(2, 3, init_value=1)
 
-for i in a:
-    print(i)
+# for i in a:
+#     print(i)
 
-# print('a + b')
-# print(f'{a+b}\n')
+print('a + b')
+print(f'{a+b}\n')
 
 
 # print("a.__getattribute__('__add__')(b)\n")

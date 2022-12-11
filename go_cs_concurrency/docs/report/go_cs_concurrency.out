@@ -4,8 +4,8 @@
 \BOOKMARK [2][-]{subsection.1.3}{Semaphores en C\043}{section.1}% 4
 \BOOKMARK [2][-]{subsection.1.4}{Barriers en C\043}{section.1}% 5
 \BOOKMARK [2][-]{subsection.1.5}{Countdowns en C\043}{section.1}% 6
-\BOOKMARK [2][-]{subsection.1.6}{Propuesta en Go para la sincronización en la concurrencia}{section.1}% 7
-\BOOKMARK [2][-]{subsection.1.7}{Solución a los filósofos}{section.1}% 8
+\BOOKMARK [2][-]{subsection.1.6}{Propuesta en Go para la sincronizaci\363n en la concurrencia}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.7}{Soluci\363n a los fil\363sofos}{section.1}% 8
 \BOOKMARK [3][-]{subsubsection.1.7.1}{Go}{subsection.1.7}% 9
 \BOOKMARK [3][-]{subsubsection.1.7.2}{C\043}{subsection.1.7}% 10
 \BOOKMARK [3][-]{subsubsection.1.7.3}{Comparaci\363n}{subsection.1.7}% 11

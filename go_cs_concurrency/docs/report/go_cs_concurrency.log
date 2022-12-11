@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  11 DEC 2022 16:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  11 DEC 2022 17:58
 entering extended mode
 **./go_cs_concurrency.tex
 (go_cs_concurrency.tex
@@ -1033,61 +1033,89 @@ Overfull \hbox (20.88718pt too wide) in paragraph at lines 193--194
 -tra-dos en la cla-se [][][][][][]. 
  []
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 199.
 [3 <./monitor.jpg>]
 <MySemaphore.jpg, id=79, 2033.5975pt x 2993.1825pt>
 File: MySemaphore.jpg Graphic file (type jpg)
 <use MySemaphore.jpg>
-Package pdftex.def Info: MySemaphore.jpg  used on input line 206.
+Package pdftex.def Info: MySemaphore.jpg  used on input line 208.
 (pdftex.def)             Requested size: 426.79134pt x 628.17584pt.
  [4]
 Overfull \vbox (19.65204pt too high) has occurred while \output is active []
 
 
 [5 <./MySemaphore.jpg>]
-<MyCountdownEvent.jpg, id=89, 1945.2675pt x 4101.3225pt>
+Overfull \hbox (21.30559pt too wide) in paragraph at lines 229--230
+[][][][][][] \T1/pplx/m/n/10 (-20) en un va-lor es-pe-ci-fi-ca-do, [][][][][][]
+ que res-ta-ble-ce la pro-pie-dad [][][][][][]
+ []
+
+[6]
+<MyCountdownEvent.jpg, id=92, 1945.2675pt x 4101.3225pt>
 File: MyCountdownEvent.jpg Graphic file (type jpg)
 <use MyCountdownEvent.jpg>
-Package pdftex.def Info: MyCountdownEvent.jpg  used on input line 249.
+Package pdftex.def Info: MyCountdownEvent.jpg  used on input line 234.
 (pdftex.def)             Requested size: 426.79134pt x 899.79051pt.
- [6]
+ [7]
 Overfull \vbox (291.26671pt too high) has occurred while \output is active []
 
 
-[7 <./MyCountdownEvent.jpg>]
+[8 <./MyCountdownEvent.jpg>]
+
+LaTeX Warning: Citation `katrip' on page 9 undefined on input line 241.
+
 
 LaTeX Font Warning: Font shape `T1/pplx/b/sc' undefined
-(Font)              using `T1/pplx/b/n' instead on input line 256.
+(Font)              using `T1/pplx/b/n' instead on input line 247.
 
-[8] (go_cs_concurrency.aux
+[9] [10] (go_cs_concurrency.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `go_cs_concurrency.out' has not changed.
-(rerunfilecheck)             Checksum: 309352AA37B0DF7F0D815CF2EDC6C0F3;780.
+
+LaTeX Warning: There were undefined references.
+
+
+Package rerunfilecheck Warning: File `go_cs_concurrency.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `go_cs_concurrency.out':
+(rerunfilecheck)             Before: 657A83E688CEE6819C5DE3100D692ED7;771
+(rerunfilecheck)             After:  8A549015CDAAF134B632CAB9E91AF5ED;795.
  ) 
 Here is how much of TeX's memory you used:
- 24643 strings out of 479618
- 452196 string characters out of 2865026
- 779173 words of memory out of 3000000
- 41034 multiletter control sequences out of 15000+200000
- 467235 words of font info for 276 fonts, out of 3000000 for 9000
+ 24601 strings out of 479618
+ 450291 string characters out of 2865026
+ 778033 words of memory out of 3000000
+ 40933 multiletter control sequences out of 15000+200000
+ 470097 words of font info for 317 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,11n,102p,1156b,907s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\laura\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
-1000.pk>{C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.e
-nc}<C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a
-.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/upl
-b8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/
-uplr8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palati
-no/uplri8a.pfb>
-Output written on go_cs_concurrency.pdf (8 pages, 2089933 bytes).
+ 102i,11n,102p,1049b,448s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{subsubsection.2.1.2} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsubsection.2.1.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.2.1} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2} has been referenced but does not exist, 
+replaced by a fixed one
+
+ <C:\Users\laura\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt10
+00.pk>{C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc
+}<C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a.p
+fb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8
+a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/up
+lr8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino
+/uplri8a.pfb>
+Output written on go_cs_concurrency.pdf (10 pages, 2101138 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
- 24 named destinations out of 1000 (max. 500000)
+ 184 PDF objects out of 1000 (max. 8388607)
+ 29 named destinations out of 1000 (max. 500000)
  90760 words of extra memory for PDF output out of 106986 (max. 10000000)
 

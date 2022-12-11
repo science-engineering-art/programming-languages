@@ -10,6 +10,8 @@ public class MyBarrier
     
     public MyBarrier(int maxParticipants, Action<MyBarrier>? postAction = null) //ctor
     {
+        if(maxParticipants < 0 || maxParticipants > 32767)
+            throw new ArgumentOutOfRangeException();
         this.maxParticipants = maxParticipants;
         this.postAction = postAction;
         phaseNumber = numberExceptions = participantCount = 0;

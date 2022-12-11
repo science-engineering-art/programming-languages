@@ -42,7 +42,8 @@ class Program
     #region MyCountdownEventTest
     static void Main(string[] args)
     {
-        Meeting.StartMeeintg();
+        // Meeting.StartMeeintg();
+        TestBarrier.Test();
         // MyCountdownEvent countObject = new MyCountdownEvent(10);
         // int[] result = new int[10];
 

@@ -175,23 +175,36 @@ El candado de exclusi\'on mutua es adquirido para un objeto dado por \csl{lock},
 
 \subsection{Monitors en C\#}
 
-La clase Monitor permite sincronizar el acceso a una región de código tomando y liberando un bloqueo en un objeto determinado llamando a los métodos Monitor.Enter, Monitor.TryEnter y Monitor.Exit . Los bloqueos de objeto proporcionan la capacidad de restringir el acceso a un bloque de código, normalmente denominado sección crítica. Aunque un subproceso posee el bloqueo de un objeto, ningún otro subproceso puede adquirir ese bloqueo. También puede usar la Monitor clase para asegurarse de que ningún otro subproceso pueda acceder a una sección del código de aplicación que ejecuta el propietario del bloqueo, a menos que el otro subproceso ejecute el código mediante un objeto bloqueado diferente.
+Los monitores permiten sincronizar el acceso a una región de código tomando y liberando un bloqueo en un objeto en particular, de manera m\'as fluida que en los candados. En C\# se dispone de la clase \csl{System.Threading.Monitor} para este prop\'osito.
+
+Un monitor se asocia a un objeto bajo demanda y se puede llamar directamente desde cualquier contexto. No se puede crear una instancia de esta clase. Sus métodos son todos estáticos y a cada uno se le pasa el objeto sincronizado que controla el acceso a la sección crítica.
+
+Posee los m\'etodos \csl{Enter}, que adquiere un candado para un objeto y marca el comienzo de una sección crítica; y \csl{Exit}
+que libera el bloqueo de un objeto, marcando el final de la sección crítica protegida por el objeto bloqueado. Se puede lograr entonces el comportamiento de un bloque \csl{lock} mediante un bloque \csl{try-finally} que utilice los m\'etodos \csl{Enter} y \csl{Exit} como se muestra a continuaci\'on:
+
+\begin{center}
+	\includegraphics[width=8cm]{monitor.jpg}
+\end{center}
+
+Adem\'as cuenta con los m\'etodos \csl{Wait} que libera el bloqueo de un objeto para permitir que otros subprocesos bloqueen y accedan al mismo; el subproceso que llama a este m\'etodo espera mientras otro subproceso accede al objeto; \csl{Pulse} y \csl{PulseAll}, quienes env\'ian una señal a los subprocesos en espera (uno y todos respectivamente), notific\'andoles que el estado del objeto bloqueado ha cambiado y que el propietario del bloqueo está listo para liberarlo. El subproceso en espera se coloca en la cola de subprocesos listos del objeto para que eventualmente pueda recibir el bloqueo para el mismo. 
 
 \subsection{Semaphores en C\#}
 
-Un sem\'aforo limita la cantidad de subprocesos que pueden acceder a un recurso o conjunto de recursos al mismo tiempo. En C\# puede ser encontrado en la clase \csl{System.Threading.Semaphore}.
+Los sem\'aforos limitan la cantidad de subprocesos que pueden acceder a un recurso o conjunto de recursos al mismo tiempo. En C\# pueden ser encontrados en la clase \csl{System.Threading.Semaphore}.
 
-Cuenta con dos propiedades fundamentales: \csl{Count}, que indica el n\'umero de hilos que pueden ingresar al sem\'aforo en este momento; y \csl{InitialCount}, que indica la cantidad m\'axima de hilos que pueden ingresar al sem\'aforo. Los subprocesos ingresan al semáforo llamando al método \csl{WaitOne()}, y liberan el semáforo llamando al método \csl{Release()}.
+Un sem\'aforo cuenta con dos propiedades fundamentales: \csl{Count}, que indica el n\'umero de hilos que pueden ingresar al sem\'aforo en este momento; y \csl{InitialCount}, que indica la cantidad m\'axima de hilos que pueden ingresar al sem\'aforo. Los subprocesos ingresan al semáforo llamando al método \csl{WaitOne()}, y liberan el semáforo llamando al método \csl{Release()}.
 
 El \csl{Count} en un semáforo se reduce cada vez que un subproceso ingresa al semáforo y se incrementa cuando un subproceso libera el semáforo. Cuando el \csl{Count} es cero, las solicitudes posteriores se bloquean hasta que otros subprocesos liberan el semáforo; no hay un orden predeterminado en el que los subprocesos bloqueados entren en el semáforo. Cuando todos los subprocesos han liberado el semáforo, el \csl{Count} estar\'a en el valor máximo especificado cuando se creó el semáforo (\csl{InitialCount}).
 
-Un subproceso puede ingresar el semáforo varias veces llamando al método \csl{WaitOne()}; repetidamente. Para liberar algunas o todas estas entradas, el subproceso puede llamar a la sobrecarga del método \csl{Release()} sin parámetros varias veces, o puede llamar a la sobrecarga del método \csl{Release(int)} que especifica la cantidad de entradas que se liberarán.
+Un subproceso puede ingresar el semáforo varias veces llamando al método \csl{WaitOne()} repetidamente. Para liberar algunas o todas estas entradas, el subproceso puede llamar a la sobrecarga del método \csl{Release()} sin parámetros varias veces, o puede llamar a la sobrecarga del método \csl{Release(int)} que especifica la cantidad de entradas que se liberarán. No se aplica la identidad del subproceso en las llamadas a \csl{WaitOne()} o \csl{Release()}, por lo que es responsabilidad del programador asegurarse de que los subprocesos no liberen el semáforo m\'as veces de las requeridas. \todo{Decidir si dejo el ejemplo para la expo} Esto es importante pues si, por ejemplo, un semáforo tiene un recuento máximo de dos y tanto el hilo A como el hilo B entran en el semáforo, si un error de programación en el subproceso B hace que llame a \csl{Release} dos veces, ambas llamadas se realizan correctamente. El conteo en el semáforo estar\'a lleno, y cuando el subproceso A eventualmente llame a \csl{Release}, se lanzar\'a una excepci\'on \csl{SemaphoreFullException}.
 
-No se aplica la identidad del subproceso en las llamadas a \csl{WaitOne()} o \csl{Release()}, por lo que es responsabilidad del programador asegurarse de que los subprocesos no liberen el semáforo m\'as veces de las requeridas. Por ejemplo, si un semáforo tiene un recuento máximo de dos y que tanto el hilo A como el hilo B entran en el semáforo. Si un error de programación en el subproceso B hace que llame a Release dos veces, ambas llamadas se realizan correctamente. El conteo en el semáforo estar\'a lleno, y cuando el subproceso A eventualmente llame a Release, se lanzar\'a una excepci\'on SemaphoreFullException.
+Un sem\'aforo puede ser de dos tipos: local o nombrado del sistema. Un semáforo local existe solo dentro de su proceso, pudiendo ser utilizado por cualquier subproceso en este que tenga una referencia al mismo. Por otro lado, si se crea un sem\'aforo utilizando un constructor que acepta un nombre, se asocia con un semáforo del sistema operativo de ese nombre, siendo visible en todo el sistema operativo y pudiendo utilizarse para sincronizar las actividades de los procesos. Se puede usar el método \csl{OpenExisting} para abrir un semáforo nombrado del sistema existente.
 
-Un sem\'aforo puede ser de dos tipos: local o nombrado del sistema. Un semáforo local existe solo dentro de su proceso, pudiendo ser utilizado por cualquier subproceso en este que tenga una referencia al mismo. Cada objeto Semaphore es un semáforo local independiente. Por otro lado, si se crea un objeto Semaphore utilizando un constructor que acepta un nombre, se asocia con un semáforo del sistema operativo de ese nombre, siendo visible en todo el sistema operativo y puediendo utilizarse para sincronizar las actividades de los procesos. Se puede usar el método OpenExisting para abrir un semáforo nombrado del sistema existente.
+En la figura siguiente se muestra una implementación de la clase Semaphore en C\# usando la clase Monitor:
 
-\includegraphics[width=15cm]{MySemaphore.jpg}
+\begin{center}
+	\includegraphics[width=15cm]{MySemaphore.jpg}
+\end{center}
 
 \subsection{Barriers en C\#}
 
@@ -203,7 +216,9 @@ En esta sincronización de barrera, tenemos varios subprocesos que trabajan en u
 
 Representa una primitiva de sincronización que emite una señal cuando su cuenta llega a cero.
 
-\includegraphics[width=15cm]{MyCountdownEvent.jpg}
+\begin{center}
+	\includegraphics[width=15cm]{MyCountdownEvent.jpg}
+\end{center}
 
 \subsection{Propuesta en Go para la sincronización en la concurrencia}
 

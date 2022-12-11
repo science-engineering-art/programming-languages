@@ -28,18 +28,18 @@ public class Philosopher
         int r = Meeting.Positions[right];
         while(true)
         {
-            bool ate = false;                   //If already ate
+            bool ate = false;                   //Indicates if already ate
             System.Console.WriteLine("{0, -30}{1}", "Pensando ...", name);
             Thread.Sleep(ran.Next(timeMin,timeMaxThink));
             System.Console.WriteLine("{0, -30}{1}", "Queriendo Comer ...", name);
             
             
             Monitor.Enter(Meeting.WaitingForIt);
-            if(Meeting.WaitingForIt[l] == 0 && Meeting.WaitingForIt[r] == 0)
+            if(Meeting.WaitingForIt[l] == 0 && Meeting.WaitingForIt[r] == 0)    //Check if someone in the line is already asking for the forks he need to eat
             {
-                if(Monitor.TryEnter(Meeting.forks[l]))
+                if(Monitor.TryEnter(Meeting.forks[l]))  //Check if the left fork is in use
                 {
-                    if(Monitor.TryEnter(Meeting.forks[r]))
+                    if(Monitor.TryEnter(Meeting.forks[r]))  //Check if the right fork is in use
                     {   
                         System.Console.WriteLine("Didn't need to wait for the line {0}", name);
                         Monitor.Exit(Meeting.WaitingForIt);
@@ -50,19 +50,20 @@ public class Philosopher
                     Monitor.Exit(Meeting.forks[l]);
                 }
             }
-            if(!ate)
+            if(!ate)      //If he couldn't skeep the line....
             {
-                Meeting.WaitingForIt[l]++;
+                //He must add himself to the line and indicate that he is requesting the forks.
+                Meeting.WaitingForIt[l]++;  
                 Meeting.WaitingForIt[r]++;
                 Meeting.Waiting.Add(this);
                 Monitor.Exit(Meeting.WaitingForIt);
             }
             
-            if(!ate)
+            if(!ate)    //If he couldn't skeep the line....
             {
-                lock(Ticket)
+                lock(Ticket)   
                 {
-                    Monitor.Wait(Ticket);
+                    Monitor.Wait(Ticket);   //Waiting for his turn
                     System.Console.WriteLine("His turn in the line came {0}", name);
                     Monitor.Enter(Meeting.forks[l]);
                     Monitor.Enter(Meeting.forks[r]);   
@@ -79,7 +80,7 @@ public class Philosopher
             System.Console.WriteLine("{0, -30}{1}", "Comiendo ...", name);
             Thread.Sleep(ran.Next(timeMin,timeMaxEat));
             System.Console.WriteLine("{0, -30}{1}", "Finished eating ...", name);
-            lock(Meeting.Waiter)    //Indicate to the waiter it finished eating
+            lock(Meeting.Waiter)    //Indicate to the waiter that he finished eating
                 Monitor.PulseAll(Meeting.Waiter);
         }
     }

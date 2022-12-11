@@ -216,6 +216,35 @@ En esta sincronización de barrera, tenemos varios subprocesos que trabajan en u
 
 Representa una primitiva de sincronización que emite una señal cuando su cuenta llega a cero.
 
+Permiten poner a una hebra a esperar por la notificación de más de una hebra que se
+esté ejecutando. El countdown se define con un número entero n que representa el número de hebras por
+las que esperar, y a medida que las hebras le manden notificaciones al countdown, este irá decrementando el
+valor de ese contador, hasta llegar a 0, en cuyo caso, si una hebra está utilizando el countdown para esperar
+a la ejecución de las n hebras, continuará su ejecución. Intuitivamente puede verse como una cuenta atrás,
+donde se sabe el número de eventos que tienen que ocurrir para llegar al final de la cuenta y a medida que
+cada evento de esos ocurre notifica su final, parándose la cuenta cuando todos hayan concluido
+
+En C\# esta funcionalidad se implementa con la clase \csl{System.Threading.CountdownEvent}.
+
+Propiedades:
+
+\csl{CurrentCount}: Obtiene el número de señales restantes necesarias para establecer el evento.
+
+\csl{InitialCount}: Obtiene el número de señales requeridas inicialmente para configurar el evento.
+
+\csl{IsSet}: Indica si el recuento actual del objeto \csl{CountdownEvent} ha llegado a cero.
+	
+M\'etodos:
+\csl{AddCount(Int32)}: Incrementa el recuento actual de CountdownEvent en un valor especificado.
+
+\csl{Reset(Int32)}: Restablece la propiedad InitialCount a un valor especificado.
+
+\csl{Signal(Int32)}: Registra múltiples señales con CountdownEvent, disminuyendo el valor de CurrentCount en la cantidad especificada.
+
+\csl{Wait()}: Bloquea el subproceso actual hasta que se establece CountdownEvent.
+
+En la figura siguiente se muestra una implementación de la clase CountdownEvent en C\# usando la clase Monitor:
+
 \begin{center}
 	\includegraphics[width=15cm]{MyCountdownEvent.jpg}
 \end{center}

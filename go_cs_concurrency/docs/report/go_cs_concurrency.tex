@@ -55,7 +55,7 @@
 \pagestyle{fancy} % All pages have headers and footers
 \fancyhead{} % Blank out the default header
 \fancyfoot{} % Blank out the default footer
-\fancyhead[C]{Lenguajes de Programaci\'on: \textbf{Python M\'agico}} % Custom header text
+\fancyhead[C]{Lenguajes de Programaci\'on: \textbf{Concurrencia}} % Custom header text
 \fancyfoot[RO,LE]{\thepage} % Custom footer text
 
 \usepackage{titling} % Customizing the title section
@@ -145,37 +145,39 @@
 
 \section{Concurrencia y paralelismo}
 
-La concurrencia es la ejecuci\'on simult\'anea de varias hebras (una hebra es una ejecuci\'on secuencial de instrucciones) pero esta simultaneidad puede ser solo en apariencia. Cada programa se ejecuta de forma secuencial, el sistema operativo es el encargado de administrar y distribuir el tiempo que el procesador le da a cada tarea. La vida de los procesos comparten el mismo tiempo, pero la ejecución de todos ellos no ocurre en el mismo instante. 
-
-Se comparte el tiempo de ejecución, dándole a cada proceso una suma de tiempo limitada para ejecutarse. Solo un proceso se ejecuta en un instante dado, y si no completa su operación dentro de su tiempo, el proceso se coloca en pausa, y se le da lugar a otro proceso para iniciar o resumirse, hasta que le vuelva a tocar su tiempo.
-
-Sea T el tiempo total de ejecuci\'on de dos programas concurrentes $ P_{1} $ y $ P_{2} $:
+La \textit{concurrencia} es la ejecuci\'on simult\'anea de varias hebras\footnote{Una hebra es una ejecuci\'on secuencial de instrucciones.}, pero esta simultaneidad puede ser solo en apariencia. Los procesos tienen lugar en el mismo tiempo, pero la ejecución de todos ellos no ocurre en el mismo instante. En un momento dado solo se ejecuta un programa, y este lo hace de forma secuencial en un tiempo limitado establecido para realizar sus operaciones. Si este no termina su ejecuci\'on dentro de su tiempo, es puesto en espera, d\'andole paso al p\'oximo, y es resumido una vez vuelva a tocar su tiempo. Sea T el tiempo total de ejecuci\'on de dos programas concurrentes $ P_{1} $ y $ P_{2} $: 
 
 \begin{center}
 	\includegraphics[width=5cm]{concurrencia.png}
 \end{center}
 
-En la computación paralela, la ejecución ocurre en el mismo instante físico, los c\'alculos se realizan de forma verdaderamente simul\'anea. Para maximizar el uso de múltiples procesadores o n\'ucleos, presentes en las CPU modernas, el procesamiento en paralelo dividirá el trabajo entre varios subprocesos, cada uno de los cuales puede ejecutarse de forma independiente en un núcleo diferente.
-
-Sea T el tiempo total de ejecuci\'on de dos programas paralelos $ P_{1} $ y $ P_{2} $:
+En el \textit{paralelismo} la ejecución ocurre en el mismo instante físico, los c\'alculos se realizan de forma verdaderamente simul\'anea. Para maximizar el uso de múltiples procesadores o n\'ucleos, presentes en las CPU modernas, el procesamiento en paralelo dividirá el trabajo entre varios subprocesos, cada uno de los cuales puede ejecutarse de forma independiente en un núcleo diferente. Paralelismo implica concurrencia, pero no se cumple el rec\'iproco. Sea ahora T el tiempo total de ejecuci\'on de dos programas paralelos $ P_{1} $ y $ P_{2} $:
 
 \begin{center}
 	\includegraphics[width=5cm]{paralelismo.png}
 \end{center}
 
-Paralelismo implica concurrencia, pero no se cumple el rec\'iproco.
+En la programaci\'on concurrente ocurre con frecuencia que las hebras que se ejecuten necesiten sincronizar e intercambiar informaci\'on enn alg\'un momento, lo cual se hace usualmente a trav\'es de memoria compartida. Esto puede causar problemas dado que varios procesos estar\'an realizando modificaciones concurrentemente sobre la misma memoria. M\'ultiples hebras se encuentran en una \textit{condici\'on de carrera} si el resultado de su ejecuci\'on depende del orden en que se ejecutan las instrucciones que componen cada hebra. 
 
-En la programaci\'on concurrente es com\'un wue las hebras que se ejecuten necesiten sincronizar e intercambiar informaci\'on enn alg\'un momento, lo cual se hace usualmente a trav\'es de memoria compartida, pudiendo dar lugar a varios problemas.
+Se denomina \textit{sección crítica} a la porción de código de una hebra en la que se accede a un recurso compartido y que puede entrar en una condici\'on de carrera, por lo que no debe ser accedido por más de un proceso o hilo en ejecución a la vez. Se necesita un mecanismo de sincronización en la entrada y salida de la sección crítica para asegurar la utilización exclusiva del recurso. Los recursos destinados a lograr este comportamiento se denominan de exclusi\'on mutua o \textit{mutex}. Los m\'as comunes son los candados, monitores y semáforos.
+
+\subsection{Locks en C\#}
+
+Los candados garantizan acceso exclusivo a un recurso compartido. La sincronizaci\'on se logra poni\'endole el candado a una variable. En C\# esto se logra mediante la palabra reservada \csl{lock}. 
+
+El candado de exclusi\'on mutua es adquirido para un objeto dado por \csl{lock}, se ejecuta el bloque de c\'odigo dentro de su cuerpo y luego se libera el candado. Mientras un hilo mantenga un candado, este puede volver a adquirirlo y liberarlo. Cualquier otro subproceso no puede adquirir el candado y debe esperar hasta que este sea liberado. A continuaci\'on se muestra la forma de declarar un candado:
+
+\begin{center}
+	\includegraphics[width=8cm]{lock.jpg}
+\end{center}
+
+\csl{lock} controla toda una secci\'on sin dejar libertad para adquirir o liberar un recurso basado en una l\'ogica m\'as propia del problema a solucionar. 
 
 \subsection{Monitors en C\#}
-Proporcionan un mecanismo que sincroniza el acceso a los objetos.
-
-Los monitores garantizan que, a la vez, solo se estén ejecutando
-dentro de un monitor una sola hebra.
 
 La clase Monitor permite sincronizar el acceso a una región de código tomando y liberando un bloqueo en un objeto determinado llamando a los métodos Monitor.Enter, Monitor.TryEnter y Monitor.Exit . Los bloqueos de objeto proporcionan la capacidad de restringir el acceso a un bloque de código, normalmente denominado sección crítica. Aunque un subproceso posee el bloqueo de un objeto, ningún otro subproceso puede adquirir ese bloqueo. También puede usar la Monitor clase para asegurarse de que ningún otro subproceso pueda acceder a una sección del código de aplicación que ejecuta el propietario del bloqueo, a menos que el otro subproceso ejecute el código mediante un objeto bloqueado diferente.
 
-\subsection{Sem\'aforos en C\#}
+\subsection{Semaphores en C\#}
 
 Un sem\'aforo limita la cantidad de subprocesos que pueden acceder a un recurso o conjunto de recursos al mismo tiempo. En C\# puede ser encontrado en la clase \csl{System.Threading.Semaphore}.
 
@@ -213,5 +215,14 @@ Representa una primitiva de sincronización que emite una señal cuando su cuent
 
 \subsubsection{Comparaci\'on}
 %----------------------------------------------------------------------------------------
+
+\begin{thebibliography}
+	a
+	\bibitem{katrib} Miguel Katrib. \emph{Empezar a programar. Un enfoque multiparadigma con C\#}. 
+	Editorial UH.
+	2020.
+	La Habana.
+	\bibitem{microsoft} \href{https://learn.microsoft.com/en-us/dotnet/api/system.threading?view=net-7.0}{Microsoft Learn: System.Threading Namespace in .NET}
+\end{thebibliography}
 
 \end{document}

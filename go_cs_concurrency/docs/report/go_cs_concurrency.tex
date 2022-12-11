@@ -149,12 +149,16 @@ La \textit{concurrencia} es la ejecuci\'on simult\'anea de varias hebras\footnot
 
 \begin{center}
 	\includegraphics[width=5cm]{concurrencia.png}
+	
+	\imgcaption{1}{Tiempo de ejecuci\'on de programas concurrentes}
 \end{center}
 
 En el \textit{paralelismo} la ejecución ocurre en el mismo instante físico, los c\'alculos se realizan de forma verdaderamente simul\'anea. Para maximizar el uso de múltiples procesadores o n\'ucleos, presentes en las CPU modernas, el procesamiento en paralelo dividirá el trabajo entre varios subprocesos, cada uno de los cuales puede ejecutarse de forma independiente en un núcleo diferente. Paralelismo implica concurrencia, pero no se cumple el rec\'iproco. Sea ahora T el tiempo total de ejecuci\'on de dos programas paralelos $ P_{1} $ y $ P_{2} $:
 
 \begin{center}
 	\includegraphics[width=5cm]{paralelismo.png}
+	
+	\imgcaption{2}{Tiempo de ejecuci\'on de programas paralelos}
 \end{center}
 
 En la programaci\'on concurrente ocurre con frecuencia que las hebras que se ejecuten necesiten sincronizar e intercambiar informaci\'on enn alg\'un momento, lo cual se hace usualmente a trav\'es de memoria compartida. Esto puede causar problemas dado que varios procesos estar\'an realizando modificaciones concurrentemente sobre la misma memoria. M\'ultiples hebras se encuentran en una \textit{condici\'on de carrera} si el resultado de su ejecuci\'on depende del orden en que se ejecutan las instrucciones que componen cada hebra. 
@@ -169,6 +173,8 @@ El candado de exclusi\'on mutua es adquirido para un objeto dado por \csl{lock},
 
 \begin{center}
 	\includegraphics[width=8cm]{lock.jpg}
+	
+	\imgcaption{3}{Declaraci\'on de un candado}
 \end{center}
 
 \csl{lock} controla toda una secci\'on sin dejar libertad para adquirir o liberar un recurso basado en una l\'ogica m\'as propia del problema a solucionar. 
@@ -183,7 +189,9 @@ Posee los m\'etodos \csl{Enter}, que adquiere un candado para un objeto y marca 
 que libera el bloqueo de un objeto, marcando el final de la sección crítica protegida por el objeto bloqueado. Se puede lograr entonces el comportamiento de un bloque \csl{lock} mediante un bloque \csl{try-finally} que utilice los m\'etodos \csl{Enter} y \csl{Exit} como se muestra a continuaci\'on:
 
 \begin{center}
-	\includegraphics[width=8cm]{monitor.jpg}
+	\includegraphics[width=8cm]{monitor.jpg} 
+	
+	\imgcaption{4}{Logrando comportamiento de candado con Monitors}
 \end{center}
 
 Adem\'as cuenta con los m\'etodos \csl{Wait} que libera el bloqueo de un objeto para permitir que otros subprocesos bloqueen y accedan al mismo; el subproceso que llama a este m\'etodo espera mientras otro subproceso accede al objeto; \csl{Pulse} y \csl{PulseAll}, quienes env\'ian una señal a los subprocesos en espera (uno y todos respectivamente), notific\'andoles que el estado del objeto bloqueado ha cambiado y que el propietario del bloqueo está listo para liberarlo. El subproceso en espera se coloca en la cola de subprocesos listos del objeto para que eventualmente pueda recibir el bloqueo para el mismo. 
@@ -196,16 +204,20 @@ Un sem\'aforo cuenta con dos propiedades fundamentales: \csl{Count}, que indica 
 
 El \csl{Count} en un semáforo se reduce cada vez que un subproceso ingresa al semáforo y se incrementa cuando un subproceso libera el semáforo. Cuando el \csl{Count} es cero, las solicitudes posteriores se bloquean hasta que otros subprocesos liberan el semáforo; no hay un orden predeterminado en el que los subprocesos bloqueados entren en el semáforo. Cuando todos los subprocesos han liberado el semáforo, el \csl{Count} estar\'a en el valor máximo especificado cuando se creó el semáforo (\csl{InitialCount}).
 
-Un subproceso puede ingresar el semáforo varias veces llamando al método \csl{WaitOne()} repetidamente. Para liberar algunas o todas estas entradas, el subproceso puede llamar a la sobrecarga del método \csl{Release()} sin parámetros varias veces, o puede llamar a la sobrecarga del método \csl{Release(int)} que especifica la cantidad de entradas que se liberarán. No se aplica la identidad del subproceso en las llamadas a \csl{WaitOne()} o \csl{Release()}, por lo que es responsabilidad del programador asegurarse de que los subprocesos no liberen el semáforo m\'as veces de las requeridas. 
-
-%\todo{Decidir si dejo el ejemplo para la expo} Esto es importante pues si, por ejemplo, un semáforo tiene un recuento máximo de dos y tanto el hilo A como el hilo B entran en el semáforo, si un error de programación en el subproceso B hace que llame a \csl{Release} dos veces, ambas llamadas se realizan correctamente. El conteo en el semáforo estar\'a lleno, y cuando el subproceso A eventualmente llame a \csl{Release}, se lanzar\'a una excepci\'on \csl{SemaphoreFullException}.
+Un subproceso puede ingresar el semáforo varias veces llamando al método \csl{WaitOne()} repetidamente. Para liberar algunas o todas estas entradas, el subproceso puede llamar a la sobrecarga del método \csl{Release()} sin parámetros varias veces, o puede llamar a la sobrecarga del método \csl{Release(int)} que especifica la cantidad de entradas que se liberarán. No se aplica la identidad del subproceso en las llamadas a \csl{WaitOne()} o \csl{Release()}, por lo que es responsabilidad del programador asegurarse de que los subprocesos no liberen el semáforo m\'as veces de las requeridas. Esto es importante pues si, por ejemplo, un semáforo tiene un recuento máximo de dos y tanto el hilo A como el hilo B entran en el semáforo, si un error de programación en el subproceso B hace que llame a \csl{Release} dos veces, ambas llamadas se realizan correctamente. El conteo en el semáforo estar\'a lleno, y cuando el subproceso A eventualmente llame a \csl{Release}, se lanzar\'a una excepci\'on \csl{SemaphoreFullException}.
 
 Un sem\'aforo puede ser de dos tipos: local o nombrado del sistema. Un semáforo local existe solo dentro de su proceso, pudiendo ser utilizado por cualquier subproceso en este que tenga una referencia al mismo. Por otro lado, si se crea un sem\'aforo utilizando un constructor que acepta un nombre, se asocia con un semáforo del sistema operativo de ese nombre, siendo visible en todo el sistema operativo y pudiendo utilizarse para sincronizar las actividades de los procesos. Se puede usar el método \csl{OpenExisting} para abrir un semáforo nombrado del sistema existente.
 
 En la figura siguiente se muestra una implementación de la clase Semaphore en C\# usando la clase Monitor:
 
 \begin{center}
-	\includegraphics[width=15cm]{MySemaphore.jpg}
+	\includegraphics[width=15cm]{MySemaphore1.jpg}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=15cm]{MySemaphore2.jpg}
+	
+	\imgcaption{5}{Implementaci\'on de MySemaphore utilizando Monitors}
 \end{center}
 
 \subsection{Barriers en C\#}
@@ -220,6 +232,20 @@ El \'ultimo m\'etodo relevante que posee es el \csl{Dispose()} que permite liber
 
 Para implementar la clase Barrier se hizo uso de la clase \csl{Monitor}. Para ello en el cuerpo del m\'etodo \csl{SignalAndWait()} se usa \csl{Monitor.Wait} para hacer que la hebra que lo ejecuta espere a que el resto llegue a la barrera. Cada vez que llega una hebra nueva se incrementa la cantidad de participantes que han llegado. Cuando se alcanza el m\'aximo lo primero que se ejecuta la acci\'on prefijada (si alguna), desde la \'ultima hebra en llegar. Entonces se incrementa el n\'umero de la fase y se invoca \csl{Monitor.PulseAll} para que todas las hebras reanuden su ejecuci\'on. Sin embargo, se tuvo mucha sutileza para manejar la mayor cantidad de casos posibles en que pudieran ocurrir errores de sincronizaci\'on, como podr\'ia ser la muerte por inanici\'on. Se maneja cada situaci\'on de la manera m\'as correcta posible seg\'un criterio de los autores, y se lanza la excepci\'on adecuada en cada caso, seg\'un lo descrito sobre estas anteriormente.
 
+\begin{center}
+	\includegraphics[width=15cm]{MyBarrier1.jpg}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=15cm]{MyBarrier2.jpg}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=15cm]{MyBarrier3.jpg}
+	
+	\imgcaption{6}{Implementaci\'on de MyBarrier utilizando Monitors}
+\end{center}
+
 \subsection{Countdowns en C\#}
 
 Los countdowns permiten sincronizar ejecuciones de m\'ultiples hebras mediante cuentas regresivas. Dado el n\'umero de eventos que tienen que ocurrir para realizar una acci\'on, se notifica cada vez que termine uno de estos eventos disminuyendo el contador, y se emite una se\~nal cuando la cuenta llegue a cero. En C\# esta funcionalidad se implementa con la clase \csl{System.Threading.CountdownEvent}. 
@@ -231,7 +257,13 @@ Sus m\'etodos fundamentales son \csl{AddCount(Int32)} que incrementa el recuento
 En la figura siguiente se muestra una implementación de la clase \csl{CountdownEvent} en C\# usando la clase \csl{Monitor}:
 
 \begin{center}
-	\includegraphics[width=15cm]{MyCountdownEvent.jpg}
+	\includegraphics[width=15cm]{MyCountdownEvent1.jpg}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=15cm]{MyCountdownEvent2.jpg}
+	
+	\imgcaption{7}{Implementaci\'on de MyCountdownEvent utilizando Monitors}
 \end{center}
 
 \subsection{Propuesta en Go para la sincronización en la concurrencia}
@@ -253,6 +285,26 @@ Para evitar ese problema en este trabajo se propuso contar con una cola en la qu
 Para implementar esto usaremos la clase \csl{Monitor}, qu\'e interactuar\'a sobre los objetos de tipo tenedor, para bloquearlos y desbloquearlos seg\'un se est\'en usando. Entonces cuando un fil\'osofo debe comenzar a comer, se revisa si los tenedores correspondientes no est\'an bloqueado (en uso) y si adem\'as la cantidad de gente en la cola esperando por cada uno de estos es cero. Si estas condiciones se cumplen se puede proceder a comer sin problemas, ya que no se afecta a m\'as nadie. Se bloquean entonces los dos tenedores que se usar\'an. Si este no es el caso entonces esta instancia de fil\'osofo se adiciona a la cola, y adem\'as se bloquea la ejecuci\'on de su hebra mediante \csl{Monitor.Wait}, mientras espera una se\~nal de \csl{Monitor} correspondiente al objeto \csl{Ticket} (campo de la clase \csl{Philosopher}).
 
 Por otro lado tenemos en la hebra principal (disjunta de las 5 correspondientes a los fil\'osofos) un bucle infinito que en en cada iteraci\'on revisa la cola para darle los tenedores libres al que primero los necesite, haciendo \csl{Monitor.Pulse} a su \csl{Ticket} correspondiente. Sin embargo, si se hace esto consecutivamente se caer\'ia en un problema de interbloqueo. Adem\'as, es innecesario revisar la cola dos veces seguidas si no se han liberado tenedores nuevos. Entonces la ejecuci\'on de esta hebra queda bloqueada nuevamente por la clase \csl{Monitor}, aplicada sobre el objeto \csl{Waiter}, hasta que alg\'un fil\'osofo termine de comer y de la se\~nal de desbloqueo.
+
+\begin{center}
+	\includegraphics[width=15cm]{Philosopher_Live1.jpg}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=15cm]{Philosopher_Live2.jpg}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=15cm]{Philosopher_Live3.jpg}
+	
+	\imgcaption{8}{C\'odigo que muestra el comportamiento del fil\'osofo}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=15cm]{Philosopher_InfiniteLoop.jpg}
+	
+	\imgcaption{9}{C\'odigo que muestra el trabajo del mesero}
+\end{center}
 
 \subsubsection{Go}
 

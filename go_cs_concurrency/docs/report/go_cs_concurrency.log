@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  11 DEC 2022 17:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  11 DEC 2022 18:57
 entering extended mode
 **./go_cs_concurrency.tex
 (go_cs_concurrency.tex
@@ -998,7 +998,7 @@ Package pdftex.def Info: concurrencia.png  used on input line 151.
 <paralelismo.png, id=54, 682.04813pt x 396.7322pt>
 File: paralelismo.png Graphic file (type png)
 <use paralelismo.png>
-Package pdftex.def Info: paralelismo.png  used on input line 157.
+Package pdftex.def Info: paralelismo.png  used on input line 159.
 (pdftex.def)             Requested size: 142.26378pt x 82.75322pt.
 
 [1
@@ -1006,7 +1006,7 @@ Package pdftex.def Info: paralelismo.png  used on input line 157.
 {C:/Users/laura/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./go_cs_logo.pn
 g> <./concurrencia.png>]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-66.
+70.
 
 (C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -1018,56 +1018,102 @@ Package microtype Info: Loading generic protrusion settings for font family
 <lock.jpg, id=67, 963.6pt x 343.2825pt>
 File: lock.jpg Graphic file (type jpg)
 <use lock.jpg>
-Package pdftex.def Info: lock.jpg  used on input line 171.
+Package pdftex.def Info: lock.jpg  used on input line 175.
 (pdftex.def)             Requested size: 227.62204pt x 81.09044pt.
 
 [2 <./paralelismo.png> <./lock.jpg>]
 <monitor.jpg, id=74, 963.6pt x 680.5425pt>
 File: monitor.jpg Graphic file (type jpg)
 <use monitor.jpg>
-Package pdftex.def Info: monitor.jpg  used on input line 186.
+Package pdftex.def Info: monitor.jpg  used on input line 192.
 (pdftex.def)             Requested size: 227.62204pt x 160.75824pt.
 
-Overfull \hbox (20.88718pt too wide) in paragraph at lines 193--194
+Overfull \hbox (20.88718pt too wide) in paragraph at lines 201--202
 \T1/pplx/m/n/10 (-20) de re-cur-sos al mis-mo tiem-po. En C# pue-den ser en-con
 -tra-dos en la cla-se [][][][][][]. 
  []
 
 [3 <./monitor.jpg>]
-<MySemaphore.jpg, id=79, 2033.5975pt x 2993.1825pt>
-File: MySemaphore.jpg Graphic file (type jpg)
-<use MySemaphore.jpg>
-Package pdftex.def Info: MySemaphore.jpg  used on input line 208.
-(pdftex.def)             Requested size: 426.79134pt x 628.17584pt.
- [4]
-Overfull \vbox (19.65204pt too high) has occurred while \output is active []
-
-
-[5 <./MySemaphore.jpg>]
-Overfull \hbox (21.30559pt too wide) in paragraph at lines 229--230
+<MySemaphore1.jpg, id=79, 1525.19812pt x 1180.41pt>
+File: MySemaphore1.jpg Graphic file (type jpg)
+<use MySemaphore1.jpg>
+Package pdftex.def Info: MySemaphore1.jpg  used on input line 214.
+(pdftex.def)             Requested size: 426.79134pt x 330.29642pt.
+<MySemaphore2.jpg, id=80, 1525.19812pt x 1056.94875pt>
+File: MySemaphore2.jpg Graphic file (type jpg)
+<use MySemaphore2.jpg>
+Package pdftex.def Info: MySemaphore2.jpg  used on input line 218.
+(pdftex.def)             Requested size: 426.79134pt x 295.75009pt.
+ [4 <./MySemaphore1.jpg>] [5 <./MySemaphore2.jpg>]
+<MyBarrier1.jpg, id=89, 2028.07687pt x 1742.00812pt>
+File: MyBarrier1.jpg Graphic file (type jpg)
+<use MyBarrier1.jpg>
+Package pdftex.def Info: MyBarrier1.jpg  used on input line 236.
+(pdftex.def)             Requested size: 426.79134pt x 366.57677pt.
+<MyBarrier2.jpg, id=90, 2028.07687pt x 2704.1025pt>
+File: MyBarrier2.jpg Graphic file (type jpg)
+<use MyBarrier2.jpg>
+Package pdftex.def Info: MyBarrier2.jpg  used on input line 240.
+(pdftex.def)             Requested size: 426.79134pt x 569.0336pt.
+ [6 <./MyBarrier1.jpg>]
+<MyBarrier3.jpg, id=95, 2028.07687pt x 1748.78343pt>
+File: MyBarrier3.jpg Graphic file (type jpg)
+<use MyBarrier3.jpg>
+Package pdftex.def Info: MyBarrier3.jpg  used on input line 244.
+(pdftex.def)             Requested size: 426.79134pt x 368.00252pt.
+ [7 <./MyBarrier2.jpg>]
+Overfull \hbox (21.30559pt too wide) in paragraph at lines 255--256
 [][][][][][] \T1/pplx/m/n/10 (-20) en un va-lor es-pe-ci-fi-ca-do, [][][][][][]
  que res-ta-ble-ce la pro-pie-dad [][][][][][]
  []
 
-[6]
-<MyCountdownEvent.jpg, id=92, 1945.2675pt x 4101.3225pt>
-File: MyCountdownEvent.jpg Graphic file (type jpg)
-<use MyCountdownEvent.jpg>
-Package pdftex.def Info: MyCountdownEvent.jpg  used on input line 234.
-(pdftex.def)             Requested size: 426.79134pt x 899.79051pt.
- [7]
-Overfull \vbox (291.26671pt too high) has occurred while \output is active []
+[8 <./MyBarrier3.jpg>]
+<MyCountdownEvent1.jpg, id=105, 1458.95062pt x 1936.98656pt>
+File: MyCountdownEvent1.jpg Graphic file (type jpg)
+<use MyCountdownEvent1.jpg>
+Package pdftex.def Info: MyCountdownEvent1.jpg  used on input line 260.
+(pdftex.def)             Requested size: 426.79134pt x 566.61803pt.
+<MyCountdownEvent2.jpg, id=106, 1458.95062pt x 1132.23pt>
+File: MyCountdownEvent2.jpg Graphic file (type jpg)
+<use MyCountdownEvent2.jpg>
+Package pdftex.def Info: MyCountdownEvent2.jpg  used on input line 264.
+(pdftex.def)             Requested size: 426.79134pt x 331.20618pt.
+ [9 <./MyCountdownEvent1.jpg>]
 
-
-[8 <./MyCountdownEvent.jpg>]
-
-LaTeX Warning: Citation `katrip' on page 9 undefined on input line 241.
+LaTeX Warning: Citation `katrip' on page 10 undefined on input line 273.
 
 
 LaTeX Font Warning: Font shape `T1/pplx/b/sc' undefined
-(Font)              using `T1/pplx/b/n' instead on input line 247.
+(Font)              using `T1/pplx/b/n' instead on input line 279.
 
-[9] [10] (go_cs_concurrency.aux
+[10 <./MyCountdownEvent2.jpg>]
+<Philosopher_Live1.jpg, id=116, 2028.07687pt x 554.07pt>
+File: Philosopher_Live1.jpg Graphic file (type jpg)
+<use Philosopher_Live1.jpg>
+Package pdftex.def Info: Philosopher_Live1.jpg  used on input line 290.
+(pdftex.def)             Requested size: 426.79134pt x 116.59485pt.
+<Philosopher_Live2.jpg, id=117, 2028.07687pt x 2931.45187pt>
+File: Philosopher_Live2.jpg Graphic file (type jpg)
+<use Philosopher_Live2.jpg>
+Package pdftex.def Info: Philosopher_Live2.jpg  used on input line 294.
+(pdftex.def)             Requested size: 426.79134pt x 616.87552pt.
+ [11 <./Philosopher_Live1.jpg>]
+Overfull \vbox (8.35172pt too high) has occurred while \output is active []
+
+
+[12 <./Philosopher_Live2.jpg>]
+<Philosopher_Live3.jpg, id=127, 2028.07687pt x 2739.48468pt>
+File: Philosopher_Live3.jpg Graphic file (type jpg)
+<use Philosopher_Live3.jpg>
+Package pdftex.def Info: Philosopher_Live3.jpg  used on input line 298.
+(pdftex.def)             Requested size: 426.79134pt x 576.4792pt.
+<Philosopher_InfiniteLoop.jpg, id=128, 2810.5pt x 2415.0225pt>
+File: Philosopher_InfiniteLoop.jpg Graphic file (type jpg)
+<use Philosopher_InfiniteLoop.jpg>
+Package pdftex.def Info: Philosopher_InfiniteLoop.jpg  used on input line 304.
+(pdftex.def)             Requested size: 426.79134pt x 366.73347pt.
+ [13 <./Philosopher_Live3.jpg>] [14 <./Philosopher_InfiniteLoop.jpg>] (go_cs_co
+ncurrency.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -1077,45 +1123,27 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-Package rerunfilecheck Warning: File `go_cs_concurrency.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `go_cs_concurrency.out':
-(rerunfilecheck)             Before: 657A83E688CEE6819C5DE3100D692ED7;771
-(rerunfilecheck)             After:  8A549015CDAAF134B632CAB9E91AF5ED;795.
+Package rerunfilecheck Info: File `go_cs_concurrency.out' has not changed.
+(rerunfilecheck)             Checksum: 8A549015CDAAF134B632CAB9E91AF5ED;795.
  ) 
 Here is how much of TeX's memory you used:
- 24601 strings out of 479618
- 450291 string characters out of 2865026
- 778033 words of memory out of 3000000
- 40933 multiletter control sequences out of 15000+200000
- 470097 words of font info for 317 fonts, out of 3000000 for 9000
+ 24687 strings out of 479618
+ 451771 string characters out of 2865026
+ 777030 words of memory out of 3000000
+ 40982 multiletter control sequences out of 15000+200000
+ 475762 words of font info for 335 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,11n,102p,1049b,448s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{subsubsection.2.1.2} has been referenced but does
- not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.2.1.1} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.2.1} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.2} has been referenced but does not exist, 
-replaced by a fixed one
-
- <C:\Users\laura\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt10
-00.pk>{C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc
-}<C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a.p
-fb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8
-a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/up
-lr8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino
-/uplri8a.pfb>
-Output written on go_cs_concurrency.pdf (10 pages, 2101138 bytes).
+ 102i,12n,102p,1093b,472s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\laura\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
+1000.pk>{C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.e
+nc}<C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a
+.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/upl
+b8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/
+uplr8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palati
+no/uplri8a.pfb>
+Output written on go_cs_concurrency.pdf (14 pages, 4322908 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
+ 207 PDF objects out of 1000 (max. 8388607)
  29 named destinations out of 1000 (max. 500000)
- 90760 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 103093 words of extra memory for PDF output out of 106986 (max. 10000000)
 

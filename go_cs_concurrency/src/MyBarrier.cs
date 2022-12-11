@@ -1,10 +1,14 @@
 public class MyBarrier
 {
-    Action<MyBarrier>? postAction; //Keeps the post phase action
-    int participantCount, numberExceptions, phaseNumber, maxParticipants;   
-    static object waitForOthers = new Object(), waitForExiting = new Object();  //Object used for the monitor to change change the executing thread.
-    bool ObjectDisposed = false, exiting = false, fullcapacity = false;     //If disposed / If exiting (all the threads launching BarrierPostPhaseException's) / If changing phase
-    BarrierPostPhaseException? exceptionPostPhase = null; // Keeps the BarrierPostPhaseException to throw it in every thread (participant)
+    //Keeps the post phase action
+    Action<MyBarrier>? postAction; 
+    int participantCount, numberExceptions, phaseNumber, maxParticipants;
+    //Object used for the monitor to change change the executing thread.
+    static object waitForOthers = new Object(), waitForExiting = new Object();
+    //If disposed / If exiting (all the threads launching BarrierPostPhaseException's) / If changing phase
+    bool ObjectDisposed = false, exiting = false, fullcapacity = false;
+    // Keeps the BarrierPostPhaseException to throw it in every thread (participant)
+    BarrierPostPhaseException? exceptionPostPhase = null; 
     public int CurrentPhaseNumber { get => phaseNumber; }
     
     
@@ -17,21 +21,25 @@ public class MyBarrier
         phaseNumber = numberExceptions = participantCount = 0;
     }
 
-    void BarrierReachedForAll()  //The barrier was reached by everyone
+    //The barrier was reached by everyone
+    void BarrierReachedForAll()  
     {
         fullcapacity = true;
-        try //tries to execute the action
+        //tries to execute the action
+        try
         {
             if(postAction != null)
                 postAction(this);
         }
-        catch (Exception ex)    //catch the exception if any and stores it
+        //catch the exception if any and stores it
+        catch (Exception ex)    
         {
             exceptionPostPhase = new BarrierPostPhaseException(ex);
         }
         phaseNumber++;    
         exiting = true;
-        lock (waitForOthers)     //Resume all participants execution
+        //Resume all participants execution
+        lock (waitForOthers)     
             Monitor.PulseAll(waitForOthers);
 
     }
@@ -63,25 +71,31 @@ public class MyBarrier
             }
             else
                 Monitor.Wait(waitForOthers);
-            PostPhaseExceptionLauncher();   //Wait for the other participants
+            //Wait for the other participants
+            PostPhaseExceptionLauncher();   
         }
     }
 
-    void PostPhaseExceptionLauncher() //If an exception was catch from the post-phase action this throws it in any participant
+    //If an exception was catch from the post-phase action this throws it in any participant
+    void PostPhaseExceptionLauncher() 
     {
         if (exceptionPostPhase != null)
         {
-            numberExceptions++; // How many exceptions are already ready to throw
-            if (numberExceptions == maxParticipants)    // If all of them...
+            // How many exceptions are already ready to throw
+            numberExceptions++;
+            // If all of them...
+            if (numberExceptions == maxParticipants)    
             {
                 exceptionPostPhase = null;  
                 numberExceptions = 0;   
                 lock (waitForOthers)
-                    Monitor.PulseAll(waitForOthers);    //throw them
+                    //throw them
+                    Monitor.PulseAll(waitForOthers);    
             }
             else
             {
-                lock (waitForOthers)    //ready...
+                //ready...
+                lock (waitForOthers)    
                     Monitor.Wait(waitForOthers);
             }
             Exiting();
@@ -100,18 +114,22 @@ public class MyBarrier
         {
             fullcapacity = false;
             exiting = false;
-            lock(waitForExiting)        
-                Monitor.PulseAll(waitForExiting); //If something is waiting for the end of the exiting process, this alerts it. 
+            lock(waitForExiting)
+                //If something is waiting for the end of the exiting process, this alerts it. 
+                Monitor.PulseAll(waitForExiting); 
         }
     }
 
     public void Dispose()
     {
-        if (ObjectDisposed) //check the barrier disposal
+        //check the barrier disposal
+        if (ObjectDisposed) 
             throw new ObjectDisposedException("The current instance has already been disposed.");
-        Monitor.Enter(waitForOthers);    //Ensures that no other thread try to do anything while changing the total amount of participants
-        ObjectDisposed = true;      
-        if(exiting || fullcapacity)  // If already in post-phase throw exception 
+        //Ensures that no other thread try to do anything while changing the total amount of participants
+        Monitor.Enter(waitForOthers);    
+        ObjectDisposed = true;
+        // If already in post-phase throw exception
+        if (exiting || fullcapacity)   
         {
             throw new InvalidOperationException("The method was invoked from within a post-phase action");
         }
@@ -122,9 +140,11 @@ public class MyBarrier
     {
         if (ObjectDisposed) //check the barrier disposal
             throw new ObjectDisposedException("The current instance has already been disposed.");
-        
-        Monitor.Enter(waitForOthers);   //Ensures that no other thread try to do anything while changing the total amount of participants
-        if(exiting || fullcapacity)     // If already in post-phase throw exception 
+
+        //Ensures that no other thread try to do anything while changing the total amount of participants
+        Monitor.Enter(waitForOthers);
+        // If already in post-phase throw exception 
+        if (exiting || fullcapacity)     
         {
             throw new InvalidOperationException("The method was invoked from within a post-phase action");
         }
@@ -133,10 +153,13 @@ public class MyBarrier
     }
     public void RemoveParticipant()
     {
-        if (ObjectDisposed) //check the barrier disposal
+        //check the barrier disposal
+        if (ObjectDisposed) 
             throw new ObjectDisposedException("The current instance has already been disposed.");
-        Monitor.Enter(waitForOthers);     //Ensures that no other thread try to do anything while changing the total amount of participants
-        if(exiting || fullcapacity)    // If already in post-phase throw exception 
+        //Ensures that no other thread try to do anything while changing the total amount of participants
+        Monitor.Enter(waitForOthers);
+        // If already in post-phase throw exception
+        if (exiting || fullcapacity)     
         {
             throw new InvalidOperationException("The method was invoked from within a post-phase action");
         }

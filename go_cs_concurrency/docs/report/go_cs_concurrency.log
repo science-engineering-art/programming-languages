@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  8 DEC 2022 11:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  10 DEC 2022 13:19
 entering extended mode
 **./go_cs_concurrency.tex
 (go_cs_concurrency.tex
@@ -945,7 +945,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
 \c@lstlisting=\count343
-<go_cs_logo.png, id=38, 358.33875pt x 318.43968pt>
+<go_cs_logo.png, id=46, 358.33875pt x 318.43968pt>
 File: go_cs_logo.png Graphic file (type png)
 <use go_cs_logo.png>
 Package pdftex.def Info: go_cs_logo.png  used on input line 141.
@@ -990,39 +990,52 @@ Package microtype Info: Character `029' is missing
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
+<concurrencia.png, id=48, 682.04813pt x 344.03531pt>
+File: concurrencia.png Graphic file (type png)
+<use concurrencia.png>
+Package pdftex.def Info: concurrencia.png  used on input line 155.
+(pdftex.def)             Requested size: 142.26378pt x 71.76134pt.
+<paralelismo.png, id=49, 682.04813pt x 396.7322pt>
+File: paralelismo.png Graphic file (type png)
+<use paralelismo.png>
+Package pdftex.def Info: paralelismo.png  used on input line 163.
+(pdftex.def)             Requested size: 142.26378pt x 82.75322pt.
 
 [1
 
 {C:/Users/laura/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./go_cs_logo.pn
-g>] (go_cs_concurrency.aux
+g> <./concurrencia.png>]
+
+LaTeX Font Warning: Font shape `T1/pplx/b/sc' undefined
+(Font)              using `T1/pplx/b/n' instead on input line 187.
+
+[2 <./paralelismo.png>] (go_cs_concurrency.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 
-Package rerunfilecheck Warning: File `go_cs_concurrency.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: Checksums for `go_cs_concurrency.out':
-(rerunfilecheck)             Before: 1891A2AEEC0AB39D417EC3053E4C3CA6;431
-(rerunfilecheck)             After:  0F49956A0A39F6A11DF9FC5BA3846014;601.
+Package rerunfilecheck Info: File `go_cs_concurrency.out' has not changed.
+(rerunfilecheck)             Checksum: BAA5A385AB5A94589BFFC207BC02339A;718.
  ) 
 Here is how much of TeX's memory you used:
- 24216 strings out of 479618
- 445393 string characters out of 2865026
- 770967 words of memory out of 3000000
- 40810 multiletter control sequences out of 15000+200000
- 438975 words of font info for 122 fonts, out of 3000000 for 9000
+ 24331 strings out of 479618
+ 446984 string characters out of 2865026
+ 772973 words of memory out of 3000000
+ 40858 multiletter control sequences out of 15000+200000
+ 451686 words of font info for 184 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,7n,102p,1016b,378s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 102i,11n,102p,1016b,446s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:
 /Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><
 C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pf
 b><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a
-.pfb>
-Output written on go_cs_concurrency.pdf (1 page, 138767 bytes).
+.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/upl
+ri8a.pfb>
+Output written on go_cs_concurrency.pdf (2 pages, 180735 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
+ 86 PDF objects out of 1000 (max. 8388607)
  13 named destinations out of 1000 (max. 500000)
- 56914 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 70764 words of extra memory for PDF output out of 74296 (max. 10000000)
 

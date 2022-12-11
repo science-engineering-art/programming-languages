@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  10 DEC 2022 13:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 21.1) (preloaded format=pdflatex 2022.5.15)  10 DEC 2022 23:04
 entering extended mode
 **./go_cs_concurrency.tex
 (go_cs_concurrency.tex
@@ -1005,11 +1005,53 @@ Package pdftex.def Info: paralelismo.png  used on input line 163.
 
 {C:/Users/laura/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./go_cs_logo.pn
 g> <./concurrencia.png>]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+80.
+
+(C:\Users\laura\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+[2 <./paralelismo.png>]
+<MySemaphore.jpg, id=67, 2033.5975pt x 2993.1825pt>
+File: MySemaphore.jpg Graphic file (type jpg)
+<use MySemaphore.jpg>
+Package pdftex.def Info: MySemaphore.jpg  used on input line 192.
+(pdftex.def)             Requested size: 426.79134pt x 628.17584pt.
+
+Overfull \hbox (11.78671pt too wide) in paragraph at lines 192--193
+[][] 
+ []
+
+[3]
+Overfull \vbox (19.65204pt too high) has occurred while \output is active []
+
+
+[4 <./MySemaphore.jpg>]
+<MyCountdownEvent.jpg, id=76, 1945.2675pt x 4101.3225pt>
+File: MyCountdownEvent.jpg Graphic file (type jpg)
+<use MyCountdownEvent.jpg>
+Package pdftex.def Info: MyCountdownEvent.jpg  used on input line 204.
+(pdftex.def)             Requested size: 426.79134pt x 899.79051pt.
+
+Overfull \hbox (11.78671pt too wide) in paragraph at lines 204--205
+[][] 
+ []
+
+[5]
+Overfull \vbox (291.26671pt too high) has occurred while \output is active []
+
+
+[6 <./MyCountdownEvent.jpg>]
 
 LaTeX Font Warning: Font shape `T1/pplx/b/sc' undefined
-(Font)              using `T1/pplx/b/n' instead on input line 187.
+(Font)              using `T1/pplx/b/n' instead on input line 210.
 
-[2 <./paralelismo.png>] (go_cs_concurrency.aux
+[7] (go_cs_concurrency.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
@@ -1020,22 +1062,23 @@ Package rerunfilecheck Info: File `go_cs_concurrency.out' has not changed.
 (rerunfilecheck)             Checksum: BAA5A385AB5A94589BFFC207BC02339A;718.
  ) 
 Here is how much of TeX's memory you used:
- 24331 strings out of 479618
- 446984 string characters out of 2865026
- 772973 words of memory out of 3000000
- 40858 multiletter control sequences out of 15000+200000
- 451686 words of font info for 184 fonts, out of 3000000 for 9000
+ 24417 strings out of 479618
+ 448331 string characters out of 2865026
+ 775973 words of memory out of 3000000
+ 40887 multiletter control sequences out of 15000+200000
+ 454452 words of font info for 218 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,11n,102p,1016b,446s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:
-/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a.pfb><
-C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplb8a.pf
-b><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/uplr8a
+ <C:\Users\laura\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt
+1000.pk>{C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.e
+nc}<C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a
 .pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/upl
-ri8a.pfb>
-Output written on go_cs_concurrency.pdf (2 pages, 180735 bytes).
+b8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/
+uplr8a.pfb><C:/Users/laura/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palati
+no/uplri8a.pfb>
+Output written on go_cs_concurrency.pdf (7 pages, 1947263 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
- 70764 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 140 PDF objects out of 1000 (max. 8388607)
+ 18 named destinations out of 1000 (max. 500000)
+ 71286 words of extra memory for PDF output out of 74296 (max. 10000000)
 

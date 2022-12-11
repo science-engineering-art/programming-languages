@@ -165,12 +165,31 @@ Sea T el tiempo total de ejecuci\'on de dos programas paralelos $ P_{1} $ y $ P_
 
 Paralelismo implica concurrencia, pero no se cumple el rec\'iproco.
 
+En la programaci\'on concurrente es com\'un wue las hebras que se ejecuten necesiten sincronizar e intercambiar informaci\'on enn alg\'un momento, lo cual se hace usualmente a trav\'es de memoria compartida, pudiendo dar lugar a varios problemas.
+
 \subsection{Monitors en C\#}
 Proporcionan un mecanismo que sincroniza el acceso a los objetos.
+
+Los monitores garantizan que, a la vez, solo se estén ejecutando
+dentro de un monitor una sola hebra.
 
 La clase Monitor permite sincronizar el acceso a una región de código tomando y liberando un bloqueo en un objeto determinado llamando a los métodos Monitor.Enter, Monitor.TryEnter y Monitor.Exit . Los bloqueos de objeto proporcionan la capacidad de restringir el acceso a un bloque de código, normalmente denominado sección crítica. Aunque un subproceso posee el bloqueo de un objeto, ningún otro subproceso puede adquirir ese bloqueo. También puede usar la Monitor clase para asegurarse de que ningún otro subproceso pueda acceder a una sección del código de aplicación que ejecuta el propietario del bloqueo, a menos que el otro subproceso ejecute el código mediante un objeto bloqueado diferente.
 
 \subsection{Sem\'aforos en C\#}
+
+Un sem\'aforo limita la cantidad de subprocesos que pueden acceder a un recurso o conjunto de recursos al mismo tiempo. En C\# puede ser encontrado en la clase \csl{System.Threading.Semaphore}.
+
+Cuenta con dos propiedades fundamentales: \csl{Count}, que indica el n\'umero de hilos que pueden ingresar al sem\'aforo en este momento; y \csl{InitialCount}, que indica la cantidad m\'axima de hilos que pueden ingresar al sem\'aforo. Los subprocesos ingresan al semáforo llamando al método \csl{WaitOne()}, y liberan el semáforo llamando al método \csl{Release()}.
+
+El \csl{Count} en un semáforo se reduce cada vez que un subproceso ingresa al semáforo y se incrementa cuando un subproceso libera el semáforo. Cuando el \csl{Count} es cero, las solicitudes posteriores se bloquean hasta que otros subprocesos liberan el semáforo; no hay un orden predeterminado en el que los subprocesos bloqueados entren en el semáforo. Cuando todos los subprocesos han liberado el semáforo, el \csl{Count} estar\'a en el valor máximo especificado cuando se creó el semáforo (\csl{InitialCount}).
+
+Un subproceso puede ingresar el semáforo varias veces llamando al método \csl{WaitOne()}; repetidamente. Para liberar algunas o todas estas entradas, el subproceso puede llamar a la sobrecarga del método \csl{Release()} sin parámetros varias veces, o puede llamar a la sobrecarga del método \csl{Release(int)} que especifica la cantidad de entradas que se liberarán.
+
+No se aplica la identidad del subproceso en las llamadas a \csl{WaitOne()} o \csl{Release()}, por lo que es responsabilidad del programador asegurarse de que los subprocesos no liberen el semáforo m\'as veces de las requeridas. Por ejemplo, si un semáforo tiene un recuento máximo de dos y que tanto el hilo A como el hilo B entran en el semáforo. Si un error de programación en el subproceso B hace que llame a Release dos veces, ambas llamadas se realizan correctamente. El conteo en el semáforo estar\'a lleno, y cuando el subproceso A eventualmente llame a Release, se lanzar\'a una excepci\'on SemaphoreFullException.
+
+Un sem\'aforo puede ser de dos tipos: local o nombrado del sistema. Un semáforo local existe solo dentro de su proceso, pudiendo ser utilizado por cualquier subproceso en este que tenga una referencia al mismo. Cada objeto Semaphore es un semáforo local independiente. Por otro lado, si se crea un objeto Semaphore utilizando un constructor que acepta un nombre, se asocia con un semáforo del sistema operativo de ese nombre, siendo visible en todo el sistema operativo y puediendo utilizarse para sincronizar las actividades de los procesos. Se puede usar el método OpenExisting para abrir un semáforo nombrado del sistema existente.
+
+\includegraphics[width=15cm]{MySemaphore.jpg}
 
 \subsection{Barriers en C\#}
 
@@ -179,6 +198,10 @@ Permite que múltiples tareas trabajen de manera cooperativa en un algoritmo en 
 En esta sincronización de barrera, tenemos varios subprocesos que trabajan en un solo algoritmo. El algoritmo funciona en fases. Todos los subprocesos deben completar la fase 1 y luego pueden continuar con la fase 2. Hasta que todos los subprocesos no completen la fase 1, todos los subprocesos deben esperar a que todos los subprocesos lleguen a la fase 1.
 
 \subsection{Countdowns en C\#}
+
+Representa una primitiva de sincronización que emite una señal cuando su cuenta llega a cero.
+
+\includegraphics[width=15cm]{MyCountdownEvent.jpg}
 
 \subsection{Propuesta en Go para la sincronización en la concurrencia}
 

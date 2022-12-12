@@ -92,21 +92,60 @@ func main() {
 
 	var wg sync.WaitGroup
 
-	for j := 0; true; j++ {
-		
-		fmt.Printf("\n========== ROUND %d ==========\n\n", j + 1)
+	//for j := 0; true; j++ {
+	//	
+	//	fmt.Printf("\n========== ROUND %d ==========\n\n", j + 1)
+	//
+	//	wg.Add(nPhil)
+	//	for i := range phils {
+	//		go func(i int){
+	//			defer wg.Done()	
+	//			phils[i].Think()
+	//			phils[i].GetForks()
+	//			phils[i].Eat()
+	// 			phils[i].DropForks()
+	// 		}(i)
+	// 	}
+	//	wg.Wait()
+	//}
 
-		wg.Add(nPhil)
-		for i := range phils {
-			go func(i int){
-				defer wg.Done()	
-				phils[i].Think()
-				phils[i].GetForks()
-				phils[i].Eat()
-				phils[i].DropForks()
-			}(i)
-		}
-		wg.Wait()
+	//wg.Add(nPhil)
+	//for i := range phils {
+	//	go func(i int){
+	//		for {
+	//			defer wg.Done()	
+	//			phils[i].Think()
+	//			phils[i].GetForks()
+	//			phils[i].Eat()
+	//			phils[i].DropForks()
+	// 		}
+	//	}(i)
+	//}
+	//wg.Wait()
+
+	wg.Add(nPhil)
+
+	for i := range phils {
+
+		go func(phil *Philosopher) {
+			defer wg.Done()
+			var waitGroup sync.WaitGroup
+			
+			for {
+				waitGroup.Add(1)
+				go func() {
+					defer waitGroup.Done()
+					phil.Think()
+					phil.GetForks()
+					phil.Eat()
+					phil.DropForks()
+				} ()
+				waitGroup.Wait()
+			}
+		}(&phils[i])
 	}
+
+	wg.Wait()
+
 	return
 }

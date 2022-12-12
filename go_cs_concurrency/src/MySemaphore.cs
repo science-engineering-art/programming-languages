@@ -50,6 +50,7 @@ public class MySemaphore
             this.Count += N;
             if (this.Count > this.Capacity)
             {
+                this.Count -= N; // If Count > Capacity it stays as it was before the call to Release
                 throw new Exception("Semaphore is empty, nothing to release.");
             }
             System.Threading.Monitor.PulseAll(LockObj);

@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\@School Stuff\\Tercer Anno (2do Semestre)\\Lenguajes de programación\\2022\\programming-languages\\go_cs_concurrency\\src\\src.csproj": {}
+    "D:\\MATCOM\\3er año\\Segundo Semestre\\Lenguajes de Programación\\Git\\programming-languages\\go_cs_concurrency\\src\\src.csproj": {}
   },
   "projects": {
-    "D:\\@School Stuff\\Tercer Anno (2do Semestre)\\Lenguajes de programación\\2022\\programming-languages\\go_cs_concurrency\\src\\src.csproj": {
+    "D:\\MATCOM\\3er año\\Segundo Semestre\\Lenguajes de Programación\\Git\\programming-languages\\go_cs_concurrency\\src\\src.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\@School Stuff\\Tercer Anno (2do Semestre)\\Lenguajes de programación\\2022\\programming-languages\\go_cs_concurrency\\src\\src.csproj",
+        "projectUniqueName": "D:\\MATCOM\\3er año\\Segundo Semestre\\Lenguajes de Programación\\Git\\programming-languages\\go_cs_concurrency\\src\\src.csproj",
         "projectName": "src",
-        "projectPath": "D:\\@School Stuff\\Tercer Anno (2do Semestre)\\Lenguajes de programación\\2022\\programming-languages\\go_cs_concurrency\\src\\src.csproj",
-        "packagesPath": "C:\\Users\\17869\\.nuget\\packages\\",
-        "outputPath": "D:\\@School Stuff\\Tercer Anno (2do Semestre)\\Lenguajes de programación\\2022\\programming-languages\\go_cs_concurrency\\src\\obj\\",
+        "projectPath": "D:\\MATCOM\\3er año\\Segundo Semestre\\Lenguajes de Programación\\Git\\programming-languages\\go_cs_concurrency\\src\\src.csproj",
+        "packagesPath": "C:\\Users\\laura\\.nuget\\packages\\",
+        "outputPath": "D:\\MATCOM\\3er año\\Segundo Semestre\\Lenguajes de Programación\\Git\\programming-languages\\go_cs_concurrency\\src\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\17869\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\laura\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,8 +45,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -53,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

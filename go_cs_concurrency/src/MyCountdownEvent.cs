@@ -37,13 +37,17 @@ public class MyCountdownEvent
 
     // Decrements the CountdownEvent's current count by N, and indicates weather the event was set or not
     public bool Signal(int N = 1)
-    {
+    {   
         lock (LockObj)
         {
+            if (N < 1)
+                throw new ArgumentOutOfRangeException("Signal count cannot be less than 1.");
+
             this.counter -= N;
 
-            if (this.counter == 0)
+            if (this.counter <= 0)
             {
+                this.counter = 0;
                 this.counter_equals_zero = true;
                 Monitor.PulseAll(LockObj);
             }
@@ -52,14 +56,33 @@ public class MyCountdownEvent
     }
 
     // Sets the CountdownEvent's current count to N.
-    public void Reset(int N = -1)
+    public void Reset()
+    {
+        lock (LockObj)
+        {
+            this.counter = this.InitialCount;
+
+            if (this.counter == 0)
+            {
+                this.counter_equals_zero = true;
+                Monitor.PulseAll(LockObj);
+            }
+        }
+    }
+
+    // Sets the CountdownEvent's initial count to N.
+    public void Reset(int N)
     {
         lock (LockObj)
         {
             if (N < 0)
-                this.counter = this.InitialCount;
+                throw new ArgumentOutOfRangeException("Value of initial count cannot be less than 0.");
             else
-                this.counter = N;
+            {
+                this.init_counter = N;
+                if (this.counter > this.init_counter)
+                    this.Reset();
+            }
 
             if (this.counter == 0)
             {
@@ -74,10 +97,8 @@ public class MyCountdownEvent
     {
         lock (LockObj)
         {
-            while (!this.counter_equals_zero)
-            {
+            if (!this.counter_equals_zero)
                 Monitor.Wait(LockObj);
-            }
         }
     }
 }

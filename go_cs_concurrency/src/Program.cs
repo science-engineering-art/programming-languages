@@ -42,32 +42,38 @@ class Program
     #region MyCountdownEventTest
     static void Main(string[] args)
     {
-        // Meeting.StartMeeintg();
-        TestBarrier.Test();
-        // MyCountdownEvent countObject = new MyCountdownEvent(10);
-        // int[] result = new int[10];
+        MyCountdownEvent countObject = new MyCountdownEvent(10);
+        int[] result = new int[10];
 
 
-        // for (int i = 0; i < 10; ++i)
-        // {
-        //     int j = i;
-        //     Task.Factory.StartNew(() =>
-        //     {
-        //         Thread.Sleep(TimeSpan.FromSeconds(3));
-        //         result[j] = j * 10;
+        for (int i = 0; i < 10; ++i)
+        {
+            int j = i;
+            Task.Factory.StartNew(() =>
+            {
+                Thread.Sleep(TimeSpan.FromSeconds(3));
+                result[j] = j * 10;
 
-        //         countObject.Signal();
-        //     });
-        // }
+                countObject.Signal();
+            });
+        }
 
-        // countObject.Wait();
+        countObject.Wait();
 
-        // foreach (var r in result)
-        // {
-        //     Console.WriteLine(r);
-        // }
+        foreach (var r in result)
+        {
+            Console.WriteLine(r);
+        }
 
-        // Console.ReadLine();
+        Console.ReadLine();
     }
+    #endregion
+
+    #region MyBarrierTest
+    //static void Main(string[] args)
+    //{
+    //    Meeting.StartMeeintg();
+    //    TestBarrier.Test();
+    //}
     #endregion
 }

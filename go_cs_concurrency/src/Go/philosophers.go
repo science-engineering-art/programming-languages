@@ -92,37 +92,6 @@ func main() {
 
 	var wg sync.WaitGroup
 
-	//for j := 0; true; j++ {
-	//	
-	//	fmt.Printf("\n========== ROUND %d ==========\n\n", j + 1)
-	//
-	//	wg.Add(nPhil)
-	//	for i := range phils {
-	//		go func(i int){
-	//			defer wg.Done()	
-	//			phils[i].Think()
-	//			phils[i].GetForks()
-	//			phils[i].Eat()
-	// 			phils[i].DropForks()
-	// 		}(i)
-	// 	}
-	//	wg.Wait()
-	//}
-
-	//wg.Add(nPhil)
-	//for i := range phils {
-	//	go func(i int){
-	//		for {
-	//			defer wg.Done()	
-	//			phils[i].Think()
-	//			phils[i].GetForks()
-	//			phils[i].Eat()
-	//			phils[i].DropForks()
-	// 		}
-	//	}(i)
-	//}
-	//wg.Wait()
-
 	wg.Add(nPhil)
 
 	for i := range phils {

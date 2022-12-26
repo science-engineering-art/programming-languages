@@ -266,7 +266,113 @@ En la figura siguiente se muestra una implementación de la clase \csl{Countdown
 	\imgcaption{7}{Implementaci\'on de MyCountdownEvent utilizando Monitors}
 \end{center}
 
-\subsection{Propuesta en Go para la sincronización en la concurrencia}
+\subsection{Concurrencia en Go}
+
+Antes de entrar en detalles de como Go trata la concurrencia, es importante definir algunos conceptos importantes que ayuden a comprender mejor esta sección.
+
+\subsubsection{Procesos, hebras y gorutinas en Go}
+
+Un \textbf{proceso} es la representación en el SO (Sistema Operativo) de un \textbf{programa} en ejecución, mientras que un programa es un archivo binario en disco que contiene toda la información necesaria para crear un proceso en el SO. El archivo binario está escrito en un formato específico (ELF en Linux) y contiene todas las instrucciones que la CPU va a ejecutar, así como una plétora de otras secciones útiles. Ese programa se carga en memoria y las instrucciones se ejecutan, creando un proceso en ejecución. Así, un proceso lleva consigo recursos adicionales como memoria, descripciones de archivos abiertos y datos de usuario, así como otros tipos de recursos que se obtienen durante el tiempo de ejecución.
+
+Un \textbf{hebra} es una entidad más pequeña y ligera que un proceso. Los procesos constan de una o más hebras que tienen su propio flujo de control y pila. Una forma rápida y simplista de diferenciar una hebra de un proceso es considerar un proceso como el archivo binario en ejecución y una hebra como un subconjunto de un proceso.
+
+Una \textbf{gorutina} es la entidad Go mínima que puede ser ejecutada concurrentemente. El uso de la palabra mínima es muy importante aquí, ya que las gorutinas no son entidades autónomas como los procesos UNIX, las gorutinas viven en hebras del SO que viven a su vez en procesos del SO. Lo bueno es que las gorutinas son más ligeras que las hebras, que, a su vez, son más ligeras que los procesos, ejecutar miles o cientos de miles de gorutinas en una sola máquina no es un problema. Entre las razones por las que las gorutinas son más ligeras que los hilos está que tienen una pila más pequeña que puede crecer, tienen un tiempo de arranque más rápido y pueden comunicarse entre sí a través de canales con baja latencia. Por defecto, cada gorutina reserva 2Kb de memoria al inicializarse y a medida que se va necesitando más, va pidiendo.
+
+En la práctica, esto significa que un proceso puede tener múltiples hebras así como muchas gorutinas, mientras que una gorutina necesita el entorno de un proceso para existir. Así, para crear una gorutina, necesitas tener un proceso con al menos una hebra. El SO se encarga del manejo de procesos y hebras, mientras que Go crea las hebras necesarias y el desarrollador crea el número deseado de gorutinas.
+
+\subsubsection{Planificador de Go}
+
+El planificador (scheduler) del núcleo del SO es responsable de la ejecución de las hebras de un programa. Del mismo modo, el \texttt{runtime} de Go tiene su propio planificador, que es responsable de la ejecución de las gorutinas utilizando una técnica conocida como \textbf{M:N scheduling}, donde M gorutinas se ejecutan utilizando N hebras del SO usando multiplexación. El planificador de Go es el componente de Go responsable de la forma y el orden en que se ejecutan las gorutinas de un programa Go. Esto hace que el planificador de Go sea una parte realmente importante del lenguaje de programación Go. 
+
+Para encontrar más información acerca del planificador de Go, se recomiendo consultar la siguiente bibliografía \cite{scheduler}.
+
+\subsection{Propuesta de Go para la sincronización de gorutinas}
+
+En Go, se abordan dos enfoques distintos para lograr la sincronización de gorutinas, el primero es el enfoque clásica que es compartir datos a través de la memoria compartida, y el segundo enfoque e innovador de Go, es el de compartir memoria a través de los datos.
+
+\subsection{ Sincronización a bajo nivel (paquete sync) }
+
+Este es el enfoque clásico haciendo uso de la memoria compartida. Es importante aclarar que solo se presentan en este trabajo algunas de las formas más usadas de tratar la concurrencia usando este enfoque en Go, pero existen otras.
+
+\subsubsection{WaitGroup}
+
+En ocasiones es conveniente dividir el flujo de ejecución de un programa en pequeñas subrutinas que deben ser ejecutadas de manera concurrente, pero que tienen una lógica que las agrupa y no tiene sentido seguir ejecutando el programa hasta que todas por independiente lleguen a un estado exitoso.
+
+Para esto se crea la estructura \emph{WaitGroup} que tiene 3 métodos principales, el primero \emph{Add(count int)} que recibe un entero que indica el incremento del contador en el grupo, \emph{Done()} que indica que una subrutina del grupo fue terminada de ejecutar con éxito (nótese que una llamada a \emph{Done()} es equivalente a \emph{Add(-1)}), y por último pero no menos importante la función \emph{Wait()} que marca un punto de bloqueo, y hasta que todas las subrutinas del grupo no se hayan ejecutado correctamente y el contador haya disminuido a 0, no continua la ejecución del programa.
+
+Un ejemplo del uso de la estructura \emph{WaitGroup} se encuentra en el archivo \textit{waitGroup.go}. 
+
+\subsubsection{Mutex}
+
+Al igual que otros lenguajes de programación, \emph{Mutex} brinda un mecanismo de bloqueo con el objetivo de proteger las zonas críticas del código. Posee una función \emph{Lock()} que sirve para indicar que a partir de esa línea de código está bloqueado el acceso desde cualquier gorutina diferente a la que se le hace el llamado. Y tiene un método \emph{Unlock()} que indica la finalización de zona crítica y con esto el desbloqueo de los recursos.
+
+Véase un ejemplo en el archivo \textit{mutex.go}, que es una pequeña modelación de un sistema de votación electrónico. Imagínese que dos votantes desean votar por el mismo candidato y estos acceden al recurso de la cantidad de votos en el mismo instante de tiempo, de \textit{N} votos que tenía el candidato tendrá luego de incrementar el valor en ambas gorutinas \textit{N+1} votos, lo cuál es incorrecto puesto que debería incrementar 2 votaciones. La solución a esto es bloquear la zona de incrementar la cantidad de votaciones. 
+
+\subsubsection{RWMutex}
+
+\emph{Mutex} resuelve el problema de proteger las secciones críticas del código, pero puede mejorarse aún más. El problema con el acceso a los recursos compartidos no es la lectura de estos, sino la escritura. \emph{RWMutex} permite diferenciar las zonas de bloqueo de escritura y de lectura.
+
+Como la estructura \emph{RWMutex} está compuesta por \emph{Mutex}, los métodos \emph{Lock()} y \emph{Unlock()} se tratan de la misma forma, y se utilizan para indicar las zonas de escritura. La diferencia principal entre estas dos estructuras radica en que las zonas de lectura permiten ser accedidas desde distintas gorutinas, permitiendo así una mayor fluidez de su programa. Para indicar los límites de las zonas de lectura se utilizan los métodos \emph{RLock} y \emph{RUnlock}. Es importante mencionar, que la zona de escritura se considera desbloqueada si y solo si no hay ninguna gorutina escribiendo, ni ninguna leyendo; y una zona de lectura se considera desbloqueada si no hay ninguna gorutina escribiendo.
+
+Se propone analizar el ejemplo práctico para entender estos conceptos. El problema consiste en tener una llave privada que se utiliza para firmar operaciones que realizan llamados a servicios \textit{gRPC}. Cada llamado a un servicio toma tiempo de espera determinado. Dicha llave privada se cambia con frecuencia, con el objetivo de evitar que sea robada fácilmente. 
+
+Nótese que cuando se está cambiando la llave privada, ninguna gorutina puede estar accediendo a dicho recurso. En el momento que se desee acceder a un servicio, y se está escribiendo en ese instante, se bloquea la gorutina y espera a que se termine de escribir; una vez que esto pase, se permite el paso a la zona de lectura a todas aquellas gorutinas que quieren acceder a un servicio. (piense que sucedería si se abordara el enfoque clásico de Mutex, cuánto tiempo demoraría en salir del cuello de botella) 
+
+Se deja el código fuente con el ejemplo, en el archivo \textit{rwMutex.go}. Debe tenerse en cuenta que la estructura RWMutex tiene otros métodos, pero por su poco uso cotidiano no se considera necesario abordarlos en este informe.
+
+\subsubsection{Once}
+
+La primitiva de bajo nivel \emph{Once} tiene como objetivo ejecutar una función una única vez. Esta tiene un método \emph{Do()} que es el que se encarga de asegurar que una función se ejecute a lo sumo una vez utilizando ese objeto \emph{Once}, o sea, no significa que la función no se pueda ejecutar varias veces, sí puede hacerlo, pero utilizando la función \emph{Do()} de una instancia específica de la estructura \emph{Once} solo se puede ejecutar una vez. Verifique por ud mismo que dados dos objetos \emph{Once} es posible ejecutar una función 2 veces, una vez por cada objeto.
+
+Se deja una ejemplo en el archivo \textit{once.go}, donde se quieren hacer operaciones con objetos en una base de datos, pero se sabe que cada fila en una base de datos necesita tener un identificador único, por tanto cada vez que se quiere hacer una operación en la base de datos con un objeto de tipo Persona, se asegura primero que se haya inicializado antes, dándole un identificador único a cada objeto, y luego se hacen las operaciones que se deseen en la base de datos.
+
+\subsection{Sincronización a alto nivel.}
+
+En los sistemas UNIX, existe un concepto llamado Pipeline, su traducción al español viene siendo tubería, o cualquier sinónimo que haga referencia a un conducto de comunicación. En dichos sistemas, las tuberías se utilizan para la sincronización de procesos a bajo nivel, proveendo un forma efectiva de comunicación.
+
+En Go no hablamos de procesos, ni de hebras, quien se encarga de lidiar con estas son el SO y el planificador de Go. El desarrollador de Go, de lo que entiende es de gorutinas, que vienen siendo un análogo a una hebra en un SO, pero no son lo mismo (leer sección \emph{VI.1}). Entonces para la comunicación de estas, además de tener el enfoque clásico de sincronizacón en la concurrencia, se crea un nuevo enfoque el cual se basa en compartir memoria a través de los datos. 
+
+Go logra esta forma de sincronización creando un tipo en el lenguaje llamado \textbf{chan} (o canal), que es el encargado de transferir información entre una gorutina y otra. Los canales en Go funcionan de manera muy similar a como funcionan las tuberías en los sistemas UNIX. 
+
+\subsubsection{Canales sin búfer}
+
+En un servidor web, cuando se tiene abierto un socket esperando peticiones, hasta que el cliente no intente establecer una comunicación con el servidor y este lo acepte no comienza el intercambio de información. Exactamente esto pasa con la transferencia de datos a través de canales sin búfer. Como no tiene espacio para guardar información, bloquea el flujo de ejecución de una gorutina hasta que estén ambas partes, quien envía y quien lee la información.
+
+Para la creación de un canal, se utiliza la función built-in \textbf{make(chan Type, capacity int)}. Crear un canal sin búfer se puede hacer de dos formas, \textit{make(chan Type)} o \textit{make(chan Type, 0)}. Note que para la creación de un canal es necesario especificar el tipo de datos que se desean transferir por él.
+
+Se deja un ejemplo en el archivo \textit{unbufferedChan.go}. Note como la gorutina principal no escribe en el canal hasta que la gorutina de lectura del canal no está lista para recibir la información. 
+
+\subsubsection{Canales con búfer}
+
+A diferencia de los canales sin búfer (también pueden considerarse canales con búfer de capacidad 0), estos contienen una pila FIFO para el almacenamiento de información. La capacidad de esta pila es definida en el momento de creación del canal. En el momento en que la pila esté llena, se bloquea cualquier intento de escritura en el canal, hasta que haya espacio disponible.
+
+Apóyese en el ejemplo que se encuentra en \textit{bufferedChan.go}, el cual es similar al ejemplo anterior, pero a diferencia de que el canal tiene un buffer de capacidad 5. Se escribe hasta repletar su capacidad y luego se va leyendo del canal, uno a uno, con intervalos de 1 segundo entre una lectura y la siguiente; con esto se libera espacio, por tanto se puede volver a escribir, esto llenaría de nuevo el canal, luego se lee, se libera, y así sucesivamente. 
+
+\subsubsection{Select}
+
+La estructura \emph{select-cases} permite leer o escribir de varios canales al mismo tiempo. En caso de que hayan varias opciones de lectura y/o escritura en el mismo instante, Go escoge una al azar y es la que se selecciona. Esta estructura es muy parecida al \textit{switch-case} que existe en muchos lenguajes de programación.
+
+Se deja un ejemplo en \textit{select.go} del uso de esta estructura. El ejemplo consiste en simular el envío de información entre un servidor y dos clientes que se conectan a él, y le envían información, con la restricción de que el servidor no puede exceder un límite de tiempo de espera prefijado (en este ejemplo es 40ms). En caso de ser excedido este límite de tiempo se corta la comunicación entre clientes-servidor y se da por concluído el envío de información. 
+
+Este patrón de diseño para controlar un límite de tiempo esperando un recurso, se conoce en la literatura como \emph{Timing out, moving on}, y existen varias formas de resolver esta situación. La utilizada en este ejemplo es usando la función \emph{time.After(timeout int)} que dado un número que equivale al tiempo de espera, devuelve un canal que dará un ping luego de transcurrido este tiempo. Entonces, si se está esperando por la lectura de varios canales incluído este último, luego de pasar el tiempo predefinido y no se ha escrito en ninguno de los otros canales, se lee de este y se ejecuta la acción que se desee. En este ejemplo, las acciones deseadas son notificar a cada uno de los clientes que el servidor va a dejar de recibir información y luego se cierra el servidor. 
+
+La vía de notificación del servidor al cliente es el mismo canal por el que el cliente le enviaba información al servidor. Esto trae consigo algunas complicaciones por el lado del cliente, como por ejemplo saber diferenciar entre el signal que le envío el servidor para avisarle de que no recibirá más información, y la propia información que le enviaba él mismo al servidor. Esto lo puede resolver el servidor enviando un valor distintivo al que envía el cliente (en este caso -1); y otra forma de resolverlo es hacer el canal sin búfer, lo cual traería otras complicaciones. 
+
+La solución dada sigue siendo una solución parcial al problema, da error en el caso en que el servidor esté notificando a los clientes de que dejará de recibir información, y la gorutina de un cliente se haya quedado en la instrucción a punto de enviar la información, al intentar enviarla se quedará esperando a que se libere espacio del canal, pero esto nunca sucede. Por este mismo motivo falla también la solución que se propuso arriba de utilizar un canal sin búfer. Aunque todos estos problemas se pudieran resolver dándole mayor capacidad al canal, no se hizo. Más adelante se mostrará una forma más elegante de resolver estos problema.
+
+\subsubsection{Canales de canales}
+
+Como se había mencionado anteriormente los canales son una estructura capaz de transferir instancias de un tipo definido. Resulta que los canales también son un tipo en Go, por tanto se permite crear canales del estilo \emph{chan chan <type>}. A continuación se presenta un ejemplo (\textit{channelChan.go}) donde se evidencia la utilidad de un tipo de esta forma.
+
+Extendiendo un poco el ejemplo presentado en la sección anterior, ahora se quiere tener un servidor esperando peticiones de clientes para conectarse a él. Luego de aceptada la conexión con el servidor, este envía al cliente un \emph{chan string} para intercambiar información con él, esto es lo que vendría siendo habilitarle un puerto para la comunicación. Este envío de un medio para la comunicación se hace a través de un \emph{chan chan string}.
+
+\subsubsection{Canales con restricción}
+
+La solución anterior aún está defectuosa, se propone analizar al detalle los motivos que provocan estos \texttt{deadlocks}, pero se puede afirmar que el motivo principal por lo que son provocados es que un mismo canal está asumiendo varias funcionalidades y se permite tanto escribir como leer desde cualquier gorutina, lo cual trae fuertes conflictos porque el desarrollador no es quien controla el orden en que se ejecutan estas gorutinas. 
+
+Para desacoplar las funcionalidades de cada canal, obtener mayor expresividad y lograr un jerarquía más robusta ante posibles fallos futuros se introduce el concepto de canal con restricción. Un canal con restricción no es más que un canal unidireccional, donde solamente se puede escribir o leer, una de dos. La sintaxis para lograr esto es \textit{chan<- Type} para indicar que el canal es de solo escritura y \textit{<-chan} de solo lectura.
+
+A continuación se presenta un ejemplo \textit{restrictedChan.go} que da una solución final al problema planteado.
 
 \subsection{Problema de los 5 Fil\'osofos}
 
@@ -308,8 +414,17 @@ Por otro lado tenemos en la hebra principal (disjunta de las 5 correspondientes 
 
 \subsubsection{Go}
 
+La solución al problema de los filósofos implementada en Go no tiene un enfoque novedoso, parte de una idea sencilla e implementable en otros lenguajes de programación, a diferencia de que no permite escalar tan bien como en Go el número de filósofos sentados en la mesa. Esta solución permite ejecutar el problema de los \textit{N} filósofos con \textit{N = 700000} en una computadora de 8Gb de RAM.
+
+La idea es que cada filósofo tenga una rutina de vida que se ejecuta de manera autónoma y repetitiva. Un filósofo lo primero que hace es pensar, luego intenta coger los cubiertos, en caso de no poder se pone a pensar nuevamente e intenta tomar los cubiertos más adelante. Luego de haber tomado los cubiertos come y finalmente suelta los cubiertos para que otros filósofos puedan utilizarlos.
+
+Para coger los cubiertos el filósofo está dispuesto a esperar un tiempo \textit{T}, en caso de ser excedido ese tiempo y aún no haber tomado los dos cubiertos suelta el cubierto que tomó, en caso de haber tomado alguno, y se pone a pensar hasta que vuelve a intentar tomar los cubiertos.
+
+Sobre los detalles de implementación en Go, los tenedores se modelaron como canales de capacidad 1 que solamente tienen acceso los filósofos que está sentados alrededor de estos. Si el canal está lleno significa que el tenedor está libre, en caso contrario que está siendo usado. Otro detalle de implementación importante es la simulación del ciclo de vida de cada filósofo de manera autónoma, esto se logra utilizando una gorutina por cada filósofo.
+
 \subsubsection{Comparaci\'on}
-%----------------------------------------------------------------------------------------
+
+El propuesta de Go para la concurrencia es mucho más rica en posibilidades respecto a la de C#, ya que aborda la sincronización desde dos enfoques distintos, compartir datos a través de la memoria compartida (la clásica implementada en muchos lenguajes de programación), y compartir memoria a través de los datos. Además de esto, la eficiencia de las gorutinas en Go permite que problemas como el propuesto anteriormente escalen a números realmente elevados.
 
 \begin{thebibliography}
 	a
@@ -318,6 +433,10 @@ Por otro lado tenemos en la hebra principal (disjunta de las 5 correspondientes 
 	2020.
 	La Habana.
 	\bibitem{microsoft} \href{https://learn.microsoft.com/en-us/dotnet/api/system.threading?view=net-7.0}{Microsoft Learn: System.Threading Namespace in .NET}
+        \bibitem{scheduler} \href{https://morsmachine.dk/go-scheduler}{Go scheduler}
+        \bibitem{mastering-go} Mihalis Tsoukalos. \emph{Mastering Go. Third Edition}, Packt.
 \end{thebibliography}
 
 \end{document}
+
+

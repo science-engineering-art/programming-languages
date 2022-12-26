@@ -67,7 +67,7 @@ class Matrix:
             raise Exception('Number of parameters exceded.')
         i, j = key
 
-        if i >= 0 and i < self.amount_rows and
+        if i >= 0 and i < self.amount_rows and \
         j >= 0 and j < self.amount_cols:
             return self.matrix[i][j]
         else:
@@ -87,7 +87,7 @@ class Matrix:
             raise Exception('Number of parameters exceded.')
         i, j = key
 
-        if i >= 0 and i < self.amount_rows and
+        if i >= 0 and i < self.amount_rows and \
         j >= 0 and j < self.amount_cols:
             self.matrix[i][j] = value
         else:
@@ -181,7 +181,7 @@ class Matrix:
 
             `if matrix1 == matrix2: pass`.
         """
-        if self.amount_rows != other.amount_rows or
+        if self.amount_rows != other.amount_rows or \
         self.amount_cols != other.amount_cols:
             return False
 
